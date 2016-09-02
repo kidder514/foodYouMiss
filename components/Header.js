@@ -1,13 +1,11 @@
 import React from "react"
 
-const header = () => (
+const Header = () => (
 
 	<header>
-		<div></div>
-		<div></div>
-		<div></div>
-		<div></div>
+		<div>Home</div>
+		<div>Cook</div>
+		<div>Subscribe</div>
+		<div>Profile</div>
 	</header>
-	)
-
-
+);

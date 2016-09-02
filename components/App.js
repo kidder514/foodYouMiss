@@ -3,10 +3,9 @@ import Header from "./Header"
 import Body from "./Body"
 
 const App = () => (
-	<div>
-		<Header />
-		<Body />
-	</div>
+  <div>
+
+  </div>
 )
 
 export default App
