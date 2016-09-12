@@ -1,30 +1,16 @@
 import 'babel-polyfill'
 import React from 'react'
-import ReactDOM from 'react-dom'
-import { createStore } from 'redux'
-import { Provider } from 'react-redux'
-import { Router, Route, browserHistory } from 'react-router'
-import mainReducer from './reducers/mainReducer'
-import App from './components/App'
+import { render } from 'react-dom'
+import { browserHistory } from 'react-router'
+import { syncHistoryWithStore } from 'react-router-redux'
+import Root from './containers/Root'
+import configureStore from './store/configureStore'
 
-const store = createStore(mainReducer)
-
+// the structure follow the redux official github -> example -> real-world
+const store = configureStore()
 const history = syncHistoryWithStore(browserHistory, store)
 
-ReactDOM.render(
-  <Provider store={store}>
-    <Router history={history}>
-    	<Route component={MainLayer}>
-    		<Route component={NavLayer}></Route>  {/* Navigator */}
-    		<Route component={Container}>
-    			<Route path="/" component={Home}> {/* Home: Nearbys */}
-    			<Route path="/Foodmap" component={FoodMap}> {/* foodMap */}
-    			<Route path="/Subscription" component={Subscription}> {/* Subscription */}
-    			<Route path="/mypage" component={MyPage}>
-    			<Route path="/account" component={Account}>
-    		</Route>
-    	</Route>
-    <Router>
-  </Provider>,
+render(
+  <Root store={store} history={history} />,
   document.getElementById('root')
 )

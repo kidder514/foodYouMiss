@@ -1,6 +1,0 @@
-export page = {
-	HOME: "HOME",
-	COOK: "COOK",
-	SUBSCRIBES: "SUBSCRIBES",
-	PROFILE: "PROFILE"
-}
