@@ -4,8 +4,8 @@ import dataReducer from './dataReducer'
 
 
 const mainReducer = combineReducers({
-  pageSwitcher,
-  dataReducer
+	...reducers,
+	routing: outerReducer
 })
 
 export default mainReducer

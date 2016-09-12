@@ -1,16 +1,24 @@
 import 'babel-polyfill'
 import React from 'react'
-import { render } from 'react-dom'
-import { Provider } from 'react-redux'
+import ReactDOM from 'react-dom'
 import { createStore } from 'redux'
+import { Provider } from 'react-redux'
+import { Router, Route, browserHistory } from 'react-router'
 import mainReducer from './reducers/mainReducer'
 import App from './components/App'
 
-let store = createStore(mainReducer)
+const store = createStore(mainReducer)
 
-render(
+const history = syncHistoryWithStore(browserHistory, store)
+
+ReactDOM.render(
   <Provider store={store}>
-    <App />
+  	{ }
+    <Router history={history}>
+    	<Route component={Nav}>
+    	<Route path="/" component={App}>
+    	</Route>
+    <Router>
   </Provider>,
   document.getElementById('root')
 )
