@@ -13,10 +13,16 @@ const history = syncHistoryWithStore(browserHistory, store)
 
 ReactDOM.render(
   <Provider store={store}>
-  	{ }
     <Router history={history}>
-    	<Route component={Nav}>
-    	<Route path="/" component={App}>
+    	<Route component={MainLayer}>
+    		<Route component={NavLayer}></Route>  {/* Navigator */}
+    		<Route component={Container}>
+    			<Route path="/" component={Home}> {/* Home: Nearbys */}
+    			<Route path="/Foodmap" component={FoodMap}> {/* foodMap */}
+    			<Route path="/Subscription" component={Subscription}> {/* Subscription */}
+    			<Route path="/mypage" component={MyPage}>
+    			<Route path="/account" component={Account}>
+    		</Route>
     	</Route>
     <Router>
   </Provider>,
