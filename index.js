@@ -6,6 +6,9 @@ import { syncHistoryWithStore } from 'react-router-redux'
 import Root from './containers/Root'
 import configureStore from './store/configureStore'
 
+
+require("./asset/style.css");
+
 // the structure follow the redux official github -> example -> real-world
 const store = configureStore()
 const history = syncHistoryWithStore(browserHistory, store)
