@@ -5,7 +5,6 @@ class OutterWrapper extends Component {
   render() {
     return (
     	<div className="outter-wrapper">
-    	{this.children}
     	</div>
     )
   }

@@ -5,7 +5,6 @@ class MainWrapper extends Component {
   render() {
     return (
     	<div className="main-wrapper">
-    	{this.children}
     	</div>
     )
   }
