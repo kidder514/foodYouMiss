@@ -1,19 +1,19 @@
 import React, { Component } from 'react'
 import { Link } from "react-router"
-import Search from "./Search.js"
+import Search from "./Search"
 
 class MenuLayer extends Component {
 
   render() {
     return (
     	<div className="menu-layer">
-    		<Search />
+            <Search />
     		<ul>
-    			<li><Link to="/">Home</Link></li>
-    			<li><Link to="/map">Map</Link></li>
-    			<li><Link to="/subscriptions">subscriptions</Link></li>
-    			<li><Link to="/mypage">MyPage</Link></li>
-    			<li><Link to="/">Account</Link></li>
+    			<li><Link to="/" activeClassName="current-menu-item">Home</Link></li>
+    			<li><Link to="/map" activeClassName="current-menu-item">Map</Link></li>
+    			<li><Link to="/subscriptions" activeClassName="current-menu-item">subscriptions</Link></li>
+    			<li><Link to="/mypage" activeClassName="current-menu-item">MyPage</Link></li>
+    			<li><Link to="/account" activeClassName="current-menu-item">Account</Link></li>
     		</ul>
     	</div>
     )
