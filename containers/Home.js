@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import PostList from "./PostList"
 
 class Home extends Component {
 
@@ -6,6 +7,7 @@ class Home extends Component {
     return (
     	<div className="Home">
             Home
+            <PostList />
     	</div>
     )
   }
