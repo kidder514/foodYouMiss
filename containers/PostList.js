@@ -6,9 +6,7 @@ class PostList extends Component {
   render() {
     return (
     	<div className="post-list">
-            <SinglePost />
-            <SinglePost />
-            <SinglePost />
+    	PostList
     	</div>
     )
   }

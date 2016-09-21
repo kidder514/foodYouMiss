@@ -1,17 +1,29 @@
-//these are just some sample.
+import axios from "axios"
+import ReduxThunk from 'redux-thunk'
 
-export const increment = (index) =>{
+export const initPostsAction = (posts) =>{
   return {
-    type: "INCREMENT_LIKES",
-    index
+    type: "INIT_POSTS",
+    newPosts: posts
   }
 }
 
-export const addComment = (postId, author, comment) =>{
-  return {
-    type: "ADD_COMMENT",
-    postId,
-    author,
-    comment
-  }
+export const initPosts = () => {
+	return dispatch => {
+
+		axios.get('http://www.mocky.io/v2/57e266f0110000ec1d56f632')
+		.then(function (res) {
+			dispatch(initPostsAction(res.data))
+	  	})
+	  	.catch(function (error) {
+	    	console.log("Error occur, operation interrupted. ")
+	  	});
+	}	
+}
+
+export const appendPosts = () => {} 
+export const refreshPosts = () => {} 
+
+const getInitialPosts = () => {
+
 }

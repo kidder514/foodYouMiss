@@ -1,27 +1,40 @@
 import React, { Component } from 'react'
-import Link from "react-router"
+import { Link } from "react-router"
 
 class SinglePost extends Component {
-	var postInfo = this.props.postInfo;
+
+
+	generateGallery(imgs) {
+		return (<div></div>)
+	}
+
+	toggleLike(){
+		return ;
+	}
+
 	render() {
+
+	const postInfo = this.props.postInfo;
 	    return (
 	    	<div className="single-post">
 	            <div className="left-section">
 	            	<Link to="/author/:{postInfo.authorId}"><img src={postInfo.authorImg} alt="{postInfo.authorName}"/></Link>
-	            	<p>{postInfo.authorImg}</p>
+	            	<Link to="/author/:{postInfo.authorId}"><p>{postInfo.authorImg}</p></Link>
 	            </div>
 	            <div className="right-section">
-	            	<h3>{postInfo.title}</h3>
-	            	<p>{postInfo.desc}</p>
-	            	<p className="post-location">{postInfo.location}</p>
+	            	<Link to="/post/:{postInfo.postId}"><h3>{postInfo.title}</h3></Link>
+	            	<Link to="/post/:{postInfo.postId}"><p>{postInfo.desc}</p></Link>
+	            	<section className="image_gallery">
+	            		{generateGallery(postInfo.imgUrls)}
+	            	</section>
+	            	<Link to="/map/:{postInfo.coordinate}" className="post-location" >{postInfo.location}</Link>
 	            	<span>:expand</span>
 	            	<div className="others-section">
-	            		<a onClick={postInfo.onClick}>like:{postInfo.likes}</a>
-	            		<a href="">comment:{postInfo.comments}</a>
-	            		<a href="">Share</a>
-	            		<a href=""></a>
-	            		<a href=""></a>
-	            		<a href=""></a>
+	            		<a onClick={toggleLike()}>like:{postInfo.likes}</a>
+	            		<Link to="/post/:{postInfo.postId}/comment">comment:{postInfo.comments}</Link>
+	            		<Link to="/post/:{postInfo.postId}/share">Share</Link>
+	            		<a href="">Serve:{postInfo.portions}</a>
+	            		<Link to="/post/:{postInfo.postId}/buy">Buy</Link>
 	            	</div>
 	            </div>
 
