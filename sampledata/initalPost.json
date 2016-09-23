@@ -19,35 +19,103 @@
         "http://www.tesco.com/groceries/MarketingContent/Sites/Retail/superstore/mercury/p/i/zones/easy_meals/Easy-meals-balanced-ready-meal.jpg",
         "http://cdn.skim.gs/image/upload/v1456337850/msi/article_meals_1_dsmd8n.jpg"
     ],
-    "postCoordinate":{"-33.886290","151.209119"},
+    "postCoordinate":{"latitude": "-33.886290","longitude":"151.209119"},
     "postLocation":"55 Holt Street, Surry Hills, NSW 2000, Australia",
-    "postLikes": 9,
-    "postComments":[11103,11032,33044,33213,34561],
+    "postLikes": [1,2,3,4,5,6,7,8,9],
+    "postComments":[1,2,3,4,5],
     "postPortions": 20
   },
   {
-    "userId": 1,
-    "id": 2,
-    "title": "qui est esse",
-    "body": "est rerum tempore vitae\nsequi sint nihil reprehenderit dolor beatae ea dolores neque\nfugiat blanditiis voluptate porro vel nihil molestiae ut reiciendis\nqui aperiam non debitis possimus qui neque nisi nulla"
+    "authorId": 2,
+    "authorName": "Uncle Tony",
+    "authorImg": "http://s3.amazonaws.com/37assets/svn/765-default-avatar.png",
+    "authorCurrency":"AUD",
+    "postId": 2,
+    "postTitle": "facer sunt aut facer",
+    "postDescription":"quia et suscipit suscipit recuspit suscipit recusandae consequuntur expedita et cum reprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto",
+    "postPrice": 11.9,
+    "postImgUrls": [
+        "https://www.takethemameal.com/files_images/store/items/meatloaf-and-mac-and-jack.jpg",
+        "http://cf.alldayidreamaboutfood.com/wp-content/uploads/2015/01/Slow-Cooker-BBQ-Meatloaf-3-copy.jpg",
+        "https://www.bostonsausage.co.uk/wp-content/uploads/2013/11/Chilli-Pork-Ribeye-Meal-Deal.jpg",
+        "http://greatist.com/sites/default/files/salmon-dinner.jpg",
+        "http://suddenlysolo.org/wp-content/uploads/2013/04/MeatloafRecipe-ComfortFood.jpg",
+        "http://luvo.tetherinc.netdna-cdn.com/wp-content/uploads/2015/07/Frozen-BBQ-Chicken-Meal2-483x483.jpg"
+    ],
+    "postCoordinate":{"latitude": "-33.879484" ,"longitude":"151.206837"},
+    "postLocation":"447 Pitt St, Haymarket NSW 2000, Australia",
+    "postLikes": [2,4,5,6,7,11,23,5],
+    "postComments":[6,7,8],
+    "postPortions": 10
   },
   {
-    "userId": 1,
-    "id": 3,
-    "title": "ea molestias quasi exercitationem repellat qui ipsa sit aut",
-    "body": "et iusto sed quo iure\nvoluptatem occaecati omnis eligendi aut ad\nvoluptatem doloribus vel accusantium quis pariatur\nmolestiae porro eius odio et labore et velit aut"
+    "authorId": 1,
+    "authorName": "Tim Berger",
+    "authorImg": "http://s3.amazonaws.com/37assets/svn/765-default-avatar.png",
+    "authorCurrency":"AUD",
+    "postId": 3,
+    "postTitle": "facer sunt facer",
+    "postDescription":"quia et suscipit recuspit suscipit recusandae expedita et cum reprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto",
+    "postPrice": 12.9,
+    "postImgUrls": [
+        "https://www.takethemameal.com/files_images/store/items/meatloaf-and-mac-and-jack.jpg",
+        "http://cf.alldayidreamaboutfood.com/wp-content/uploads/2015/01/Slow-Cooker-BBQ-Meatloaf-3-copy.jpg",
+        "https://www.bostonsausage.co.uk/wp-content/uploads/2013/11/Chilli-Pork-Ribeye-Meal-Deal.jpg",
+        "http://greatist.com/sites/default/files/salmon-dinner.jpg",
+        "http://suddenlysolo.org/wp-content/uploads/2013/04/MeatloafRecipe-ComfortFood.jpg",
+        "http://www.tesco.com/groceries/MarketingContent/Sites/Retail/superstore/mercury/p/i/zones/easy_meals/Easy-meals-balanced-ready-meal.jpg",
+        "http://cdn.skim.gs/image/upload/v1456337850/msi/article_meals_1_dsmd8n.jpg"
+    ],
+    "postCoordinate":{"latitude":"-33.879108" ,"longitude":"151.206262"},
+    "postLocation":"20 Campbell St, Haymarket NSW 2000",
+    "postLikes": [2,4,7,11,23,5],
+    "postComments":[9,10,11,12],
+    "postPortions": 15
+  },
+   {
+    "authorId": 2,
+    "authorName": "Uncle Tony",
+    "authorImg": "http://s3.amazonaws.com/37assets/svn/765-default-avatar.png",
+    "authorCurrency":"AUD",
+    "postId": 4,
+    "postTitle": "blad skse noddle",
+    "postDescription":"quia et suscipit recuspit suscipit et cum reprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt",
+    "postPrice": 12.9,
+    "postImgUrls": [
+        "https://www.takethemameal.com/files_images/store/items/meatloaf-and-mac-and-jack.jpg",
+        "http://suddenlysolo.org/wp-content/uploads/2013/04/MeatloafRecipe-ComfortFood.jpg",
+        "http://www.tesco.com/groceries/MarketingContent/Sites/Retail/superstore/mercury/p/i/zones/easy_meals/Easy-meals-balanced-ready-meal.jpg",
+        "http://cdn.skim.gs/image/upload/v1456337850/msi/article_meals_1_dsmd8n.jpg"
+    ],
+    "postCoordinate":{"latitude":"-33.809860", "longitude":"151.209273"},
+    "postLocation":"Northbridge Plaza, Shop 27/79-113 Sailors Bay Road, Northbridge NSW 2063",
+    "postLikes": [2,4,7,11,23,5,21,22,23],
+    "postComments":[],
+    "postPortions": 5
   },
   {
-    "userId": 1,
-    "id": 4,
-    "title": "eum et est occaecati",
-    "body": "ullam et saepe reiciendis voluptatem adipisci\nsit amet autem assumenda provident rerum culpa\nquis hic commodi nesciunt rem tenetur doloremque ipsam iure\nquis sunt voluptatem rerum illo velit"
-  },
-  {
-    "userId": 1,
-    "id": 5,
-    "title": "nesciunt quas odio",
-    "body": "repudiandae veniam quaerat sunt sed\nalias aut fugiat sit autem sed est\nvoluptatem omnis possimus esse voluptatibus quis\nest aut tenetur dolor neque"
+    "authorId": 3,
+    "authorName": "Ginger Boys",
+    "authorImg": "http://s3.amazonaws.com/37assets/svn/765-default-avatar.png",
+    "authorCurrency":"AUD",
+    "postId": 5,
+    "postTitle": "Homemade chicken fried rice",
+    "postDescription":"quia et suscipit et cum reprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto",
+    "postPrice": 7.9,
+    "postImgUrls": [
+        "https://www.takethemameal.com/files_images/store/items/meatloaf-and-mac-and-jack.jpg",
+        "http://cf.alldayidreamaboutfood.com/wp-content/uploads/2015/01/Slow-Cooker-BBQ-Meatloaf-3-copy.jpg",
+        "https://www.bostonsausage.co.uk/wp-content/uploads/2013/11/Chilli-Pork-Ribeye-Meal-Deal.jpg",
+        "http://greatist.com/sites/default/files/salmon-dinner.jpg",
+        "http://suddenlysolo.org/wp-content/uploads/2013/04/MeatloafRecipe-ComfortFood.jpg",
+        "http://www.tesco.com/groceries/MarketingContent/Sites/Retail/superstore/mercury/p/i/zones/easy_meals/Easy-meals-balanced-ready-meal.jpg",
+        "http://cdn.skim.gs/image/upload/v1456337850/msi/article_meals_1_dsmd8n.jpg"
+    ],
+    "postCoordinate":{"latitude":"-39.810050" ,"longitude":"151.209140"},
+    "postLocation":"22 Owens Ave, Newington, NSW 2127, Australia",
+    "postLikes": [2,4,5,9,21,31],
+    "postComments":[13,14,15],
+    "postPortions": 8
   },
   {
     "userId": 1,
