@@ -6,7 +6,9 @@ class PostList extends Component {
   render() {
     return (
     	<div className="post-list">
-    	PostList
+    	postList
+          {this.props.postList.map(post => <SinglePost post={post} />)
+          }
     	</div>
     )
   }

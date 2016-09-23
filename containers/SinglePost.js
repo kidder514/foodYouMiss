@@ -14,27 +14,27 @@ class SinglePost extends Component {
 
 	render() {
 
-	const postInfo = this.props.postInfo;
+	const post = this.props.post;
 	    return (
 	    	<div className="single-post">
 	            <div className="left-section">
-	            	<Link to="/author/:{postInfo.authorId}"><img src={postInfo.authorImg} alt="{postInfo.authorName}"/></Link>
-	            	<Link to="/author/:{postInfo.authorId}"><p>{postInfo.authorImg}</p></Link>
+	            	<Link to="/author/:{post.authorId}"><img src={post.authorImg} alt="{post.authorName}"/></Link>
+	            	<Link to="/author/:{post.authorId}"><p>{post.authorImg}</p></Link>
 	            </div>
 	            <div className="right-section">
-	            	<Link to="/post/:{postInfo.postId}"><h3>{postInfo.title}</h3></Link>
-	            	<Link to="/post/:{postInfo.postId}"><p>{postInfo.desc}</p></Link>
+	            	<Link to="/post/:{post.postId}"><h3>{post.title}</h3></Link>
+	            	<Link to="/post/:{post.postId}"><p>{post.desc}</p></Link>
 	            	<section className="image_gallery">
-	            		{generateGallery(postInfo.imgUrls)}
+	            		{generateGallery(post.imgUrls)}
 	            	</section>
-	            	<Link to="/map/:{postInfo.coordinate}" className="post-location" >{postInfo.location}</Link>
+	            	<Link to="/map/:{post.coordinate}" className="post-location" >{post.location}</Link>
 	            	<span>:expand</span>
 	            	<div className="others-section">
-	            		<a onClick={toggleLike()}>like:{postInfo.likes}</a>
-	            		<Link to="/post/:{postInfo.postId}/comment">comment:{postInfo.comments}</Link>
-	            		<Link to="/post/:{postInfo.postId}/share">Share</Link>
-	            		<a href="">Serve:{postInfo.portions}</a>
-	            		<Link to="/post/:{postInfo.postId}/buy">Buy</Link>
+	            		<a onClick={toggleLike()}>like:{post.likes.length}</a>
+	            		<Link to="/post/:{post.postId}/comment">comment:{post.comments.length}</Link>
+	            		<Link to="/post/:{post.postId}/share">Share</Link>
+	            		<a href="">Serve:{post.portions}</a>
+	            		<Link to="/post/:{post.postId}/buy">Buy</Link>
 	            	</div>
 	            </div>
 
