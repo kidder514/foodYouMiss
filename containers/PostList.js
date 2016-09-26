@@ -7,7 +7,8 @@ class PostList extends Component {
     return (
     	<div className="post-list">
     	postList
-          {this.props.postList.map(post => <SinglePost post={post} />)
+          {
+          	this.props.postList.map(post => <SinglePost key={post.postId} post={post} />)
           }
     	</div>
     )

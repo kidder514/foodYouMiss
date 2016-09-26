@@ -118,33 +118,104 @@
     "postPortions": 8
   },
   {
-    "userId": 1,
-    "id": 6,
-    "title": "dolorem eum magni eos aperiam quia",
-    "body": "ut aspernatur corporis harum nihil quis provident sequi\nmollitia nobis aliquid molestiae\nperspiciatis et ea nemo ab reprehenderit accusantium quas\nvoluptate dolores velit et doloremque molestiae"
+    "authorId": 3,
+    "authorName": "Ginger Boys",
+    "authorImg": "http://s3.amazonaws.com/37assets/svn/765-default-avatar.png",
+    "authorCurrency":"AUD",
+    "postId": 6,
+    "postTitle": "Cookie and ginger boat",
+    "postDescription":"henderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto",
+    "postPrice": 7.9,
+    "postImgUrls": [
+        "http://www.tesco.com/groceries/MarketingContent/Sites/Retail/superstore/mercury/p/i/zones/easy_meals/Easy-meals-balanced-ready-meal.jpg"
+    ],
+    "postCoordinate":{"latitude":"-33.873320" ,"longitude":"151.213235"},
+    "postLocation":"4 College Street, Sydney NSW 2001",
+    "postLikes": [6],
+    "postComments":[],
+    "postPortions": 6
   },
   {
-    "userId": 1,
-    "id": 7,
-    "title": "magnam facilis autem",
-    "body": "dolore placeat quibusdam ea quo vitae\nmagni quis enim qui quis quo nemo aut saepe\nquidem repellat excepturi ut quia\nsunt ut sequi eos ea sed quas"
+    "authorId": 4,
+    "authorName": "Amier Cooker",
+    "authorImg": "https://x1.xingassets.com/assets/frontend_minified/img/users/nobody_m.original.jpg",
+    "authorCurrency":"AUD",
+    "postId": 7,
+    "postTitle": "Stir fried Naan",
+    "postDescription":"henderit mnostrum rerum est autem sunt rem eveniet architecto",
+    "postPrice": 10.9,
+    "postImgUrls": [
+        "http://www.tesco.com/groceries/MarketingContent/Sites/Retail/superstore/mercury/p/i/zones/easy_meals/Easy-meals-balanced-ready-meal.jpg",
+        "http://suddenlysolo.org/wp-content/uploads/2013/04/MeatloafRecipe-ComfortFood.jpg",
+        "http://cdn.skim.gs/image/upload/v1456337850/msi/article_meals_1_dsmd8n.jpg"
+    ],
+    "postCoordinate":{"latitude":"-33.858356" ,"longitude":"151.172219"},
+    "postLocation":"484 Darling St, Rozelle NSW 2041",
+    "postLikes": [],
+    "postComments":[16,17],
+    "postPortions": 7
   },
   {
-    "userId": 1,
-    "id": 8,
-    "title": "dolorem dolore est ipsam",
-    "body": "dignissimos aperiam dolorem qui eum\nfacilis quibusdam animi sint suscipit qui sint possimus cum\nquaerat magni maiores excepturi\nipsam ut commodi dolor voluptatum modi aut vitae"
+    "authorId": 4,
+    "authorName": "Amier Cooker",
+    "authorImg": "https://x1.xingassets.com/assets/frontend_minified/img/users/nobody_m.original.jpg",
+    "authorCurrency":"AUD",
+    "postId": 8,
+    "postTitle": "Barbeaque Cumin",
+    "postDescription":"henderit rerum est autem sunt rem eveniet architecto",
+    "postPrice": 10.9,
+    "postImgUrls": [
+        "https://www.takethemameal.com/files_images/store/items/meatloaf-and-mac-and-jack.jpg",
+        "http://cf.alldayidreamaboutfood.com/wp-content/uploads/2015/01/Slow-Cooker-BBQ-Meatloaf-3-copy.jpg",
+        "https://www.bostonsausage.co.uk/wp-content/uploads/2013/11/Chilli-Pork-Ribeye-Meal-Deal.jpg",
+        "http://greatist.com/sites/default/files/salmon-dinner.jpg",
+        "http://suddenlysolo.org/wp-content/uploads/2013/04/MeatloafRecipe-ComfortFood.jpg",
+        "http://www.tesco.com/groceries/MarketingContent/Sites/Retail/superstore/mercury/p/i/zones/easy_meals/Easy-meals-balanced-ready-meal.jpg",
+        "http://cdn.skim.gs/image/upload/v1456337850/msi/article_meals_1_dsmd8n.jpg"    
+      ],
+    "postCoordinate":{"latitude":"-33.857020" ,"longitude":"151.172679"},
+    "postLocation":"456 Darling St, Balmain NSW 2041",
+    "postLikes": [5,7,10,12,14],
+    "postComments":[18,19],
+    "postPortions": 12
   },
   {
-    "userId": 1,
-    "id": 9,
-    "title": "nesciunt iure omnis dolorem tempora et accusantium",
-    "body": "consectetur animi nesciunt iure dolore\nenim quia ad\nveniam autem ut quam aut nobis\net est aut quod aut provident voluptas autem voluptas"
+    "authorId": 4,
+    "authorName": "Amier Cooker",
+    "authorImg": "https://x1.xingassets.com/assets/frontend_minified/img/users/nobody_m.original.jpg",
+    "authorCurrency":"AUD",
+    "postId": 9,
+    "postTitle": "Coconut blink",
+    "postDescription":"henderit rerum est autem sunt rem eveniet architectosunt rem eveniet architecto",
+    "postPrice": 12.9,
+    "postImgUrls": [
+        "https://www.takethemameal.com/files_images/store/items/meatloaf-and-mac-and-jack.jpg",
+        "http://cf.alldayidreamaboutfood.com/wp-content/uploads/2015/01/Slow-Cooker-BBQ-Meatloaf-3-copy.jpg",
+        "https://www.bostonsausage.co.uk/wp-content/uploads/2013/11/Chilli-Pork-Rib"   
+      ],
+    "postCoordinate":{"latitude":"-33.918626" ,"longitude":"151.258267"},
+    "postLocation":"169 Dolphin St, Coogee NSW 2034",
+    "postLikes": [23,24],
+    "postComments":[20],
+    "postPortions": 13
   },
   {
-    "userId": 1,
-    "id": 10,
-    "title": "optio molestias id quia eum",
-    "body": "quo et expedita modi cum officia vel magni\ndoloribus qui repudiandae\nvero nisi sit\nquos veniam quod sed accusamus veritatis error"
+    "authorId": 5,
+    "authorName": "Brian Axelander",
+    "authorImg": "https://x1.xingassets.com/assets/frontend_minified/img/users/nobody_m.original.jpg",
+    "authorCurrency":"AUD",
+    "postId": 10,
+    "postTitle": "See you tomorrow",
+    "postDescription":"Rerum est autem sunt henderit rerum est autem sunt rem eveniet architectosunt rem eveniet architecto",
+    "postPrice": 9.9,
+    "postImgUrls": [
+        "http://cf.alldayidreamaboutfood.com/wp-content/uploads/2015/01/Slow-Cooker-BBQ-Meatloaf-3-copy.jpg",
+        "https://www.bostonsausage.co.uk/wp-content/uploads/2013/11/Chilli-Pork-Rib"   
+      ],
+    "postCoordinate":{"latitude":"-33.918720" ,"longitude":"151.257356"},
+    "postLocation":"5/173 Arden St, Coogee NSW 2034",
+    "postLikes": [1,2,3],
+    "postComments":[21],
+    "postPortions": 12
   }
 ]
