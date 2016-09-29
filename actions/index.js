@@ -11,7 +11,7 @@ export const initPostsAction = (posts) =>{
 export const initPosts = () => {
 	return dispatch => {
 
-		axios.get('http://www.mocky.io/v2/57e7aef90f0000201c262336')
+		axios.get('http://www.mocky.io/v2/57e900410f0000c0128439a1')
 		.then(function (res) {
 			dispatch(initPostsAction(res.data))
 	  	})
