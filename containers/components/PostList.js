@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import SinglePost from "./SinglePost"
+import SinglePost from "../singlepost/SinglePost"
 
 class PostList extends Component {
 

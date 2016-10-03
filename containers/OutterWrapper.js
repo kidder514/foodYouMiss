@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import MenuLayer from "./MenuLayer"
-import SlidingPage from "./SlidingPage"
+import MenuLayer from "./menu/MenuLayer"
+import SlidingPage from "./components/SlidingPage"
 
 
 class OutterWrapper extends Component {

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from "react-router"
-import Search from "./Search"
+import Search from "../components/Search"
 
 class MenuLayer extends Component {
 
