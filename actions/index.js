@@ -1,5 +1,4 @@
 import axios from "axios"
-import ReduxThunk from 'redux-thunk'
 
 export const initPostsAction = (posts) =>{
   return {

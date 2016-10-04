@@ -1,6 +1,4 @@
-import * as ActionTypes from '../actions'
 
-// Updates an entity cache in response to any action with response.entities.
 function nearByPostsReducer(state = [], action) {
   switch(action.type){
     case "INIT_POSTS":
