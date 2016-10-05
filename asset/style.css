@@ -73,7 +73,7 @@ h5{
 	z-index: 99;
 	width:100%;
 	padding: 10px 20px;
-	background-color:#36465D;
+	background-color:#F4511E;
 	color:#fff;
 }
 
@@ -82,12 +82,24 @@ h5{
 	text-decoration: none;
 }
 
-.menu-item,
+.logo,
 .search{
-	display:inline-block;
-	float:right;
+	float:left;
 }
 
+.menu-list{
+	float:right;
+	margin-right:20px;
+}
+
+.menu-item{
+	display:inline-block;
+	float:left;
+}
+
+.current-menu-item{
+	background-color:#E64A19;
+}
 
 /*=====================4.0 Body===========================*/
 
