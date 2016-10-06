@@ -6,11 +6,9 @@ class Wrapper extends Component {
 
   render() {
     return (
-        <div className="outter-wrapper">
-            <div className="wrapper">
-                <MenuLayer />
-                {this.props.children}
-            </div>
+        <div className="wrapper">
+            <MenuLayer />
+            {this.props.children}
         </div>
     )
   }

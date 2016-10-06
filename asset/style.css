@@ -47,24 +47,38 @@ table {
 /*=====================2.0 General===========================*/
 h1{
 	font-size:34px;
+	margin:5px 0;
 }
 
 h2{
 	font-size:30px;
+	margin:5px 0;
 }
 
 h3{
 	font-size:26px;
+	margin:5px 0;
 }
 
 h4{
 	font-size:22px;
+	margin:5px 0;
 }
 
 h5{
 	font-size:18px;
+	margin:5px 0;
 }
+
+p{
+	line-height: 1.4em;
+	margin: 5px 0;
+}
+
 /*=====================3.0 Header===========================*/
+.wrapper{
+	padding-top:68px;
+}
 
 .menu-layer{
 	position: fixed;
@@ -126,6 +140,9 @@ h5{
 	color:#fff;
 }
 
+.raised-button{
+	margin:5px 10px;
+}
 /*=====================5.0 footer===========================*/
 
 /*=====================6.0 Responsive===========================*/

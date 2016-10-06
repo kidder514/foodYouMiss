@@ -1,9 +1,20 @@
 import React, { Component } from 'react'
 import RaisedButton from 'material-ui/RaisedButton';
 import FontIcon from 'material-ui/FontIcon';
-import ActionAndroid from 'material-ui/svg-icons/action/android';
 
 class Home extends Component{
+
+    googleSignin(){
+
+        return;
+    }
+
+    fbsignin(){
+      FB.login(function(response){
+      // Handle the response object, like in statusChangeCallback() in our demo
+      // code.
+      });
+    }
 
   	render(){
   		return (
@@ -11,19 +22,10 @@ class Home extends Component{
             <div className="home-inner">
               <h1>Cookroo</h1>
               <p>Join us, to find food or become a home chef.</p>
+              <div className="g-signin2" onClick={this.googleSignin()}></div> 
+              <div id="status">
+              </div>
             </div>
-            <RaisedButton
-              label="Login with Google"
-              labelPosition="after"
-              primary={true}
-              icon={<ActionAndroid />}
-            />
-            <RaisedButton
-              label="Login with Facebook"
-              labelPosition="after"
-              primary={true}
-              icon={<ActionAndroid />}
-            />
   			</div>
   			)
   	}
