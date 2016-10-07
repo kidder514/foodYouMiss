@@ -10,12 +10,14 @@ import MyPage from "./containers/mypage/MyPage.js"
 import Account from "./containers/account/Account.js"
 import SlidingPage from "./containers/components/SlidingPage"
 import Author from "./containers/author/Author"
+import Signup from "./containers/signup/Signup"
 
 export default (
 	<Route component={OutterWrapper}>
 		<Route component={Wrapper}>
 	  		<Route path="/" component={Home} />
-	  		<Route path="/subscriptions" component ={Subscriptions} />
+	  		<Route path="/Signup" component={Signup} />
+	  		<Route path="/subscriptions" component={Subscriptions} />
 		  	<Route path="/nearby" component={Nearby} />
 		  	<Route path="/map" component={Map} />
 		  	<Route path="/mypage" component={MyPage} />
