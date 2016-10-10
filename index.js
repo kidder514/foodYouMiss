@@ -9,6 +9,7 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 
 require("./asset/style.css");
+require("./asset/googlefont/roboto.css");
 
 // the structure follow the redux official github -> example -> real-world
 const store = configureStore()

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from "react-router"
-import Search from "../components/Search"
+import Search from "./Search"
 import IconButton from 'material-ui/IconButton';
 import ActionHome from 'material-ui/svg-icons/action/home';
 import PlacesKitchen from 'material-ui/svg-icons/places/kitchen';
