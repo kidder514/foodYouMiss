@@ -38,7 +38,7 @@ class Signin extends Component {
 	    return (
 			<div className="single-page-wrapper signin">
 	        	<div className="single-page-content signin-inner">
-		    		<form>
+		    		<form onSubmit={this.onSubmit} >
 		    			<h1>Sign in</h1>
 						<TextField 
 		    			hintText="E-mail"

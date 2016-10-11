@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from "react-redux"
 import PostList from "../components/PostList"
-import { initPosts }from "../../actions"
+import { initPostsCall }from "../../actions"
 
 class Subscriptions extends Component{
 	 componentDidMount() {
@@ -29,7 +29,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     initPosts: () => {
-      dispatch(initPosts())
+      dispatch(initPostsCall())
     }
   }
 }

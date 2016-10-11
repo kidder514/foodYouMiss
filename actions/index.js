@@ -7,7 +7,7 @@ export const initPostsAction = (posts) =>{
   }
 }
 
-export const initPosts = () => {
+export const initPostsCall = () => {
 	return dispatch => {
 
 		axios.get('http://www.mocky.io/v2/57e900410f0000c0128439a1')

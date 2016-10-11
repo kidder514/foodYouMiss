@@ -1,11 +1,31 @@
 import React, { Component } from 'react'
-import IconButton from 'material-ui/IconButton';
-import ActionSearch from 'material-ui/svg-icons/action/search';
-import TextField from 'material-ui/TextField';
+import IconButton from 'material-ui/IconButton'
+import ActionSearch from 'material-ui/svg-icons/action/search'
+import TextField from 'material-ui/TextField'
 
 class Search extends Component {
+    constructor(props){
+        super(props)
+        this.state={
+            searchKeyword:""
+        }
+        this.onSubmit = this.onSubmit.bind(this)
+        this.onChange = this.onChange.bind(this)
+    }
 
-  render() {
+    onChange(e){
+        this.setState({ [e.target.name]: e.target.value })
+    }
+
+    onSubmit(e){
+        e.preventDefault()
+        console.log(this.state);
+        if(this.state.searchKeyword != null){
+            
+        }
+    }
+
+    render() {
 
     let style = {
         wrapper : {
@@ -35,16 +55,21 @@ class Search extends Component {
 
     return (
     	<div className="search">
-            <IconButton iconStyle={style.icon} style={style.button} >
-                <ActionSearch className="menu-icon" color={"#fff"}/>
-            </IconButton>
-            <TextField 
-            style={style.wrapper}
-            inputStyle={style.input}
-            hintText="Search..." 
-            hintStyle={style.hint} 
-            underlineStyle={style.underline}
-            underlineFocusStyle={style.underlineFocus}/>
+            <form onSubmit={this.onSubmit}>
+                <IconButton iconStyle={style.icon} style={style.button} type="submit" >
+                    <ActionSearch className="menu-icon" color={"#fff"}/>
+                </IconButton>
+                <TextField 
+                style={style.wrapper}
+                inputStyle={style.input}
+                onChange={this.onChange}
+                value={this.state.searchKeyword}
+                name="searchKeyword"
+                hintText="Search..." 
+                hintStyle={style.hint} 
+                underlineStyle={style.underline}
+                underlineFocusStyle={style.underlineFocus}/>
+            </form>
     	</div>
     )
   }
