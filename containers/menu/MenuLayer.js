@@ -10,7 +10,6 @@ import ActionFace from 'material-ui/svg-icons/action/face';
 import NavigationMenu from 'material-ui/svg-icons/navigation/menu';
 
 
-
 class MenuLayer extends Component {
 
 

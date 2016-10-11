@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from "react-redux"
 import PostList from "../components/PostList"
-import { initPostsCall }from "../../actions"
+import { initPostsCall }from "../../actions/postActions"
 
 class Subscriptions extends Component{
 	 componentDidMount() {

@@ -2,12 +2,15 @@ import React, { Component } from 'react'
 import IconButton from 'material-ui/IconButton'
 import ActionSearch from 'material-ui/svg-icons/action/search'
 import TextField from 'material-ui/TextField'
+import { escape, trim } from "Validator"
+import { connect } from "react-redux"
+import {searchPostsCall} from "../../actions/searchActions"
 
 class Search extends Component {
     constructor(props){
         super(props)
         this.state={
-            searchKeyword:""
+            searchKeywords:""
         }
         this.onSubmit = this.onSubmit.bind(this)
         this.onChange = this.onChange.bind(this)
@@ -19,9 +22,10 @@ class Search extends Component {
 
     onSubmit(e){
         e.preventDefault()
-        console.log(this.state);
-        if(this.state.searchKeyword != null){
-            
+        console.log(trim(escape(this.state.searchKeywords)));
+        if(this.state.searchKeywords != null){
+            let sanitizedKeywords = escape(trim(this.state.searchKeywords));
+            this.props.searchPostDispatch(sanitizedKeywords)
         }
     }
 
@@ -63,8 +67,8 @@ class Search extends Component {
                 style={style.wrapper}
                 inputStyle={style.input}
                 onChange={this.onChange}
-                value={this.state.searchKeyword}
-                name="searchKeyword"
+                value={this.state.searchKeywords}
+                name="searchKeywords"
                 hintText="Search..." 
                 hintStyle={style.hint} 
                 underlineStyle={style.underline}
@@ -75,4 +79,12 @@ class Search extends Component {
   }
 }
 
-export default Search
+const mapDispatchToProps = (dispatch) => {
+  return {
+    searchPostDispatch: (request) => {
+      dispatch(searchPostsCall(request));
+    }
+  }
+}
+
+export default connect(null,mapDispatchToProps)(Search)

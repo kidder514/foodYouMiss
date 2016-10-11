@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import ErrorPopup from "./components/ErrorPopup"
+import LoadingSpinner from "./components/LoadingSpinner"
 
 class OutterWrapper extends Component {
 
@@ -6,6 +8,8 @@ class OutterWrapper extends Component {
     return (
     	<div className="outter-wrapper">
 			{this.props.children}
+			<ErrorPopup />
+			<LoadingSpinner />
     	</div>
     )
   }

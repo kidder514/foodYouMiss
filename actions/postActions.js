@@ -1,4 +1,5 @@
 import axios from "axios"
+import errorPopup from "./errorActions"
 
 export const initPostsAction = (posts) =>{
   return {
@@ -15,7 +16,7 @@ export const initPostsCall = () => {
 			dispatch(initPostsAction(res.data))
 	  	})
 	  	.catch(function (error) {
-	    	console.log("Error occur, operation interrupted. ")
+			dispatch(errorPopup("Unable to load Initial Post"))
 	  	});
 	}	
 }
