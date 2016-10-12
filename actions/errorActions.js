@@ -1,8 +1,7 @@
 
-
-export const errorPopup = (msg) => {
+export const errorPopup = (message) => {
 	return {
 		type: "ERROR_POPUP",
-		message: msg
+		message: message
 	}
 }

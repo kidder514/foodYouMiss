@@ -1,15 +1,65 @@
 import React, { Component } from 'react'
+import Dialog from 'material-ui/Dialog';
+import FlatButton from 'material-ui/FlatButton';
+import { connect } from "react-redux"
+import { errorPopup } from "../../actions/errorActions"
 
 class ErrorPopup extends Component {
+	constructor(props){
+		super(props)
+		
+        this.handleOpen = this.handleOpen.bind(this)
+        this.handleClose = this.handleClose.bind(this)
+	}
 
-  render() {
-    return (
-    	<div className="error-popup">
+	handleOpen(msg) {
+		this.props.errorPopup(this.props.error)
+	}
 
-    		!Error-popup
-    	</div>
-    )
+	handleClose(){
+		this.props.errorPopup("")
+	}
+
+	somethingelse(){
+
+	}
+	render() {
+
+	  	const button = [
+	  		<FlatButton
+	  		   label="Ok"
+	  		   primary={true}
+	  		   onTouchTap={this.handleClose}
+	  		/>,
+	  	]
+
+
+	    return (
+	        <Dialog
+	        	actions={button}
+	          	title="Ooooops"
+	          	modal={true}
+	          	open={this.props.error != ""}
+	          	onRequestClose={this.handleClose}
+	        >
+	        { this.props.error}
+	        </Dialog>
+	    )
+	}
+}
+
+const mapStateToProps = (state) => {
+	return {
+		error: state.errorPopup
+	}
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    errorPopup: (msg) => {
+      dispatch(errorPopup(msg))
+    }
   }
 }
 
-export default ErrorPopup
+export default connect(mapStateToProps, mapDispatchToProps)(ErrorPopup)

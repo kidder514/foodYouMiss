@@ -1,23 +1,19 @@
 import axios from "axios"
-import errorPopup from "./errorActions"
+import { errorPopup } from "./errorActions"
 
 export const searchPostsCall = (request) => {
 	return dispatch => {
-		axios.post("/searchResults?" + request)
-		.then(function(res){
-			dispatch(displayPostsResult(res))
-		})
-		.catch(function(error){
-			dispatch(errorPopup("Unable to load search result"))
-		})
-
+		axios.post("/api/search", {"keyword" : request})
+		.then(
+			() => { },
+			(err) => { dispatch(errorPopup(err.response.data.errorMsg)) }
+		)
 	}
 }
 
-
 const displayPostsResult = (data) => {
 	return {
-		type: "POST_RESULT",
+		type: "SEARCH_RESULT",
 		data
 	}
 }

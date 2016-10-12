@@ -17,16 +17,15 @@ class Search extends Component {
     }
 
     onChange(e){
-        this.setState({ [e.target.name]: e.target.value })
+        this.setState({[e.target.name]: e.target.value })
     }
 
     onSubmit(e){
         e.preventDefault()
-        console.log(trim(escape(this.state.searchKeywords)));
-        if(this.state.searchKeywords != null){
-            let sanitizedKeywords = escape(trim(this.state.searchKeywords));
-            this.props.searchPostDispatch(sanitizedKeywords)
-        }
+        // if(this.state.searchKeywords != null){
+        let sanitizedKeywords = escape(trim(this.state.searchKeywords));
+        this.props.searchPostDispatch(sanitizedKeywords)
+        // }
     }
 
     render() {
@@ -70,7 +69,7 @@ class Search extends Component {
                 value={this.state.searchKeywords}
                 name="searchKeywords"
                 hintText="Search..." 
-                hintStyle={style.hint} 
+                hintStyle={style.hint}
                 underlineStyle={style.underline}
                 underlineFocusStyle={style.underlineFocus}/>
             </form>

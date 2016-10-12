@@ -10,8 +10,7 @@ import ActionFace from 'material-ui/svg-icons/action/face';
 import NavigationMenu from 'material-ui/svg-icons/navigation/menu';
 
 
-class MenuLayer extends Component {
-
+class MenuLayer extends Component{
 
   render() {
     let style = {
@@ -27,11 +26,13 @@ class MenuLayer extends Component {
 
     return (
     	<div className="menu-layer">
+
             <Link to="/" className="logo">
                 <IconButton style={style.button} iconStyle={style.icon} >
                     <ActionHome className="menu-icon" color={"#fff"}/>
                 </IconButton>
             </Link>
+
     		<ul className="menu-list">
                 <li className="menu-item">
                     <Link to="/subscriptions" activeClassName="current-menu-item">
@@ -69,6 +70,7 @@ class MenuLayer extends Component {
                     </Link>
                 </li>
     		</ul>
+            
             <Search />
     	</div>
     )
