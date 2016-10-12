@@ -1,11 +1,11 @@
 import { routerReducer as routing } from 'react-router-redux'
 import { combineReducers } from 'redux'
 import nearByPostsReducer from "./nearByPostsReducer"
-import errorReducer from "./errorReducer"
+import uiReducer from "./uiReducer"
 
 const rootReducer = combineReducers({
   nearByPosts: nearByPostsReducer,
-  errorPopup: errorReducer,
+  ui: uiReducer,
   routing
 })
 

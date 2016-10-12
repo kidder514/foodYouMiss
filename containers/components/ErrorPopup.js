@@ -33,7 +33,6 @@ class ErrorPopup extends Component {
 	  		/>,
 	  	]
 
-
 	    return (
 	        <Dialog
 	        	actions={button}
@@ -50,7 +49,7 @@ class ErrorPopup extends Component {
 
 const mapStateToProps = (state) => {
 	return {
-		error: state.errorPopup
+		error: state.ui.errorMessage
 	}
 }
 

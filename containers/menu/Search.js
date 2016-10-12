@@ -22,10 +22,10 @@ class Search extends Component {
 
     onSubmit(e){
         e.preventDefault()
-        // if(this.state.searchKeywords != null){
-        let sanitizedKeywords = escape(trim(this.state.searchKeywords));
-        this.props.searchPostDispatch(sanitizedKeywords)
-        // }
+        if(this.state.searchKeywords != ""){
+            let sanitizedKeywords = escape(trim(this.state.searchKeywords));
+            this.props.searchPostDispatch(sanitizedKeywords)
+        }
     }
 
     render() {
