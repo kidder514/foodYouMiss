@@ -8,14 +8,12 @@ import validator from "Validator"
 class Signin extends Component {
 	constructor(props){
 		super(props)
-		this.state={
+		this.state = {
 			email:"",
 			password:"",
-			isValid:false,
-			error:{
-				email:"",
-				password:""
-			}
+			isValid:true,
+			errorEmail:"",
+			errorPassword:""
 		}
 		this.onChange = this.onChange.bind(this);
 		this.onSubmit = this.onSubmit.bind(this);
@@ -26,44 +24,49 @@ class Signin extends Component {
 	}
 
 	onSubmit(e){
+
 		e.preventDefault()
+		let state_cache = {};
 
 		if(this.state.email == ""){
-			this.state.error.email = "Email address is required."
-			this.state.isValid = false
+			state_cache.errorEmail = "Email address is required.";
+			state_cache.isValid = false;
 			console.log("1");
+
 		}else{
 
 			if(!validator.isEmail(this.state.email)){
-				this.state.error.email = "Email format is incorrect."
-				this.state.isValid = false;
-			console.log("2");
+				state_cache.errorEmail = "Email format is invalid";
+				state_cache.isValid = false;
+				console.log("2");
 
 			}else{
-				this.state.error.email = ""
-				this.state.isValid = true;
-			console.log("3");
-
+				state_cache.errorEmail = "";
+				state_cache.isValid = true;
+				console.log("3");
 			}
-
 		}
 
 		if(this.state.password == ""){
-			this.state.error.password = "Password is required."
-			this.state.isValid = false
+			state_cache.errorPassword = "Password is required.";
+			state_cache.isValid = false;
 			console.log("4");
 
 		}else{
-			this.state.error.password = ""
-			this.state.isValid = true;
+			state_cache.errorPassword = "";
 			console.log("6");
 
 		}
 
-		if(this.state.isValid){
-			console.log("7");
 
-			this.props.signinDispatch({email: this.state.email, password: this.state.password})
+		console.log(state_cache.isValid);
+		if(state_cache.isValid){
+			this.setState(state_cache,function(){
+				this.props.signinDispatch({email: this.state.email, password: this.state.password})
+			});
+			
+		}else{
+			this.setState(state_cache);
 		}
 	}
 
@@ -95,7 +98,7 @@ class Signin extends Component {
 		    			type="text"
 		    			name="email"
 		    			defaultValue=""
-		    			errorText={this.state.error.email}
+		    			errorText={this.state.errorEmail}
 		    			errorStyle={style.error}
 		    			inputStyle={style.input}
 		    			floatingLabelText="E-mail"
@@ -109,7 +112,7 @@ class Signin extends Component {
 		    			name="password"
 		    			defaultValue=""
 		    			floatingLabelText="Password"
-		    			errorText={this.state.error.password}
+		    			errorText={this.state.errorPassword}
 		    			errorStyle={style.error}
 		    			inputStyle={style.input}
 		    			floatingLabelStyle={style.hint} 
@@ -121,7 +124,6 @@ class Signin extends Component {
 		    			secondary={true} 
 		    			type="submit"
 		    			onClick={this.onSubmit}
-		    			disabled={this.state.isValid}
 						/>
 		    		</form>
 	        	</div>
