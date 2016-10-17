@@ -68,8 +68,8 @@ class Search extends Component {
                 onChange={this.onChange}
                 value={this.state.searchKeywords}
                 name="searchKeywords"
-                hintText="Search..." 
-                hintStyle={style.hint}
+                floatingLabelText="Search..."
+                floatingLabelStyle={style.hint}
                 underlineStyle={style.underline}
                 underlineFocusStyle={style.underlineFocus}/>
             </form>

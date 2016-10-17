@@ -3,13 +3,19 @@ import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 import { connect } from "react-redux"
 import { signinCall } from "../../actions/signinActions"
+import validator from "Validator"
 
 class Signin extends Component {
 	constructor(props){
 		super(props)
 		this.state={
 			email:"",
-			password:""
+			password:"",
+			isValid:false,
+			error:{
+				email:"",
+				password:""
+			}
 		}
 		this.onChange = this.onChange.bind(this);
 		this.onSubmit = this.onSubmit.bind(this);
@@ -20,10 +26,45 @@ class Signin extends Component {
 	}
 
 	onSubmit(e){
-		console.log("on submit clicked")
 		e.preventDefault()
-		this.props.signinDispatch({email: this.state.email, password: this.state.password})
 
+		if(this.state.email == ""){
+			this.state.error.email = "Email address is required."
+			this.state.isValid = false
+			console.log("1");
+		}else{
+
+			if(!validator.isEmail(this.state.email)){
+				this.state.error.email = "Email format is incorrect."
+				this.state.isValid = false;
+			console.log("2");
+
+			}else{
+				this.state.error.email = ""
+				this.state.isValid = true;
+			console.log("3");
+
+			}
+
+		}
+
+		if(this.state.password == ""){
+			this.state.error.password = "Password is required."
+			this.state.isValid = false
+			console.log("4");
+
+		}else{
+			this.state.error.password = ""
+			this.state.isValid = true;
+			console.log("6");
+
+		}
+
+		if(this.state.isValid){
+			console.log("7");
+
+			this.props.signinDispatch({email: this.state.email, password: this.state.password})
+		}
 	}
 
 	render() {
@@ -37,6 +78,9 @@ class Signin extends Component {
 			},
 			underlineFocus:{
 		        borderColor: "#fff",
+			},
+			error:{
+				color: "#fff",
 			}
 		}
 
@@ -46,23 +90,29 @@ class Signin extends Component {
 		    		<form onSubmit={this.onSubmit} >
 		    			<h1>Sign in</h1>
 						<TextField 
-		    			hintText="E-mail"
 		    			value={this.state.email}
 		    			onChange={this.onChange}
 		    			type="text"
 		    			name="email"
+		    			defaultValue=""
+		    			errorText={this.state.error.email}
+		    			errorStyle={style.error}
 		    			inputStyle={style.input}
-		    			hintStyle={style.hint} 
+		    			floatingLabelText="E-mail"
+		    			floatingLabelStyle={style.hint} 
 		    			underlineFocusStyle={style.underlineFocus}
 		    			/><br />
 						<TextField 
-		    			hintText="Password"
 		    			value={this.state.password}
 		    			onChange={this.onChange}
 		    			type="password"
 		    			name="password"
+		    			defaultValue=""
+		    			floatingLabelText="Password"
+		    			errorText={this.state.error.password}
+		    			errorStyle={style.error}
 		    			inputStyle={style.input}
-		    			hintStyle={style.hint} 
+		    			floatingLabelStyle={style.hint} 
 		    			underlineFocusStyle={style.underlineFocus}
 		    			/><br />
 
@@ -70,7 +120,8 @@ class Signin extends Component {
 		    			label="Sign In"
 		    			secondary={true} 
 		    			type="submit"
-		    			onClick={this.onSubmit}/>
+		    			onClick={this.onSubmit}
+		    			disabled={this.state.isValid}
 						/>
 		    		</form>
 	        	</div>
