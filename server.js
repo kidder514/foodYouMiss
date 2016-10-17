@@ -4,13 +4,16 @@ var webpackHotMiddleware = require('webpack-hot-middleware')
 var config = require('./webpack.config')
 
 import bodyParser from "body-parser"
-import search from  "./server/routes/search"
+import search from "./server/routes/search"
+import signin from "./server/routes/signin"
+
 
 var app = new (require('express'))()
 
 app.use(bodyParser.json())
 
 app.use("/api/search", search)
+app.use("/api/signin", signin)
 
 var compiler = webpack(config)
 app.use(webpackDevMiddleware(compiler, { noInfo: true, publicPath: config.output.publicPath }))

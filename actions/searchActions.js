@@ -8,11 +8,13 @@ export const searchPostsCall = (request) => {
 		dispatch(startLoading())
 		axios.post("/api/search", {"keyword" : request})
 		.then(
-			() => { },
-			(err) => { 
-				dispatch(finishLoading());
-				dispatch(errorPopup(err.response.data.errorMsg));}
+			(response) => { dispatch(finishLoading()); }		
 		)
+		.catch((error)=>{
+			dispatch(finishLoading());
+			dispatch(errorPopup(error.response.data.errorMsg))
+		})
+
 	}
 }
 

@@ -19,10 +19,12 @@ function validateInput(data){
 
 router.post("/",(req, res) => {
 		
-	const { errors, isValid } = validateInput(req.body);
+	const { errors, isValid } = validateInput(req.body)
 
-	if(!isValid){
-		res.status(400).json(errors);
+	if(isValid){
+		res.status(200).json({message: "you have successfully"})
+	}else{
+		res.status(400).json(errors)
 	}
 })
 

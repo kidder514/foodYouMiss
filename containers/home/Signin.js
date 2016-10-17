@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
+import { connect } from "react-redux"
+import { signinCall } from "../../actions/signinActions"
 
 class Signin extends Component {
 	constructor(props){
@@ -12,13 +14,16 @@ class Signin extends Component {
 		this.onChange = this.onChange.bind(this);
 		this.onSubmit = this.onSubmit.bind(this);
 	}
+
 	onChange(e){
 		this.setState({ [e.target.name]: e.target.value})
 	}
 
 	onSubmit(e){
-		e.preventDefault();
-		console.log(this.state)
+		console.log("on submit clicked")
+		e.preventDefault()
+		this.props.signinDispatch({email: this.state.email, password: this.state.password})
+
 	}
 
 	render() {
@@ -62,13 +67,25 @@ class Signin extends Component {
 		    			/><br />
 
 		    			<RaisedButton 
-		    			onClick={this.onSubmit} 
 		    			label="Sign In"
-		    			secondary={true} />
+		    			secondary={true} 
+		    			type="submit"
+		    			onClick={this.onSubmit}/>
+						/>
 		    		</form>
 	        	</div>
 	    	</div>
 	    )
 	  }
 	}
-export default Signin
+
+const mapDispatchToProps = (dispatch) => {
+	return {
+		signinDispatch: (userInfo) =>{
+			dispatch(signinCall(userInfo))
+		}
+	}
+}
+
+export default connect(null,mapDispatchToProps)(Signin)
+

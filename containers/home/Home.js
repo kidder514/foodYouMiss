@@ -3,8 +3,6 @@ import RaisedButton from 'material-ui/RaisedButton';
 import FontIcon from 'material-ui/FontIcon';
 import { Link } from "react-router";
 
-
-
 class Home extends Component{
 
     googleSignin(){
