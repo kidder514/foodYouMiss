@@ -13,7 +13,6 @@ class Subscriptions extends Component{
   	render(){
   		return (
   			<div className="Subscriptions">
-  				Subscriptions
   			   <PostList postList={this.props.nearByPosts}/>
   			</div>
   			)

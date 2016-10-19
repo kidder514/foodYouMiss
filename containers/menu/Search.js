@@ -33,6 +33,7 @@ class Search extends Component {
     let style = {
         wrapper : {
             bottom : 9,
+            height: 60,
         },
         icon : {
             height: 30,
@@ -47,6 +48,7 @@ class Search extends Component {
         },
         hint : {
             color: "#ef8667",
+            top: 31,
         },
         underline : {
             borderColor: "#ef8667",
