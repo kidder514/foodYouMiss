@@ -151,6 +151,24 @@ p{
 	color:#fff;
 }
 
+.container{
+	width:970px;
+	margin:0 auto;
+}
+
+.subscriptions{
+	width:640px;
+	float:left;
+}
+
+.sidebar{
+	width:300px;
+	float:right;
+	margin-left:30px;
+	height:90px;
+	background-color: red;
+}
+
 .raised-button{
 	margin:5px 10px;
 }
@@ -177,6 +195,44 @@ p{
 .hidden{
 	display:none;
 }
+
+/*  4.3. subscription */
+
+.image_gallery{
+	clear:both;
+}
+
+.nine-layout{
+	box-sizing: border-box;
+	display: block;
+	float: left;
+	width:33.333333%;
+	border: 2px solid #fff;
+	padding-bottom: 33.33333%;
+	overflow: hidden;
+}
+
+.four-layout{
+	box-sizing: border-box;
+	display: block;
+	float: left;
+	width:50%;
+	border: 2px solid #fff;
+	padding-bottom: 50%;
+	overflow: hidden;
+}
+
+.one-layout{
+	box-sizing: border-box;
+	display: block;
+	width:100%;
+	border: 2px solid #fff;
+	padding-bottom: 100%;
+	overflow: hidden;
+}
+
+
+
 
 /*=====================5.0 footer===========================*/
 

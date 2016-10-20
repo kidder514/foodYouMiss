@@ -25,22 +25,38 @@ class SinglePost extends Component {
 	generateGallery(imgs) {
 	const post = this.props.post;
 
+
 		var imgNodes = [];
 		if(imgs.length > 4){
 			//only load the first nine even if the imgs.length exceed the maximal length
 			for(let i = 0; i < imgs.length; i++){
 				if( imgs[i] != null)
-					imgNodes.push(<div key={"post"+post.postId+"img"+ i} onTouchTap={this.handleImageClick} onResize={this.handleImageResize} style={} className="nine-layout"><img src={imgs[i]} /></div>);
+					imgNodes.push(<div 
+						key={"post"+post.postId+"img"+ i} 
+						onTouchTap={this.handleImageClick} 
+						onResize={this.handleImageResize} 
+						className="nine-layout" 
+						style={{backgroundImage:'url(' + imgs[i] + ')'}}></div>);
 			}
 		}else if(imgs.length >= 2 && imgs.length <= 4){
 			for(let i = 0; i < imgs.length; i++){
 				if( imgs[i] != null)
-					imgNodes.push(<div key={"post"+post.postId+"img"+ i} onTouchTap={this.handleImageClick} onResize={this.handleImageResize} className="four-layout"><img src={imgs[i]} /></div>);
+					imgNodes.push(<div 
+						key={"post"+post.postId+"img"+ i} 
+						onTouchTap={this.handleImageClick} 
+						onResize={this.handleImageResize} 
+						className="four-layout"
+						style={{backgroundImage:'url(' + imgs[i] + ')'}}></div>);
 			}
 		}else{
 			for(let i = 0; i < imgs.length; i++){
 				if( imgs[i] != null)
-					imgNodes.push(<div key={"post"+post.postId+"img"+ i} onTouchTap={this.handleImageClick} onResize={this.handleImageResize} className="one-layout"><img src={imgs[i]} /></div>);
+					imgNodes.push(<div 
+						key={"post"+post.postId+"img"+ i} 
+						onTouchTap={this.handleImageClick} 
+						onResize={this.handleImageResize} 
+						className="one-layout"
+						style={{backgroundImage:'url(' + imgs[i] + ')'}}></div>);
 			}
 		}
 

@@ -12,9 +12,14 @@ class Subscriptions extends Component{
 
   	render(){
   		return (
-  			<div className="Subscriptions">
-  			   <PostList postList={this.props.nearByPosts}/>
-  			</div>
+        <div className="container">
+    			<div className="subscriptions">
+    			   <PostList postList={this.props.nearByPosts}/>
+    			</div>
+          <div className="sidebar">
+            
+          </div>
+        </div>
   			)
   	}
 }
