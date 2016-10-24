@@ -33,8 +33,7 @@ class SinglePost extends Component {
 				if( imgs[i] != null)
 					imgNodes.push(<div 
 						key={"post"+post.postId+"img"+ i} 
-						onTouchTap={this.handleImageClick} 
-						onResize={this.handleImageResize} 
+						onTouchTap={this.handleImageClick}
 						className="nine-layout" 
 						style={{backgroundImage:'url(' + imgs[i] + ')'}}></div>);
 			}
@@ -43,8 +42,7 @@ class SinglePost extends Component {
 				if( imgs[i] != null)
 					imgNodes.push(<div 
 						key={"post"+post.postId+"img"+ i} 
-						onTouchTap={this.handleImageClick} 
-						onResize={this.handleImageResize} 
+						onTouchTap={this.handleImageClick}
 						className="four-layout"
 						style={{backgroundImage:'url(' + imgs[i] + ')'}}></div>);
 			}
@@ -54,7 +52,6 @@ class SinglePost extends Component {
 					imgNodes.push(<div 
 						key={"post"+post.postId+"img"+ i} 
 						onTouchTap={this.handleImageClick} 
-						onResize={this.handleImageResize} 
 						className="one-layout"
 						style={{backgroundImage:'url(' + imgs[i] + ')'}}></div>);
 			}
@@ -66,19 +63,28 @@ class SinglePost extends Component {
 	}
 
 	render() {
-	const post = this.props.post;
+		const post = this.props.post;
+
+		let style={
+			singlePost:{
+				paddingTop:0,
+				clear:"both",
+			},
+			leftSection:{
+				top:0,
+			}
+		}
 
 	    return (
 	    	<ListItem disabled={true} leftAvatar={
-	            <div className="left-section">
+	            <div className="left-section" style={style.leftSection}>
 	            	<Link to={"/author/:" + post.authorId} ><Avatar src={post.authorImg} alt={post.authorName}/></Link>
-	            	<Link to={"/author/:" + post.authorId} className="author-name">{post.authorName}</Link>
 	            </div>
-	    	} className="single-post">
+	    	} className="single-post" style={style.singlePost}>
 	            <div className="right-section">
 	            	<Link to={"/post/:" + post.postId}><h3>{post.title}</h3></Link>
 	            	<p>{post.postDescription}</p>
-	            	<section className="image_gallery">
+	            	<section className="image_gallery clearfix">
 	            		{ this.generateGallery(post.postImgUrls)}
 	            	</section>
 	            	<Link to={"/map/:" + post.postCoordinate.latitude + "+" + post.postCoordinate.longitude} className="post-location" >{post.postLocation}</Link>
@@ -91,7 +97,6 @@ class SinglePost extends Component {
 	            		<Link to={"/post/:" + post.postId + "/buy"}>Buy</Link>
 	            	</div>
 	            </div>
-
 	    	</ListItem>
 	    )
 	}

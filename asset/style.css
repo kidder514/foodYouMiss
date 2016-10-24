@@ -46,32 +46,33 @@ table {
 
 /*=====================2.0 General===========================*/
 
-body{
-	font-family: Roboto, sans-serif;
+body, *{
+	font-family: Roboto, sans-serif, Helvetica Neue,HelveticaNeue,Helvetica,Arial,sans-serif;
+	font-size:13px;
 }
 
 h1{
-	font-size:34px;
+	font-size:24px;
 	margin:5px 0;
 }
 
 h2{
-	font-size:30px;
-	margin:5px 0;
-}
-
-h3{
-	font-size:26px;
-	margin:5px 0;
-}
-
-h4{
 	font-size:22px;
 	margin:5px 0;
 }
 
-h5{
+h3{
+	font-size:20px;
+	margin:5px 0;
+}
+
+h4{
 	font-size:18px;
+	margin:5px 0;
+}
+
+h5{
+	font-size:16px;
 	margin:5px 0;
 }
 
@@ -80,6 +81,13 @@ p{
 	margin: 5px 0;
 }
 
+
+.clearfix:after { 
+   content: " ";
+   display: block; 
+   height: 0; 
+   clear: both;
+}
 /*=====================3.0 Header===========================*/
 .wrapper{
 	padding-top:64px;
@@ -159,6 +167,7 @@ p{
 .subscriptions{
 	width:640px;
 	float:left;
+	padding-top:40px;
 }
 
 .sidebar{
@@ -199,6 +208,7 @@ p{
 /*  4.3. subscription */
 
 .image_gallery{
+	display:block;
 	clear:both;
 }
 
