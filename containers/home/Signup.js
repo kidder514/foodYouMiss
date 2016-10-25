@@ -1,33 +1,31 @@
-import React, { Component } from 'react'
+import React, {Component} from 'react'
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 
 class Signup extends Component {
 
 	constructor(props){
-		super(props)
+		super(props);
 		this.state={
 			username:"",
 			email:"",
 			password:"",
 			comfirmPassword:""
-		}
+		};
 		this.isValid= false;
 		this.onChange = this.onChange.bind(this);
 		this.onSubmit = this.onSubmit.bind(this);
 	}
 
 	onChange(e){
-		this.setState({ [e.target.name]: e.target.value})
-
+		this.setState({ [e.target.name]: e.target.value});
 	}
 
 	onSubmit(e){
 		e.preventDefault();
 	}
 
-	render() {
-
+	render(){
 		let style={
 			input:{
 		        color: "#fff",
@@ -38,11 +36,11 @@ class Signup extends Component {
 			underlineFocus:{
 		        borderColor: "#fff",
 			}
-		}
+		};
 
 	    return (
-			<div className="single-page-wrapper singup">
-	        	<div className="single-page-content singup-inner">
+			<div className="full-width-wrapper singup">
+	        	<div className="content-wrapper">
 		    		<form>
 		    			<h1>Join our community</h1>
 		    			<TextField 
@@ -93,8 +91,8 @@ class Signup extends Component {
 		    		</form>
 	        	</div>
 	    	</div>
-	    )
-	  }
+	    );
 	}
+}
 
-export default Signup
+export default Signup;

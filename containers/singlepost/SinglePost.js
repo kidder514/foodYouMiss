@@ -1,21 +1,22 @@
-import React, { Component } from 'react'
-import { Link } from "react-router"
-import ListItem from 'material-ui/List/ListItem'
-import Avatar from 'material-ui/Avatar'
+import React, { Component } from 'react';
+import { Link } from "react-router";
+import ListItem from 'material-ui/List/ListItem';
+import Avatar from 'material-ui/Avatar';
 
 class SinglePost extends Component {
 	constructor(props){
 		super(props);
-		this.handleImageClick = this.handleImageClick.bind(this)
-		this.handleImageResize = this.handleImageResize.bind(this)
+
+		this.handleImageClick = this.handleImageClick.bind(this);
+		this.handleImageResize = this.handleImageResize.bind(this);
 	}
 
 	handleImageClick(){
-		window.alert("image clicked")
+		window.alert("image clicked");
 	}
 
 	handleImageResize(){
-		window.alert("image resized")
+		window.alert("image resized");
 	}
 
 	toggleLike() {
@@ -23,10 +24,9 @@ class SinglePost extends Component {
 	}
 
 	generateGallery(imgs) {
-	const post = this.props.post;
-
-
+		const post = this.props.post;
 		var imgNodes = [];
+
 		if(imgs.length > 4){
 			//only load the first nine even if the imgs.length exceed the maximal length
 			for(let i = 0; i < imgs.length; i++){
@@ -34,7 +34,7 @@ class SinglePost extends Component {
 					imgNodes.push(<div 
 						key={"post"+post.postId+"img"+ i} 
 						onTouchTap={this.handleImageClick}
-						className="nine-layout" 
+						className="nine-layout single-image" 
 						style={{backgroundImage:'url(' + imgs[i] + ')'}}></div>);
 			}
 		}else if(imgs.length >= 2 && imgs.length <= 4){
@@ -43,7 +43,7 @@ class SinglePost extends Component {
 					imgNodes.push(<div 
 						key={"post"+post.postId+"img"+ i} 
 						onTouchTap={this.handleImageClick}
-						className="four-layout"
+						className="four-layout single-image"
 						style={{backgroundImage:'url(' + imgs[i] + ')'}}></div>);
 			}
 		}else{
@@ -52,14 +52,12 @@ class SinglePost extends Component {
 					imgNodes.push(<div 
 						key={"post"+post.postId+"img"+ i} 
 						onTouchTap={this.handleImageClick} 
-						className="one-layout"
+						className="one-layout single-image"
 						style={{backgroundImage:'url(' + imgs[i] + ')'}}></div>);
 			}
 		}
 
-		return (
-			imgNodes
-			);
+		return imgNodes;
 	}
 
 	render() {
@@ -73,7 +71,7 @@ class SinglePost extends Component {
 			leftSection:{
 				top:0,
 			}
-		}
+		};
 
 	    return (
 	    	<ListItem disabled={true} leftAvatar={
@@ -98,8 +96,8 @@ class SinglePost extends Component {
 	            	</div>
 	            </div>
 	    	</ListItem>
-	    )
+	    );
 	}
 }
 
-export default SinglePost
+export default SinglePost;

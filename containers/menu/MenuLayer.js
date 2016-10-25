@@ -1,6 +1,5 @@
-import React, { Component } from 'react'
-import { Link } from "react-router"
-import Search from "./Search"
+import React, {Component} from 'react';
+import {Link} from "react-router";
 import IconButton from 'material-ui/IconButton';
 import ActionHome from 'material-ui/svg-icons/action/home';
 import PlacesKitchen from 'material-ui/svg-icons/places/kitchen';
@@ -8,21 +7,21 @@ import SocialLocationCity from 'material-ui/svg-icons/social/location-city';
 import CommunicationLocationOn from 'material-ui/svg-icons/communication/location-on';
 import ActionFace from 'material-ui/svg-icons/action/face';
 import NavigationMenu from 'material-ui/svg-icons/navigation/menu';
-
+import Search from "./Search";
 
 class MenuLayer extends Component{
 
-  render() {
-    let style = {
-        icon : {
-            height: 30,
-            width: 30,
-        },
-        button : {
-            height: 60,
-            width: 60,
-        }
-    }
+    render() {
+        let style = {
+            icon : {
+                height: 30,
+                width: 30,
+            },
+            button : {
+                height: 60,
+                width: 60,
+            }
+        };
 
     return (
     	<div className="menu-layer">
@@ -73,8 +72,8 @@ class MenuLayer extends Component{
             
             <Search />
     	</div>
-    )
-  }
+        )
+    }
 }
 
-export default MenuLayer
+export default MenuLayer;

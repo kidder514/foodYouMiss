@@ -1,14 +1,14 @@
-import React, { Component } from 'react'
+import React, {Component} from 'react';
 
 class Account extends Component {
 
   render() {
     return (
-    	<div className="Account">
+    	<div className="content-wrapper account">
             Account
     	</div>
     )
   }
 }
 
-export default Account
+export default Account;

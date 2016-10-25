@@ -1,10 +1,11 @@
-import React, { Component } from 'react'
+import React, {Component} from 'react';
+import {connect} from "react-redux";
 import Dialog from 'material-ui/Dialog';
 import FlatButton from 'material-ui/FlatButton';
-import { connect } from "react-redux"
-import { errorPopup } from "../../actions/errorActions"
+import {errorPopup} from "../../actions/errorActions"
 
 class ErrorPopup extends Component {
+
 	constructor(props){
 		super(props)
 		
@@ -23,8 +24,8 @@ class ErrorPopup extends Component {
 	somethingelse(){
 
 	}
-	render() {
 
+	render() {
 	  	const button = [
 	  		<FlatButton
 	  		   label="Ok"
@@ -41,7 +42,7 @@ class ErrorPopup extends Component {
 	          	open={this.props.error != ""}
 	          	onRequestClose={this.handleClose}
 	        >
-	        { this.props.error}
+	        {this.props.error}
 	        </Dialog>
 	    )
 	}
@@ -49,7 +50,7 @@ class ErrorPopup extends Component {
 
 const mapStateToProps = (state) => {
 	return {
-		error: state.ui.errorMessage
+		error:state.ui.errorMessage
 	}
 }
 

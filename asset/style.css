@@ -19,6 +19,7 @@ time, mark, audio, video {
 	font-size: 100%;
 	font: inherit;
 	vertical-align: baseline;
+
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
@@ -46,41 +47,44 @@ table {
 
 /*=====================2.0 General===========================*/
 
+
+html, body, span,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td{
+	line-height: 1.4em;
+	font-size:13px;
+	margin:5px 0;
+}
+
 body, *{
 	font-family: Roboto, sans-serif, Helvetica Neue,HelveticaNeue,Helvetica,Arial,sans-serif;
-	font-size:13px;
 }
 
 h1{
 	font-size:24px;
-	margin:5px 0;
 }
 
 h2{
 	font-size:22px;
-	margin:5px 0;
 }
 
 h3{
 	font-size:20px;
-	margin:5px 0;
 }
 
 h4{
 	font-size:18px;
-	margin:5px 0;
 }
 
 h5{
 	font-size:16px;
-	margin:5px 0;
 }
-
-p{
-	line-height: 1.4em;
-	margin: 5px 0;
-}
-
 
 .clearfix:after { 
    content: " ";
@@ -88,6 +92,11 @@ p{
    height: 0; 
    clear: both;
 }
+
+.hidden{
+	display:none;
+}
+
 /*=====================3.0 Header===========================*/
 .wrapper{
 	padding-top:64px;
@@ -103,7 +112,7 @@ p{
 	color:#fff;
 }
 
-.menu-layer a {
+.menu-layer a{
 	color: #fff;
 	text-decoration: none;
 	display: block;
@@ -138,30 +147,18 @@ p{
 
 /* 4.1 general */
 
-.single-page-wrapper{
-	position:absolute;
-	top:0;
-	left:0;
+.full-width-wrapper{
 	width:100%;
-	height:100%;
+	height:auto;
 	background-color: #000;
 /*	background-image: url("img/home.jpg");
 	background-size: cover;*/
 }
 
-.single-page-content{
-	max-width:540px;
-	height:auto;
-	margin-top:270px;
-	margin-left:auto;
-	margin-right:auto;
-	text-align: center;
-	color:#fff;
-}
-
-.container{
-	width:970px;
+.content-wrapper{
+	width:940px;
 	margin:0 auto;
+	height:100%;
 }
 
 .subscriptions{
@@ -182,13 +179,6 @@ p{
 	margin:5px 10px;
 }
 
-/* 4.2 home */
-
-.homepage-button{
-	display: block;
-	margin:20px 0;
-}
-
 .loading-spinner{
 	background-color:rgba(0,0,0, 0.541176);
 	position:fixed;
@@ -201,8 +191,16 @@ p{
 	height:100%;
 	z-index: 999;
 }
-.hidden{
+
+.loading-spinner.hidden{
 	display:none;
+}
+
+/* 4.2 home */
+
+.homepage-button{
+	display: block;
+	margin:20px 0;
 }
 
 /*  4.3. subscription */
@@ -210,6 +208,7 @@ p{
 .image_gallery{
 	display:block;
 	clear:both;
+	padding-bottom:30px;
 }
 
 .nine-layout{
@@ -241,7 +240,11 @@ p{
 	overflow: hidden;
 }
 
-
+.single-image{
+	background-size: cover;
+	background-repeat:no-repeat;
+	background-position:center;
+}
 
 
 /*=====================5.0 footer===========================*/

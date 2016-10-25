@@ -1,41 +1,41 @@
-import React, { Component } from 'react'
-import { connect } from "react-redux"
-import PostList from "../components/PostList"
-import { initPostsCall }from "../../actions/postActions"
+import React, {Component} from 'react';
+import {connect} from "react-redux";
+import PostList from "../components/PostList";
+import {initPostsCall}from "../../actions/postActions";
 
 class Subscriptions extends Component{
-	 componentDidMount() {
-      if(this.props.nearByPosts.length <= 0){
-      	this.props.initPosts();
-      }
+
+	  componentDidMount() {
+        if(this.props.nearByPosts.length <= 0){
+      	    this.props.initPosts();
+        }
   	}
 
   	render(){
-  		return (
-        <div className="container">
-    			<div className="subscriptions">
-    			   <PostList postList={this.props.nearByPosts}/>
-    			</div>
-          <div className="sidebar">
-            
-          </div>
-        </div>
-  			)
-  	}
+    		return (
+            <div className="content-wrapper subscriptions">
+      			    <div className="subscriptions-content">
+      			        <PostList postList={this.props.nearByPosts}/>
+      			    </div>
+                <div className="sidebar">
+                </div>
+            </div>
+    			)
+    	}
 }
 
 const mapStateToProps = (state) => {
-	return {
-		nearByPosts: state.nearByPosts
-	}
-}
+	  return {
+		    nearByPosts: state.nearByPosts
+	  };
+};
 
 const mapDispatchToProps = (dispatch) => {
-  return {
-    initPosts: () => {
-      dispatch(initPostsCall())
-    }
-  }
-}
+    return {
+        initPosts: () => {
+            dispatch(initPostsCall())
+        }
+    };
+};
 
-export default connect(mapStateToProps, mapDispatchToProps)(Subscriptions)
+export default connect(mapStateToProps, mapDispatchToProps)(Subscriptions);

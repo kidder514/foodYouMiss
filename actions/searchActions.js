@@ -1,6 +1,6 @@
-import axios from "axios"
-import { errorPopup } from "./errorActions"
-import { startLoading, finishLoading} from "./loadingActions"
+import axios from "axios";
+import {errorPopup} from "./errorActions";
+import {startLoading, finishLoading} from "./loadingActions";
 
 export const searchPostsCall = (request) => {
 	return dispatch => {
@@ -12,7 +12,7 @@ export const searchPostsCall = (request) => {
 		)
 		.catch((error)=>{
 			dispatch(finishLoading());
-			dispatch(errorPopup(error.response.data.errorMsg))
+			dispatch(errorPopup(error.response.data.errorMsg));
 		})
 
 	}

@@ -1,6 +1,5 @@
-import axios from "axios"
-import { startLoading, finishLoading} from "./loadingActions"
-
+import axios from "axios";
+import { tartLoading, finishLoading} from "./loadingActions";
 
 export const signinCall = (userInfo) =>{
 	return dispatch => {
@@ -10,4 +9,3 @@ export const signinCall = (userInfo) =>{
 		.catch((error)=>{dispatch(finishLoading())})
 	}
 }
-

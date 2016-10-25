@@ -1,14 +1,14 @@
-import React, { Component } from 'react'
+import React, {Component} from 'react'
 
 class Map extends Component {
 
-  render() {
+  render(){
     return (
-    	<div className="Map">
+    	<div className="content-wrapper map">
             Map
     	</div>
-    )
+    );
   }
 }
 
-export default Map
+export default Map;

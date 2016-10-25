@@ -1,13 +1,13 @@
-import React, { Component } from 'react'
+import React, {Component} from 'react';
 
 class UserPage extends Component {
 
-  render() {
-    return (
-    	<div className="UserPage">
-    	</div>
-    )
-  }
+  	render(){
+	    return (
+	    	<div className="content-wrapper userpage">
+	    	</div>
+	    )
+  	}
 }
 
-export default UserPage
+export default UserPage;

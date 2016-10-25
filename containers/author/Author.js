@@ -1,12 +1,10 @@
-import React, { Component } from 'react'
+import React, {Component} from 'react';
 
 class Author extends Component {
 
-
-	render() {
-
+	render(){
 	    return <div>author</div>
-	}
+	};
 }
 
-export default Author
+export default Author;

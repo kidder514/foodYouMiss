@@ -1,14 +1,14 @@
-import React, { Component } from 'react'
+import React, {Component} from 'react';
 
 class Nearby extends Component {
 
-  render() {
-    return (
-    	<div className="Nearby">
-            Nearby
-    	</div>
-    )
-  }
+	 render(){
+	    return (
+	    	<div className="content-wrapper nearby">
+	            Nearby
+	    	</div>
+	    )
+	};
 }
 
-export default Nearby
+export default Nearby;
