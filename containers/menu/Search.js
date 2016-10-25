@@ -46,6 +46,7 @@ class Search extends Component {
             },
             input: {
                 color: "#fff",
+                marginTop:10,
             },
             hint : {
                 color: "#ef8667",
@@ -61,10 +62,7 @@ class Search extends Component {
 
         return (
         	<div className="search">
-                <form onSubmit={this.onSubmit}>
-                    <IconButton iconStyle={style.icon} style={style.button} type="submit" >
-                        <ActionSearch className="menu-icon" color={"#fff"}/>
-                    </IconButton>
+                <form onSubmit={this.onSubmit} autoComplete="off"> 
                     <TextField 
                     style={style.wrapper}
                     inputStyle={style.input}
@@ -75,6 +73,9 @@ class Search extends Component {
                     floatingLabelStyle={style.hint}
                     underlineStyle={style.underline}
                     underlineFocusStyle={style.underlineFocus}/>
+                    <IconButton iconStyle={style.icon} style={style.button} type="submit" >
+                        <ActionSearch className="menu-icon" color={"#fff"}/>
+                    </IconButton>
                 </form>
         	</div>
         )

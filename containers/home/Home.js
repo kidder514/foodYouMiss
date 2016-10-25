@@ -28,7 +28,7 @@ class Home extends Component{
       
   		return (
     			<div className="full-width-wrapper home">
-              <div className="content-wrapper">
+              <div className="home-content-wrapper">
                   <h1>Cookroo</h1>
                   <p>Join us, to find food or become a home chef.</p>
                   <Link to="/signup" className="homepage-button">

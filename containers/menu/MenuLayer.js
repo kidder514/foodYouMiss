@@ -34,35 +34,35 @@ class MenuLayer extends Component{
 
     		<ul className="menu-list">
                 <li className="menu-item">
-                    <Link to="/subscriptions" activeClassName="current-menu-item">
+                    <Link to="/subscriptions" className="menu-item-button" activeClassName="current-menu-item">
                         <IconButton style={style.button} iconStyle={style.icon}> 
                             <PlacesKitchen className="menu-icon" color={"#fff"}/>
                         </IconButton>
                     </Link>
                 </li>
                 <li className="menu-item">
-                    <Link to="/nearby" activeClassName="current-menu-item">
+                    <Link to="/nearby" className="menu-item-button" activeClassName="current-menu-item">
                         <IconButton style={style.button} iconStyle={style.icon}>
                             <SocialLocationCity className="menu-icon" color={"#fff"}/>
                         </IconButton>
                     </Link>
                 </li>
     			<li className="menu-item">
-                    <Link to="/map" activeClassName="current-menu-item">
+                    <Link to="/map" className="menu-item-button" activeClassName="current-menu-item">
                         <IconButton style={style.button} iconStyle={style.icon}>
                             <CommunicationLocationOn className="menu-icon" color={"#fff"}/>
                         </IconButton>
                     </Link>
                 </li>
     			<li className="menu-item">
-                    <Link to="/mypage" activeClassName="current-menu-item">
+                    <Link to="/mypage" className="menu-item-button" activeClassName="current-menu-item">
                         <IconButton style={style.button} iconStyle={style.icon}>
                             <ActionFace className="menu-icon" color={"#fff"}/>
                         </IconButton>
                     </Link>
                 </li>
     			<li className="menu-item">
-                    <Link to="/account" activeClassName="current-menu-item">
+                    <Link to="/account" className="menu-item-button" activeClassName="current-menu-item">
                         <IconButton style={style.button} iconStyle={style.icon}>
                             <NavigationMenu className="menu-icon" color={"#fff"}/>
                         </IconButton>
