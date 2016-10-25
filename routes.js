@@ -12,7 +12,7 @@ import SlidingPage from "./containers/components/SlidingPage"
 import Author from "./containers/author/Author"
 import Signup from "./containers/home/Signup"
 import Signin from "./containers/home/Signin"
-
+import Chat from "./containers/chat/Chat"
 
 export default (
 	<Route component={OutterWrapper}>
@@ -25,6 +25,7 @@ export default (
 		  	<Route path="/map" component={Map} />
 		  	<Route path="/mypage" component={MyPage} />
 		  	<Route path="/account" component={Account} />
+		  	<Route path="/chat" component={Chat} />
 		</Route>
 		<Route component={SlidingPage}>
 		  	<Route path="/author" component={Author} />
