@@ -1,9 +1,58 @@
 
-@media only screen and (max-device-width: 740px){ 
+@media only screen and (max-width: 740px){ 
 	
 /*=====================1.0 General===========================*/
 
 /*=====================2.0 Header===========================*/
+	.menu-layer .logo{
+		display:none;
+	}
+
+	.menu-layer .desktop-menu{
+		display:none;
+	}
+
+	.menu-layer .mobile-menu{
+		display:block;
+	}
+
+
+	.mobile-menu .menu-list{
+		width:100%;
+		background-color:#F3511E;
+	    padding-bottom: 5px;
+	}
+
+	.menu-item{
+		width:20%;
+		text-align: center;
+	}
+
+	.mobile-menu .search{
+		display: block;
+		float: left;
+		width:80%;
+	}
+
+	.mobile-menu .search form > div{
+		padding-left: 2%;
+    	box-sizing: border-box;
+	}
+	.mobile-search-button{
+		width:20%;
+		float: right;
+	}
+
+	.menu-item-account-mobile{
+		display: block;
+		width: 20%;
+		float: right;
+		text-align: center;
+	}
+
+
+
+
 
 /*=====================3.0 Body===========================*/
 
