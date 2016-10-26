@@ -40,7 +40,7 @@ class Signup extends Component {
 
 	    return (
 			<div className="full-width-wrapper singup">
-	        	<div className="content-wrapper">
+	        	<div className="home-content-wrapper">
 		    		<form>
 		    			<h1>Join our community</h1>
 		    			<TextField 

@@ -77,7 +77,7 @@ class Signin extends Component {
 
 	    return (
 			<div className="full-width-wrapper signin">
-	        	<div className="content-wrapper">
+	        	<div className="home-content-wrapper">
 		    		<form onSubmit={this.onSubmit} >
 		    			<h1>Sign in</h1>
 						<TextField 

@@ -61,7 +61,11 @@
 /*=====================3.0 Body===========================*/
 
 	.home-content-wrapper{
-		max-width: 100%;
+		width:90%;
+		top:50%;
+		left:0;
+		margin-left:5%;
+		margin-right: 5%;
 	}
 
 
