@@ -89,7 +89,6 @@ class MenuLayer extends Component{
                 </ul>
                 
                 <Search />
-
             </div>
 
             <div className="mobile-menu clearfix">
