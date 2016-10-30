@@ -1,12 +1,10 @@
 
-
-
-const initialState = {
+const initialUIState = {
 	errorMessage : "",
 	loading:false
 }
 
-function uiReducer(state = initialState, action) {
+function uiReducer(state = initialUIState, action) {
   switch(action.type){
     case "ERROR_POPUP":
         return { ...state, errorMessage: action.message }

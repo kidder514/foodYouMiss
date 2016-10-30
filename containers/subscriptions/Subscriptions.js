@@ -1,12 +1,12 @@
 import React, {Component} from 'react';
 import {connect} from "react-redux";
 import PostList from "../components/PostList";
-import {initPostsCall}from "../../actions/postActions";
+import {initSubscriptionsPostsCall}from "../../actions/postActions";
 
 class Subscriptions extends Component{
 
 	  componentDidMount() {
-        if(this.props.nearByPosts.length <= 0){
+        if(this.props.subscriptionsPosts.length <= 0){
       	    this.props.initPosts();
         }
   	}
@@ -15,7 +15,7 @@ class Subscriptions extends Component{
     		return (
             <div className="content-wrapper subscriptions">
       			    <div className="subscriptions-content">
-      			        <PostList postList={this.props.nearByPosts}/>
+      			        <PostList postList={this.props.subscriptionsPosts}/>
       			    </div>
                 <div className="sidebar">
                 </div>
@@ -26,14 +26,14 @@ class Subscriptions extends Component{
 
 const mapStateToProps = (state) => {
 	  return {
-		    nearByPosts: state.nearByPosts
+		    subscriptionsPosts: state.subscriptionsPosts
 	  };
 };
 
 const mapDispatchToProps = (dispatch) => {
     return {
         initPosts: () => {
-            dispatch(initPostsCall())
+            dispatch(initSubscriptionsPostsCall())
         }
     };
 };

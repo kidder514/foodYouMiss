@@ -1,5 +1,5 @@
 import axios from "axios";
-import { tartLoading, finishLoading} from "./loadingActions";
+import {startLoading, finishLoading} from "./loadingActions";
 
 export const signinCall = (userInfo) =>{
 	return dispatch => {
