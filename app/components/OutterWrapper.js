@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import ErrorPopup from "./components/ErrorPopup";
-import LoadingSpinner from "./components/LoadingSpinner";
+import ErrorPopup from "../containers/ErrorPopup";
+import LoadingSpinner from "../containers/LoadingSpinner";
 
 class OutterWrapper extends Component{
 

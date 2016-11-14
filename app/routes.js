@@ -1,34 +1,30 @@
 import React from "react"
-import { Route } from "react-router"
-// import OutterWrapper from "./containers/OutterWrapper"
-// import Wrapper from "./containers/Wrapper"
-// import Home from "./containers/home/Home.js"
-// import Subscriptions from "./containers/subscriptions/Subscriptions"
-// import Map from "./containers/map/Map.js"
-// import Nearby from "./containers/nearby/Nearby.js"
-// import MyPage from "./containers/mypage/MyPage.js"
-// import Account from "./containers/account/Account.js"
-// import SlidingPage from "./containers/components/SlidingPage"
-// import Author from "./containers/author/Author"
-// import Signup from "./containers/home/Signup"
-// import Signin from "./containers/home/Signin"
-// import Chat from "./containers/chat/Chat"
+import {Route} from "react-router"
+import OutterWrapper from "./components/Wrapper"
+import SlidingPage from "./components/OutterWrapper"
+import Wrapper from "./components/SlidingPage"
+import Home from "./containers/Home"
+import Nearby from "./containers/Nearby"
+import Subscription from "./containers/Subscription"
+import Map from "./containers/Map"
+import MyPage from "./containers/MyPage"
+import Chat from "./containers/Chat"
+import Account from "./containers/Account"
+import Author from "./containers/Author"
 
 export default (
-	<Route component={}>
-		<Route component={}>
-	  		<Route path="/" component={} />
-	  		<Route path="/Signup" component={} />
-	  		<Route path="/Signin" component={} />
-	  		<Route path="/subscriptions" component={} />
-		  	<Route path="/nearby" component={} />
-		  	<Route path="/map" component={} />
-		  	<Route path="/mypage" component={} />
-		  	<Route path="/account" component={} />
-		  	<Route path="/chat" component={} />
+	<Route component={OutterWrapper}>
+		<Route component={Wrapper}>
+	  		<Route path="/" component={Home} />
+		  	<Route path="/nearby" component={Nearby} />
+		  	<Route path="/map" component={Map} />
+	  		<Route path="/subscriptions" component={Subscription} />
+		  	<Route path="/mypage" component={MyPage} />
+		  	<Route path="/chat" component={Chat} />
+		  	<Route path="/account" component={Account} />
 		</Route>
-		<Route component={}>
-		  	<Route path="/author" component={} />
+		<Route component={SlidingPage}>
+		  	<Route path="/author" component={Author} />
 		</Route>
 	</Route>
 )

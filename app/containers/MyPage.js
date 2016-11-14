@@ -2,13 +2,13 @@ import React, {Component} from 'react';
 
 class MyPage extends Component {
 
- 	render(){
+  	render(){
 	    return (
-	    	<div className="content-wrapper mypage">
-	            MyPage
-	    	</div>
+	        <div>
+	        	MyPage
+	        </div>
 	    )
-  	};
+  	}
 }
 
 export default MyPage;

@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import MenuLayer from "./menu/MenuLayer";
+import MenuLayer from "./MenuLayer";
 
 class Wrapper extends Component {
 

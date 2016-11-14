@@ -6,17 +6,13 @@
 var webpack = require('webpack')
 
 module.exports = {
-    entry: [
-        "./index.js",
-        "webpack-hot-middleware/client"
-    ],
+    entry: "./index.js",
     output: {
         path: __dirname,
         filename: "bundle.js"
     },
     plugins: [
-        new webpack.optimize.OccurrenceOrderPlugin(),
-        new webpack.HotModuleReplacementPlugin()
+
     ],
     module: {
         loaders: [
