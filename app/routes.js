@@ -1,10 +1,9 @@
 import React from "react"
 import {Route} from "react-router"
-import OutterWrapper from "./components/Wrapper"
-import SlidingPage from "./components/OutterWrapper"
-import Wrapper from "./components/SlidingPage"
+import OutterWrapper from "./components/OutterWrapper"
+import Wrapper from "./components/Wrapper"
+import SlidingPage from "./components/SlidingPage"
 import Home from "./containers/Home"
-import Nearby from "./containers/Nearby"
 import Subscription from "./containers/Subscription"
 import Map from "./containers/Map"
 import MyPage from "./containers/MyPage"
@@ -16,7 +15,6 @@ export default (
 	<Route component={OutterWrapper}>
 		<Route component={Wrapper}>
 	  		<Route path="/" component={Home} />
-		  	<Route path="/nearby" component={Nearby} />
 		  	<Route path="/map" component={Map} />
 	  		<Route path="/subscriptions" component={Subscription} />
 		  	<Route path="/mypage" component={MyPage} />
