@@ -7,11 +7,11 @@ const initialUIState = {
 function uiReducer(state = initialUIState, action) {
   switch(action.type){
     case "ERROR_POPUP":
-        return { ...state, errorMessage: action.message }
+        return {...state, errorMessage: action.message}
     case "START_LOADING":
-    	return { ...state, loading: action.loading}
+    	return {...state, loading: action.loading}
     case "FINISH_LOADING":
-    	return { ...state, loading: action.loading}
+    	return {...state, loading: action.loading}
     default:
     	return state
     }

@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {Link} from "react-router";
-import { push } from 'react-router-redux';
+import {push} from 'react-router-redux';
 import RaisedButton from 'material-ui/RaisedButton';
 import FontIcon from 'material-ui/FontIcon';
 

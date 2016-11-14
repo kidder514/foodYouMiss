@@ -8,8 +8,8 @@ import CommunicationLocationOn from 'material-ui/svg-icons/communication/locatio
 import CommunicationTextsms from 'material-ui/svg-icons/communication/textsms';
 import ActionFace from 'material-ui/svg-icons/action/face';
 import NavigationMenu from 'material-ui/svg-icons/navigation/menu';
-import Search from "../containers/Search"
-import MobileSearch from "../containers/MobileSearch"
+import Search from "../../containers/Search"
+import MobileSearch from "../../containers/MobileSearch"
 
 class MenuLayer extends Component{
 
