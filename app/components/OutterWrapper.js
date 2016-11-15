@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import ErrorPopup from "../containers/ErrorPopup";
-import LoadingSpinner from "../containers/LoadingSpinner";
+import ErrorPopup from "../containers/common/ErrorPopup";
+import LoadingSpinner from "../containers/common/LoadingSpinner";
 
 class OutterWrapper extends Component{
 
@@ -10,6 +10,12 @@ class OutterWrapper extends Component{
 				{this.props.children}
 				<ErrorPopup />
 				<LoadingSpinner />
+			{/*
+				there should be also a initilization function here 
+				1. load the stored data from browser storage or cookie.
+				2. initilize the app.
+
+			*/}
 	    	</div>
 	    )
   	}
