@@ -4,9 +4,6 @@
 /*=====================1.0 General===========================*/
 
 /*=====================2.0 Header===========================*/
-	.menu-layer{
-		height:110px;
-	}
 
 	.menu-layer .logo{
 		display:none;
@@ -24,39 +21,12 @@
 	.mobile-menu .menu-list{
 		width:100%;
 		background-color:#F3511E;
-	    padding-bottom: 5px;
 	}
 
 	.menu-item{
-		width:20%;
+		width:16.6666666%;
 		text-align: center;
 	}
-
-	.mobile-menu .search{
-		display: block;
-		float: left;
-		width:80%;
-	}
-
-	.mobile-menu .search form > div{
-		padding-left: 2%;
-    	box-sizing: border-box;
-	}
-	.mobile-search-button{
-		width:20%;
-		float: right;
-	}
-
-	.menu-item-account-mobile{
-		display: block;
-		width: 20%;
-		float: right;
-		text-align: center;
-	}
-
-
-
-
 
 /*=====================3.0 Body===========================*/
 

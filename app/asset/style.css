@@ -142,10 +142,6 @@ h5{
 	float:left;
 }
 
-.search{
-	float:right;
-}
-
 .menu-list{
 	float:right;
 }
@@ -219,6 +215,12 @@ h5{
 
 .loading-spinner.hidden{
 	display:none;
+}
+
+.login{
+	position:fixed;
+	right: 5px;
+	top:65px;
 }
 
 /* 4.2 home */

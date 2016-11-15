@@ -1,15 +1,21 @@
 import React, {Component} from 'react';
-import {Link} from "react-router";
-import RaisedButton from 'material-ui/RaisedButton';
-import FontIcon from 'material-ui/FontIcon';
 
 class HomePage extends Component{
 
   	render(){
-        return <div>time to do this
-            search HomePage
-            nearby content
-        </div>;
+
+  		if(this.props.userStatus.isLoggedIn){
+  			console.log("user is logged in");
+  		}else{
+  			console.log("user is NOT logged in");
+  		}
+
+  		return(
+  			// search form
+  			// post list 
+  			<div></div>
+  			);
+
     }
 }
 
