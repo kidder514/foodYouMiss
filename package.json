@@ -12,7 +12,7 @@
   },
   "license": "MIT",
   "bugs": {
-    "url": ""
+    "url": "https://bitbucket.org/buildforfuture/signaturedish/issues"
   },
   "homepage": "",
   "dependencies": {
@@ -35,6 +35,7 @@
     "babel-preset-react": "^6.16.0",
     "babel-preset-react-hmre": "^1.1.1",
     "css-loader": "^0.25.0",
+    "file-loader": "^0.9.0",
     "image-webpack-loader": "^3.0.0",
     "react-tap-event-plugin": "^1.0.0",
     "style-loader": "^0.13.1",
