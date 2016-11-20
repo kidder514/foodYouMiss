@@ -2,23 +2,38 @@ import React, {Component} from 'react';
 import validator from "Validator";
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
-
+import ReCAPTCHA from "react-google-recaptcha";
 
 class SigninPage extends Component {
+
 	constructor(props){
 		super(props);
+
+		this.recapResponse = "";
 
 		this.state = {
 			email: "",
 			password:"",
+			recapResponse:"",
 			isValid:false,
 			errorEmail:"",
-			errorPassword:""
+			errorPassword:"",
+			errorRecaptcha:""
 		};
-
 		this.onChange = this.onChange.bind(this);
 		this.onSubmit = this.onSubmit.bind(this);
+		this.recaptchaCallback = this.recaptchaCallback.bind(this);
+		this.recaptchaExpiredCallback = this.recaptchaExpiredCallback.bind(this);
 	}
+
+	recaptchaCallback(value){
+		this.recapResponse = value;
+	}
+
+	recaptchaExpiredCallback(){
+		this.recapResponse = "";
+	}
+
 
 	onChange(e){
 		this.setState({[e.target.name]: e.target.value});
@@ -26,6 +41,46 @@ class SigninPage extends Component {
 
 	onSubmit(e){
 		e.preventDefault();
+
+		let state_cache = {};
+
+		if(this.state.email == ""){
+			state_cache.errorEmail = "Email address is required.";
+		}else{
+			if(!validator.isEmail(this.state.email)){
+				state_cache.errorEmail = "Email format is invalid";
+			}else{
+				state_cache.errorEmail = "";
+			}
+		}
+
+		if(this.state.password == ""){
+			state_cache.errorPassword = "Password is required.";
+		}else{
+			state_cache.errorPassword = "";
+		}
+
+		if(this.recapResponse == ""){
+			state_cache.errorRecaptcha = "Please check the Recaptcha, your Recaptcha is not valid or expired.";
+		}else{
+			state_cache.errorRecaptcha = "";
+		}
+
+		if((!this.state.email == "")
+			&&(validator.isEmail(this.state.email))
+			&&(!this.state.password == "")
+			&&(!this.recapResponse == "")){
+
+			state_cache.recapResponse = this.recapResponse;
+			state_cache.isValid = true;
+			this.setState(state_cache,function(){
+				this.props.signin({"email": this.state.email, "password": this.state.password, "recapResponse": this.state.recapResponse});
+			});
+		}else{
+			state_cache.isValid = false;
+			this.setState(state_cache);
+		}
+
 	}
 
   	render(){
@@ -51,35 +106,43 @@ class SigninPage extends Component {
 	            	<form onSubmit={this.onSubmit}>
 	            		<h1>Sign in with existing account</h1>
 						<TextField 
-		    			value={this.state.email}
-		    			onChange={this.onChange}
-		    			type="text"
-		    			name="email"
-		    			errorText={this.state.errorEmail}
-		    			errorStyle={style.error}
-		    			inputStyle={style.input}
-		    			floatingLabelText="E-mail"
-		    			floatingLabelStyle={style.hint} 
-		    			underlineFocusStyle={style.underlineFocus}
+			    			value={this.state.email}
+			    			onChange={this.onChange}
+			    			type="text"
+			    			name="email"
+			    			errorText={this.state.errorEmail}
+			    			errorStyle={style.error}
+			    			inputStyle={style.input}
+			    			floatingLabelText="E-mail"
+			    			floatingLabelStyle={style.hint} 
+			    			underlineFocusStyle={style.underlineFocus}
 		    			/><br />
 						<TextField 
-		    			value={this.state.password}
-		    			onChange={this.onChange}
-		    			type="password"
-		    			name="password"
-		    			floatingLabelText="Password"
-		    			errorText={this.state.errorPassword}
-		    			errorStyle={style.error}
-		    			inputStyle={style.input}
-		    			floatingLabelStyle={style.hint} 
-		    			underlineFocusStyle={style.underlineFocus}
+			    			value={this.state.password}
+			    			onChange={this.onChange}
+			    			type="password"
+			    			name="password"
+			    			floatingLabelText="Password"
+			    			errorText={this.state.errorPassword}
+			    			errorStyle={style.error}
+			    			inputStyle={style.input}
+			    			floatingLabelStyle={style.hint} 
+			    			underlineFocusStyle={style.underlineFocus}
 		    			/><br />
-		    			<div className="g-recaptcha" data-sitekey="6Lf5EwwUAAAAAEddev4kBP7COg1RHlQWsI81uWdt"></div>
+
+					    <ReCAPTCHA
+					      ref="recaptcha"
+					      sitekey="6Lf5EwwUAAAAAEddev4kBP7COg1RHlQWsI81uWdt"
+					      onChange={this.recaptchaCallback}
+					      onExpired={this.recaptchaExpiredCallback}
+					    />
+					    <div ref="recaptcha"></div>
+		    			<p>{this.state.errorRecaptcha}</p>
 		    			<RaisedButton 
-		    			label="Sign In"
-		    			secondary={true} 
-		    			type="submit"
-		    			onClick={this.onSubmit}
+			    			label="Sign In"
+			    			secondary={true} 
+			    			type="submit"
+			    			onClick={this.onSubmit}
 						/>
 
 	            	</form>
