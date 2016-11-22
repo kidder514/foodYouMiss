@@ -3,6 +3,7 @@ import validator from "Validator";
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 import ReCAPTCHA from "react-google-recaptcha";
+import MD5 from "../../helpers/MD5";
 
 class SigninPage extends Component {
 
@@ -74,7 +75,7 @@ class SigninPage extends Component {
 			state_cache.recapResponse = this.recapResponse;
 			state_cache.isValid = true;
 			this.setState(state_cache,function(){
-				this.props.signin({"email": this.state.email, "password": this.state.password, "recapResponse": this.state.recapResponse});
+				this.props.signin({"email": this.state.email, "password": MD5(this.state.password), "recapResponse": this.state.recapResponse});
 			});
 		}else{
 			state_cache.isValid = false;
