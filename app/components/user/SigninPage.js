@@ -21,6 +21,7 @@ class SigninPage extends Component {
 			errorPassword:"",
 			errorRecaptcha:""
 		};
+		
 		this.onChange = this.onChange.bind(this);
 		this.onSubmit = this.onSubmit.bind(this);
 		this.recaptchaCallback = this.recaptchaCallback.bind(this);
@@ -34,7 +35,6 @@ class SigninPage extends Component {
 	recaptchaExpiredCallback(){
 		this.recapResponse = "";
 	}
-
 
 	onChange(e){
 		this.setState({[e.target.name]: e.target.value});

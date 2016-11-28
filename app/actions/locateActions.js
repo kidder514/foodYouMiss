@@ -1,4 +1,3 @@
-
 export const locate = (location) => {
 	return {
 		type: "LOCATE",

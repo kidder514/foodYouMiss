@@ -7,23 +7,28 @@ class LoginButton extends Component{
   	render(){
       var display;
       if(this.props.userStatus.isLoggedIn){
-        display = "hidden";
+          display = "hidden";
       }else{
-        display = "";
+          display = "";
       }
 
   		return (
-            <Link to="/signin" className={"login " + display}>
-            	login/sign-in
-  			</Link>	
+          <div>
+              <Link to="/signin" className={"login " + display}>
+                	login
+      			  </Link>	
+              <Link to="/signupentrance" className={"signup" + display}>
+                   Sign-up
+              </Link>
+          </div>
   			);
     }
 }
 
 const mapStateToProps = (state) => {
-	return {
-		userStatus: state.userStatus
-	}
+	  return {
+		    userStatus: state.userStatus
+	  }
 }
 
 export default connect(mapStateToProps, null)(LoginButton);

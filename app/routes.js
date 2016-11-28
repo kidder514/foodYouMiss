@@ -5,6 +5,8 @@ import Wrapper from "./components/Wrapper"
 import SlidingPage from "./components/common/SlidingPage"
 import Home from "./containers/home/Home"
 import Signin from "./containers/user/Signin"
+import Signup from "./containers/user/Signup"
+import SignupEntrance from "./components/user/SignupEntrance"
 import Subscription from "./containers/Subscription"
 import Map from "./containers/Map"
 import MyPage from "./containers/MyPage"
@@ -17,6 +19,8 @@ export default (
 		<Route component={Wrapper}>
 	  		<Route path="/" component={Home} />
 	  		<Route path="/signin" component={Signin} />
+	  		<Route path="/signupentrance" component={SignupEntrance} />
+	  		<Route path="/signup" component={Signup} />
 		  	<Route path="/map" component={Map} />
 	  		<Route path="/subscriptions" component={Subscription} />
 		  	<Route path="/mypage" component={MyPage} />

@@ -5,6 +5,7 @@ import {createStore, applyMiddleware} from 'redux';
 import {Router, browserHistory} from 'react-router';
 import {syncHistoryWithStore} from 'react-router-redux';
 import thunk from 'redux-thunk';
+import createLogger from 'redux-logger';
 import rootReducer from './app/reducers';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import routes from "./app/routes";
@@ -17,11 +18,12 @@ require("./app/asset/googlefont/roboto.css");
 //this line stablise the Material UI
 injectTapEventPlugin();
 
-const store = createStore(rootReducer, applyMiddleware(thunk));
+const logger = createLogger();
+const store = createStore(rootReducer, applyMiddleware(thunk, logger));
 const history = syncHistoryWithStore(browserHistory, store);
 
 render(
-	  <MuiThemeProvider>
+	<MuiThemeProvider>
 		    <Provider store={store}>
             	<div>
             		<Router history={history} routes={routes} />
