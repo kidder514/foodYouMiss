@@ -11,9 +11,10 @@ class HomePage extends Component{
   		}
 
   		return(
-  			// search form
   			// post list 
-  			<div></div>
+  			<div className="full-width-wrapper">
+            	Home page
+        	</div>
   			);
 
     }
