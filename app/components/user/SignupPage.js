@@ -36,6 +36,20 @@ class SignupPage extends Component {
 		this.recaptchaExpiredCallback = this.recaptchaExpiredCallback.bind(this);
 	}
 
+	componentDidMount(){
+		var locationInput = this.locationInput;
+		this.locationBox = new google.maps.places.SearchBox(locationInput);
+		this.locationBox.addListener("places_changed", this.onPlacesChanged);
+	}
+
+	componentWillUnmount(){
+		this.locationBox.removeListener("places_changed", this.onPlacesChanged);
+	}
+
+	onPlacesChanged(){
+		console.log("the place has changed");
+	}
+
 	recaptchaCallback(value){
 		this.recapResponse = value;
 	}
@@ -175,6 +189,8 @@ class SignupPage extends Component {
 					<TextField 
 		    			value={this.state.location}
 		    			onChange={this.onChange}
+		    			id="location"
+		    			ref={(input) => {locationInput = input}}
 		    			type="text"
 		    			name="location"
 		    			floatingLabelText="Your Location"
