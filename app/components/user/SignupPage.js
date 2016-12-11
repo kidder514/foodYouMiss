@@ -7,6 +7,7 @@ import RaisedButton from 'material-ui/RaisedButton';
 import FlatButton from 'material-ui/FlatButton';
 import ReCAPTCHA from "react-google-recaptcha";
 import MD5 from "../../helpers/MD5";
+import Gautocomplete from "../../helpers/GoogleAutocomplete"
 
 class SignupPage extends Component {
 
@@ -35,19 +36,6 @@ class SignupPage extends Component {
 		this.onSubmit = this.onSubmit.bind(this);
 		this.recaptchaCallback = this.recaptchaCallback.bind(this);
 		this.recaptchaExpiredCallback = this.recaptchaExpiredCallback.bind(this);
-	}
-
-	componentDidMount(){
-		this.locationBox = new google.maps.places.SearchBox(this.locationInput);
-		this.locationBox.addListener("places_changed", this.onPlacesChanged);
-	}
-
-	componentWillUnmount(){
-		this.locationBox.removeListener("places_changed", this.onPlacesChanged);
-	}
-
-	onPlacesChanged(){
-		console.log("the place has changed");
 	}
 
 	recaptchaCallback(value){
@@ -186,20 +174,7 @@ class SignupPage extends Component {
 		    			floatingLabelStyle={style.hint} 
 		    			underlineFocusStyle={style.underlineFocus}
 	    			/><br />
-					<TextField 
-		    			value={this.state.location}
-		    			onChange={this.onChange}
-		    			id="location"
-		    			ref={(locationInput) => { this.locationInput = locationInput;}}
-		    			type="text"
-		    			name="location"
-		    			floatingLabelText="Your Location"
-		    			errorText={this.state.errorLocation}
-		    			errorStyle={style.error}
-		    			inputStyle={style.input}
-		    			floatingLabelStyle={style.hint} 
-		    			underlineFocusStyle={style.underlineFocus}
-	    			/><br />
+	    			<Gautocomplete lat={-34.485} lng={150.644}/><br />
 				    <ReCAPTCHA
 				      ref="recaptcha"
 				      sitekey="6Lf5EwwUAAAAAEddev4kBP7COg1RHlQWsI81uWdt"
@@ -209,7 +184,7 @@ class SignupPage extends Component {
 				    <div ref="recaptcha"></div>
 	    			<p>{this.state.errorRecaptcha}</p>
 	    			<RaisedButton 
-		    			label="Sign Up"
+		    			label="Sign Up" 
 		    			secondary={true} 
 		    			type="submit"
 		    			onClick={this.onSubmit}
