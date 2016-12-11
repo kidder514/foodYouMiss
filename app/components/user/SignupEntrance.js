@@ -11,7 +11,6 @@ class SignupEntrance extends Component{
 					<RaisedButton 
 		    			label="Sign Up"
 		    			secondary={true}
-		    			href="/signup"
 					/>
 				</Link>
 				

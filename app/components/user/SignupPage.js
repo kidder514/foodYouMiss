@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import ReactDOM from 'react-dom';
 import validator from "Validator";
 import TextField from 'material-ui/TextField';
 import ExpandTransition from 'material-ui/internal/ExpandTransition';
@@ -37,8 +38,7 @@ class SignupPage extends Component {
 	}
 
 	componentDidMount(){
-		var locationInput = this.locationInput;
-		this.locationBox = new google.maps.places.SearchBox(locationInput);
+		this.locationBox = new google.maps.places.SearchBox(this.locationInput);
 		this.locationBox.addListener("places_changed", this.onPlacesChanged);
 	}
 
@@ -190,7 +190,7 @@ class SignupPage extends Component {
 		    			value={this.state.location}
 		    			onChange={this.onChange}
 		    			id="location"
-		    			ref={(input) => {locationInput = input}}
+		    			ref={(locationInput) => { this.locationInput = locationInput;}}
 		    			type="text"
 		    			name="location"
 		    			floatingLabelText="Your Location"
