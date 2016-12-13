@@ -112,85 +112,87 @@ class SignupPage extends Component {
 
 	    return (
 	        <div className="full-width-wrapper">
-            	<form onSubmit={this.onSubmit}>
-            		<h1>Register a new account</h1>
-					<TextField 
-		    			value={this.state.email}
-		    			onChange={this.onChange}
-		    			type="text"
-		    			name="email"
-		    			errorText={this.state.errorEmail}
-		    			errorStyle={style.error}
-		    			inputStyle={style.input}
-		    			floatingLabelText="E-mail"
-		    			floatingLabelStyle={style.hint} 
-		    			underlineFocusStyle={style.underlineFocus}
-	    			/><br />
-					<TextField 
-		    			value={this.state.password}
-		    			onChange={this.onChange}
-		    			type="password"
-		    			name="password"
-		    			floatingLabelText="Password"
-		    			errorText={this.state.errorPassword}
-		    			errorStyle={style.error}
-		    			inputStyle={style.input}
-		    			floatingLabelStyle={style.hint} 
-		    			underlineFocusStyle={style.underlineFocus}
-	    			/><br />
-					<TextField 
-		    			value={this.state.confirmPassword}
-		    			onChange={this.onChange}
-		    			type="password"
-		    			name="confirmPassword"
-		    			floatingLabelText="Confirm Password"
-		    			errorText={this.state.errorConfirmPassword}
-		    			errorStyle={style.error}
-		    			inputStyle={style.input}
-		    			floatingLabelStyle={style.hint} 
-		    			underlineFocusStyle={style.underlineFocus}
-	    			/><br />
-					<TextField 
-		    			value={this.state.firstName}
-		    			onChange={this.onChange}
-		    			type="text"
-		    			name="firstName"
-		    			floatingLabelText="First Name"
-		    			errorText={this.state.errorFirstName}
-		    			errorStyle={style.error}
-		    			inputStyle={style.input}
-		    			floatingLabelStyle={style.hint} 
-		    			underlineFocusStyle={style.underlineFocus}
-	    			/><br />
-					<TextField 
-		    			value={this.state.lastName}
-		    			onChange={this.onChange}
-		    			type="text"
-		    			name="lastName"
-		    			floatingLabelText="Last Name"
-		    			errorText={this.state.errorLastName}
-		    			errorStyle={style.error}
-		    			inputStyle={style.input}
-		    			floatingLabelStyle={style.hint} 
-		    			underlineFocusStyle={style.underlineFocus}
-	    			/><br />
-	    			<Gautocomplete lat={-34.485} lng={150.644}/><br />
-				    <ReCAPTCHA
-				      ref="recaptcha"
-				      sitekey="6Lf5EwwUAAAAAEddev4kBP7COg1RHlQWsI81uWdt"
-				      onChange={this.recaptchaCallback}
-				      onExpired={this.recaptchaExpiredCallback}
-				    />
-				    <div ref="recaptcha"></div>
-	    			<p>{this.state.errorRecaptcha}</p>
-	    			<RaisedButton 
-		    			label="Sign Up" 
-		    			secondary={true} 
-		    			type="submit"
-		    			onClick={this.onSubmit}
-					/>
+		        <div className="signup-content-wrapper">
+					<form onSubmit={this.onSubmit}>
+	            		<h1>Register a new account</h1>
+						<TextField 
+			    			value={this.state.email}
+			    			onChange={this.onChange}
+			    			type="text"
+			    			name="email"
+			    			errorText={this.state.errorEmail}
+			    			errorStyle={style.error}
+			    			inputStyle={style.input}
+			    			floatingLabelText="E-mail"
+			    			floatingLabelStyle={style.hint} 
+			    			underlineFocusStyle={style.underlineFocus}
+		    			/><br />
+						<TextField 
+			    			value={this.state.password}
+			    			onChange={this.onChange}
+			    			type="password"
+			    			name="password"
+			    			floatingLabelText="Password"
+			    			errorText={this.state.errorPassword}
+			    			errorStyle={style.error}
+			    			inputStyle={style.input}
+			    			floatingLabelStyle={style.hint} 
+			    			underlineFocusStyle={style.underlineFocus}
+		    			/><br />
+						<TextField 
+			    			value={this.state.confirmPassword}
+			    			onChange={this.onChange}
+			    			type="password"
+			    			name="confirmPassword"
+			    			floatingLabelText="Confirm Password"
+			    			errorText={this.state.errorConfirmPassword}
+			    			errorStyle={style.error}
+			    			inputStyle={style.input}
+			    			floatingLabelStyle={style.hint} 
+			    			underlineFocusStyle={style.underlineFocus}
+		    			/><br />
+						<TextField 
+			    			value={this.state.firstName}
+			    			onChange={this.onChange}
+			    			type="text"
+			    			name="firstName"
+			    			floatingLabelText="First Name"
+			    			errorText={this.state.errorFirstName}
+			    			errorStyle={style.error}
+			    			inputStyle={style.input}
+			    			floatingLabelStyle={style.hint} 
+			    			underlineFocusStyle={style.underlineFocus}
+		    			/><br />
+						<TextField 
+			    			value={this.state.lastName}
+			    			onChange={this.onChange}
+			    			type="text"
+			    			name="lastName"
+			    			floatingLabelText="Last Name"
+			    			errorText={this.state.errorLastName}
+			    			errorStyle={style.error}
+			    			inputStyle={style.input}
+			    			floatingLabelStyle={style.hint} 
+			    			underlineFocusStyle={style.underlineFocus}
+		    			/><br />
+		    			<Gautocomplete /><br />
+					    <ReCAPTCHA
+					    	className="recaptcha"
+					      	ref="recaptcha"
+					      	sitekey="6Lf5EwwUAAAAAEddev4kBP7COg1RHlQWsI81uWdt"
+					      	onChange={this.recaptchaCallback}
+					      	onExpired={this.recaptchaExpiredCallback}
+					    />
+		    			<p>{this.state.errorRecaptcha}</p>
+		    			<RaisedButton 
+			    			label="Sign Up" 
+			    			primary={true} 
+			    			type="submit"
+			    			onClick={this.onSubmit}
+						/>
 
-            	</form>
+	            	</form>
+		        </div>
 	        </div>
 	    )
   	}

@@ -72,6 +72,7 @@ fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td{
 	line-height: 1.4em;
 	font-size:13px;
+	color:#fff;
 }
 
 p, blockquote, pre,
@@ -80,6 +81,7 @@ del, dfn, em, ins, kbd, q, s, samp,
 small, strike, strong, sub, sup, tt, var,
 b, u, i, center{
 	padding:5px 0;
+	color:#fff;
 }
 
 h1{
@@ -107,6 +109,11 @@ h5{
 	padding:6px 0;
 }
 
+::-webkit-input-placeholder{
+	color: rgba(255, 255, 255, 0.6);
+	font-size:13px;
+}
+
 .clearfix:after { 
    content: " ";
    display: block; 
@@ -116,6 +123,31 @@ h5{
 
 .hidden{
 	display:none;
+}
+
+.map {
+	height:100%;
+}
+
+.recaptcha > div{
+	margin:auto;
+}
+
+.raised-button{
+	margin: 5px 3px;
+}
+
+.autocomplete{
+	width:256px;
+	height:24px;
+	font-size:16px;
+	margin:15px 0;
+    border: none;
+    border-bottom:1px solid rgba(255, 255, 255, 0.6);
+    outline: none;
+    background-color: rgba(0, 0, 0, 0);
+    color: rgb(255, 255, 255);
+    box-sizing: border-box;
 }
 
 /*=====================3.0 Header===========================*/
@@ -171,7 +203,8 @@ h5{
 .full-width-wrapper{
 	display: block;
 	width:100%;
-	height:100vh;
+	min-height:100vh;
+	height:auto;
 	background-color: #f25d30;
 	background-size: cover;
 	padding-top:60px;
@@ -240,11 +273,13 @@ h5{
 
 /* 4.2 home */
 
-.signin-content-wrapper{
+.signin-content-wrapper,
+.signupentrance-content-wrapper
+{
 	display:block;
 	position:absolute;
 	width:500px;
-	height:200px;
+	height:auto;
 	top:50%;
 	left:50%;
 	margin-top:-70px;
@@ -254,10 +289,11 @@ h5{
 	/*background:rgba(256,256,256,0.3);*/
 	color:#fff;
 }
-
 .signup-content-wrapper{
-	width:90%;
+	text-align: center;
+    margin-top: 30px;
 }
+
 
 .homepage-button{
 	display: block;
@@ -312,10 +348,7 @@ h5{
 	background-position:center;
 }
 
-/* 4.3 Sigup */
-#map {
-	height:100%;
-}
+
 
 /*=====================5.0 footer===========================*/
 

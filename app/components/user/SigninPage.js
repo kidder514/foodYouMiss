@@ -132,16 +132,16 @@ class SigninPage extends Component {
 		    			/><br />
 
 					    <ReCAPTCHA
-					      ref="recaptcha"
-					      sitekey="6Lf5EwwUAAAAAEddev4kBP7COg1RHlQWsI81uWdt"
-					      onChange={this.recaptchaCallback}
-					      onExpired={this.recaptchaExpiredCallback}
+					    	className="recaptcha"
+					      	ref="recaptcha"
+					      	sitekey="6Lf5EwwUAAAAAEddev4kBP7COg1RHlQWsI81uWdt"
+					      	onChange={this.recaptchaCallback}
+					      	onExpired={this.recaptchaExpiredCallback}
 					    />
-					    <div ref="recaptcha"></div>
 		    			<p>{this.state.errorRecaptcha}</p>
 		    			<RaisedButton 
 			    			label="Sign In"
-			    			secondary={true} 
+			    			primary={true} 
 			    			type="submit"
 			    			onClick={this.onSubmit}
 						/>

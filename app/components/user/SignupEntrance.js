@@ -7,22 +7,32 @@ class SignupEntrance extends Component{
 	render(){
 		return (
 			<div className="full-width-wrapper">
-				<Link to="/signup">
-					<RaisedButton 
-		    			label="Sign Up"
-		    			secondary={true}
+				<div className="signupentrance-content-wrapper">
+					<h1>Sign in with existing account</h1>
+					<Link to="/signup">
+						<RaisedButton
+							className="raised-button" 
+			    			label="Sign Up"
+			    			secondary={true}
+						/>
+					</Link>
+					<br />
+					
+	    			<RaisedButton 
+						className="raised-button" 
+		    			label="Sign up with google"
+		    			secondary={true} 
+		    			type="submit"
 					/>
-				</Link>
-				
-    			<RaisedButton 
-	    			label="Sign up with google"
-	    			secondary={true} 
-	    			type="submit"
-				/>
-    			<RaisedButton 
-	    			label="Sign up with facebook"
-	    			secondary={true} 
-				/>
+					<br />
+
+	    			<RaisedButton 
+						className="raised-button" 
+		    			label="Sign up with facebook"
+		    			secondary={true} 
+					/>
+					<br />
+				</div>
 			</div>
 		)
 	}

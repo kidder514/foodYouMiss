@@ -1,10 +1,14 @@
 import React, {Component} from "react";
-import RaisedButton from 'material-ui/RaisedButton';
+import TextField from 'material-ui/TextField';
 
 export default class extends Component{
 	constructor(props){
 		super(props);
-
+		this.state = {
+			location:"",
+			errorLocaltion:"",
+			coordinate: ""
+		};
 		this.autocomplete;
 
 		this.fillInAddress = this.fillInAddress.bind(this);
@@ -53,14 +57,17 @@ export default class extends Component{
 	}
 
 	render(){
+		let style = this.props.style;
+
 		return(
 			<input 
 				id="autocomplete"
+				className="autocomplete"
 				ref="autocomplete"
-				placeholder="Enter your address" 
 				onFocus={this.geolocate}
 				type="text"
 			/>
+
 		);
 	}
 }
