@@ -8,13 +8,12 @@ import FlatButton from 'material-ui/FlatButton';
 import ReCAPTCHA from "react-google-recaptcha";
 import MD5 from "../../helpers/MD5";
 import Gautocomplete from "../../helpers/GoogleAutocomplete"
+import isPasswordValid from "../../helpers/passwordChecker"
 
 class SignupPage extends Component {
 
 	constructor(props){
 		super(props);
-
-		this.recapResponse = "";
 
 		this.state = {
 			isValid:false,
@@ -25,80 +24,150 @@ class SignupPage extends Component {
 			confirmPassword:"",
 			errorConfirmPassword:"",
 			firstName:"",
-			errorFirstname:"",
+			errorFirstName:"",
 			lastName:"",
 			errorLastName:"",
+			location:"",
+			errorLocation:"",
+			coordinate:"",
 			recapResponse:"",
-			errorRecaptcha:""
+			errorRecaptcha:"",
+			disableSubmit:true
 		};
 		
 		this.onChange = this.onChange.bind(this);
 		this.onSubmit = this.onSubmit.bind(this);
+		this.handleLocaltion = this.handleLocaltion.bind(this);
 		this.recaptchaCallback = this.recaptchaCallback.bind(this);
 		this.recaptchaExpiredCallback = this.recaptchaExpiredCallback.bind(this);
+		this.validateData = this.validateData.bind(this);
+	}
+
+	handleLocaltion(locationObj){
+		if(locationObj.formatted_address != null && locationObj.geometry != null){
+			this.setState({location:locationObj.formatted_address,
+				coordinate: String(locationObj.geometry.location.lat()) + "," + String(locationObj.geometry.location.lng())}
+				,() => {this.validateSubmitButton()});
+		}else{
+			this.setState({location:"",coordinate:""},() => {this.validateSubmitButton()});
+		}
 	}
 
 	recaptchaCallback(value){
-		this.recapResponse = value;
+		this.setState({recapResponse:value}, () => {this.validateSubmitButton()});
 	}
 
 	recaptchaExpiredCallback(){
-		this.recapResponse = "";
+		this.setState({recapResponse:""}, () => {this.validateSubmitButton()})
 	}
 
 	onChange(e){
-		this.setState({[e.target.name]: e.target.value});
+		this.setState({[e.target.name]: e.target.value},() => {this.validateSubmitButton()});
+		console.log(this.state.disableSubmit);
+		console.log(this.state)
+	}
+
+	validateSubmitButton(){
+		if(this.state.email != ""
+		 &&this.state.password != ""
+		 &&this.state.confirmPassword != ""
+		 &&this.state.firstName != ""
+		 &&this.state.lastName != ""
+		 &&this.state.location != ""
+		 &&this.state.coordinate != ""
+		 &&this.state.recapResponse != ""){
+			this.setState({disableSubmit: false});
+		}else{
+			this.setState({disableSubmit: true});
+		}
 	}
 
 	onSubmit(e){
 		e.preventDefault();
+		return ;
+	}
 
-		let state_cache = {};
+		// let state_cache = {};
 
-		if(this.state.email == ""){
-			state_cache.errorEmail = "Email address is required.";
-		}else{
-			if(!validator.isEmail(this.state.email)){
-				state_cache.errorEmail = "Email format is invalid";
-			}else{
-				state_cache.errorEmail = "";
-			}
-		}
+		// if(this.state.email == ""){
+		// 	state_cache.errorEmail = "Email address is required.";
+		// }else{
+		// 	if(!validator.isEmail(this.state.email)){
+		// 		state_cache.errorEmail = "Email format is invalid";
+		// 	}else{
+		// 		state_cache.errorEmail = "";
+		// 	}
+		// }
 
-		if(this.state.password == ""){
-			state_cache.errorPassword = "Password is required.";
-		}else{
-			state_cache.errorPassword = "";
-		}
+		// if(this.state.password == ""){
+		// 	state_cache.errorPassword = "Password is required.";
+		// }else{
+		// 	if(isPasswordValid(this.state.password)){
+		// 		state_cache.errorPassword = "";
+		// 	}else{
+		// 		state_cache.errorPassword = "Password must has at least 8 characters with only letters and numbers, and contain at least one capital letter and one number.";
+		// 	}
+		// }
 
-		if(this.recapResponse == ""){
-			state_cache.errorRecaptcha = "Please check the Recaptcha, your Recaptcha is not valid or expired.";
-		}else{
-			state_cache.errorRecaptcha = "";
-		}
+		// if(this.state.password !== this.state.confirmPassword){
+		// 	state_cache.errorConfirmPassword = "Two passwords do not match.";
+		// }else{
+		// 	state_cache.errorConfirmPassword = "";
+		// }
 
-		if((!this.state.email == "")
-			&&(validator.isEmail(this.state.email))
-			&&(!this.state.password == "")
-			&&(!this.recapResponse == "")){
+		// if(this.state.firstName == ""){
+		// 	state_cache.errorFirstName = "First name is required.";
+		// }else{
+		// 	if(validator.isAlpha(this.state.firstName)){
+		// 		state_cache.errorFirstName= "";
+		// 	}else{
+		// 		state_cache.errorFirstName = "Invalid first name";
+		// 	}
+		// }
 
-			state_cache.recapResponse = this.recapResponse;
-			state_cache.isValid = true;
-			this.setState(state_cache,function(){
-				this.props.signin({"email": this.state.email, "password": MD5(this.state.password), "recapResponse": this.state.recapResponse});
-			});
-		}else{
-			state_cache.isValid = false;
-			this.setState(state_cache);
-		}
+		// if(this.state.lastName == ""){
+		// 	state_cache.errorLastName = "Last name is required.";
+		// }else{
+		// 	if(validator.isAlpha(this.state.lastName)){
+		// 		state_cache.errorLastName = "";
+		// 	}else{
+		// 		state_cache.errorLastName = "Invalid Last name";
+		// 	}
+		// }
 
+		// if(this.location_cache == ""){
+		// 	state_cache.errorLocation = "Please choose a location from prompted list";
+		// }else{
+		// 	state_cache.errorLocation = "";
+		// }
+
+		// if(this.recapResponse == ""){
+		// 	state_cache.errorRecaptcha = "Please check the Recaptcha, your Recaptcha is not valid or expired.";
+		// }else{
+		// 	state_cache.errorRecaptcha = "";
+		// }
+
+		// if((!this.state.email == "")
+		// 	&&(validator.isEmail(this.state.email))
+		// 	&&(!this.state.password == "")
+		// 	&&(!this.recapResponse == "")){
+
+		// 	state_cache.recapResponse = this.recapResponse;
+		// 	state_cache.isValid = true;
+		// 	this.setState(state_cache,function(){
+		// 		this.props.signin({"email": this.state.email, "password": MD5(this.state.password), "recapResponse": this.state.recapResponse});
+		// 	});
+		// }else{
+		// 	state_cache.isValid = false;
+		// 	this.setState(state_cache);
+		// }
+
+	validateData(){
+		console.log("this is rresssed");
 	}
 
   	render(){
 		let style={
-			input:{
-		        color: "#fff",
-			},
 			hint:{
 				color: "rgba(255, 255, 255, 0.6)"
 			},
@@ -122,7 +191,6 @@ class SignupPage extends Component {
 			    			name="email"
 			    			errorText={this.state.errorEmail}
 			    			errorStyle={style.error}
-			    			inputStyle={style.input}
 			    			floatingLabelText="E-mail"
 			    			floatingLabelStyle={style.hint} 
 			    			underlineFocusStyle={style.underlineFocus}
@@ -135,7 +203,6 @@ class SignupPage extends Component {
 			    			floatingLabelText="Password"
 			    			errorText={this.state.errorPassword}
 			    			errorStyle={style.error}
-			    			inputStyle={style.input}
 			    			floatingLabelStyle={style.hint} 
 			    			underlineFocusStyle={style.underlineFocus}
 		    			/><br />
@@ -147,7 +214,6 @@ class SignupPage extends Component {
 			    			floatingLabelText="Confirm Password"
 			    			errorText={this.state.errorConfirmPassword}
 			    			errorStyle={style.error}
-			    			inputStyle={style.input}
 			    			floatingLabelStyle={style.hint} 
 			    			underlineFocusStyle={style.underlineFocus}
 		    			/><br />
@@ -159,7 +225,6 @@ class SignupPage extends Component {
 			    			floatingLabelText="First Name"
 			    			errorText={this.state.errorFirstName}
 			    			errorStyle={style.error}
-			    			inputStyle={style.input}
 			    			floatingLabelStyle={style.hint} 
 			    			underlineFocusStyle={style.underlineFocus}
 		    			/><br />
@@ -171,11 +236,12 @@ class SignupPage extends Component {
 			    			floatingLabelText="Last Name"
 			    			errorText={this.state.errorLastName}
 			    			errorStyle={style.error}
-			    			inputStyle={style.input}
 			    			floatingLabelStyle={style.hint} 
 			    			underlineFocusStyle={style.underlineFocus}
 		    			/><br />
-		    			<Gautocomplete /><br />
+
+		    			<Gautocomplete handleLocaltion={this.handleLocaltion} /><br />
+		    			<p className="locationError">{this.state.errorLocation}</p>
 					    <ReCAPTCHA
 					    	className="recaptcha"
 					      	ref="recaptcha"
@@ -188,7 +254,8 @@ class SignupPage extends Component {
 			    			label="Sign Up" 
 			    			primary={true} 
 			    			type="submit"
-			    			onClick={this.onSubmit}
+			    			onClick={this.validateData}
+			    			disabled={this.state.disableSubmit}
 						/>
 
 	            	</form>

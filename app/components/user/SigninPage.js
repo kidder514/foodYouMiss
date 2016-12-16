@@ -86,9 +86,6 @@ class SigninPage extends Component {
 
   	render(){
 		let style={
-			input:{
-		        color: "#fff",
-			},
 			hint:{
 				color: "rgba(255, 255, 255, 0.6)"
 			},
@@ -113,7 +110,6 @@ class SigninPage extends Component {
 			    			name="email"
 			    			errorText={this.state.errorEmail}
 			    			errorStyle={style.error}
-			    			inputStyle={style.input}
 			    			floatingLabelText="E-mail"
 			    			floatingLabelStyle={style.hint} 
 			    			underlineFocusStyle={style.underlineFocus}
@@ -126,7 +122,6 @@ class SigninPage extends Component {
 			    			floatingLabelText="Password"
 			    			errorText={this.state.errorPassword}
 			    			errorStyle={style.error}
-			    			inputStyle={style.input}
 			    			floatingLabelStyle={style.hint} 
 			    			underlineFocusStyle={style.underlineFocus}
 		    			/><br />

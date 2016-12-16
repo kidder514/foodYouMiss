@@ -53,7 +53,7 @@ export default class extends Component{
 	}
 
 	fillInAddress(){
-		console.log("location changed");
+		this.props.handleLocaltion(this.autocomplete.getPlace())
 	}
 
 	render(){

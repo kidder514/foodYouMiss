@@ -150,6 +150,10 @@ h5{
     box-sizing: border-box;
 }
 
+/* google map -> places autocomplete -> pridicted locations style */
+.pac-item span{
+	color:#000;
+}
 /*=====================3.0 Header===========================*/
 .menu-layer{
 	position: fixed;
