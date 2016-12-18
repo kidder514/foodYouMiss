@@ -37,6 +37,7 @@ class SignupPage extends Component {
 		
 		this.onChange = this.onChange.bind(this);
 		this.onSubmit = this.onSubmit.bind(this);
+		this.autocompleteOnChange = this.autocompleteOnChange.bind(this);
 		this.handleLocaltion = this.handleLocaltion.bind(this);
 		this.recaptchaCallback = this.recaptchaCallback.bind(this);
 		this.recaptchaExpiredCallback = this.recaptchaExpiredCallback.bind(this);
@@ -67,6 +68,12 @@ class SignupPage extends Component {
 		console.log(this.state)
 	}
 
+	autocompleteOnChange(e){
+		if(this.location != "" && e.target.value != "" ){
+			this.setState({location:"",coordinate:""},() => {this.validateSubmitButton()});
+		}
+	}
+
 	validateSubmitButton(){
 		if(this.state.email != ""
 		 &&this.state.password != ""
@@ -87,83 +94,86 @@ class SignupPage extends Component {
 		return ;
 	}
 
-		// let state_cache = {};
-
-		// if(this.state.email == ""){
-		// 	state_cache.errorEmail = "Email address is required.";
-		// }else{
-		// 	if(!validator.isEmail(this.state.email)){
-		// 		state_cache.errorEmail = "Email format is invalid";
-		// 	}else{
-		// 		state_cache.errorEmail = "";
-		// 	}
-		// }
-
-		// if(this.state.password == ""){
-		// 	state_cache.errorPassword = "Password is required.";
-		// }else{
-		// 	if(isPasswordValid(this.state.password)){
-		// 		state_cache.errorPassword = "";
-		// 	}else{
-		// 		state_cache.errorPassword = "Password must has at least 8 characters with only letters and numbers, and contain at least one capital letter and one number.";
-		// 	}
-		// }
-
-		// if(this.state.password !== this.state.confirmPassword){
-		// 	state_cache.errorConfirmPassword = "Two passwords do not match.";
-		// }else{
-		// 	state_cache.errorConfirmPassword = "";
-		// }
-
-		// if(this.state.firstName == ""){
-		// 	state_cache.errorFirstName = "First name is required.";
-		// }else{
-		// 	if(validator.isAlpha(this.state.firstName)){
-		// 		state_cache.errorFirstName= "";
-		// 	}else{
-		// 		state_cache.errorFirstName = "Invalid first name";
-		// 	}
-		// }
-
-		// if(this.state.lastName == ""){
-		// 	state_cache.errorLastName = "Last name is required.";
-		// }else{
-		// 	if(validator.isAlpha(this.state.lastName)){
-		// 		state_cache.errorLastName = "";
-		// 	}else{
-		// 		state_cache.errorLastName = "Invalid Last name";
-		// 	}
-		// }
-
-		// if(this.location_cache == ""){
-		// 	state_cache.errorLocation = "Please choose a location from prompted list";
-		// }else{
-		// 	state_cache.errorLocation = "";
-		// }
-
-		// if(this.recapResponse == ""){
-		// 	state_cache.errorRecaptcha = "Please check the Recaptcha, your Recaptcha is not valid or expired.";
-		// }else{
-		// 	state_cache.errorRecaptcha = "";
-		// }
-
-		// if((!this.state.email == "")
-		// 	&&(validator.isEmail(this.state.email))
-		// 	&&(!this.state.password == "")
-		// 	&&(!this.recapResponse == "")){
-
-		// 	state_cache.recapResponse = this.recapResponse;
-		// 	state_cache.isValid = true;
-		// 	this.setState(state_cache,function(){
-		// 		this.props.signin({"email": this.state.email, "password": MD5(this.state.password), "recapResponse": this.state.recapResponse});
-		// 	});
-		// }else{
-		// 	state_cache.isValid = false;
-		// 	this.setState(state_cache);
-		// }
-
 	validateData(){
-		console.log("this is rresssed");
+
+		let state_cache = {};
+
+		if(this.state.email == ""){
+			state_cache.errorEmail = "Email address is required.";
+		}else{
+			if(!validator.isEmail(this.state.email)){
+				state_cache.errorEmail = "Email format is invalid";
+			}else{
+				state_cache.errorEmail = "";
+			}
+		}
+
+		if(this.state.password == ""){
+			state_cache.errorPassword = "Password is required.";
+		}else{
+			if(isPasswordValid(this.state.password)){
+				state_cache.errorPassword = "";
+			}else{
+				state_cache.errorPassword = "Password must has at least 8 characters with only letters and numbers, and contain at least one capital letter and one number.";
+			}
+		}
+
+		if(this.state.password !== this.state.confirmPassword){
+			state_cache.errorConfirmPassword = "Two passwords do not match.";
+		}else{
+			state_cache.errorConfirmPassword = "";
+		}
+
+		if(this.state.firstName == ""){
+			state_cache.errorFirstName = "First name is required.";
+		}else{
+			if(validator.isAlpha(this.state.firstName)){
+				state_cache.errorFirstName= "";
+			}else{
+				state_cache.errorFirstName = "Invalid first name";
+			}
+		}
+
+		if(this.state.lastName == ""){
+			state_cache.errorLastName = "Last name is required.";
+		}else{
+			if(validator.isAlpha(this.state.lastName)){
+				state_cache.errorLastName = "";
+			}else{
+				state_cache.errorLastName = "Invalid Last name";
+			}
+		}
+
+		if(this.location_cache == ""){
+			state_cache.errorLocation = "Please choose a location from prompted list";
+		}else{
+			state_cache.errorLocation = "";
+		}
+
+		if(this.recapResponse == ""){
+			state_cache.errorRecaptcha = "Please check the Recaptcha, your Recaptcha is not valid or expired.";
+		}else{
+			state_cache.errorRecaptcha = "";
+		}
+
+		if(( state_cache.errorEmail == "")
+			&&(state_cache.errorPassword == "")
+			&&(state_cache.errorConfirmPassword == "")
+			&&(state_cache.errorFirstName == "")
+			&&(state_cache.errorLastName == "")
+			&&(state_cache.errorLocation == "")
+			&&(state_cache.errorRecaptcha == "")){
+			
+			state_cache.recapResponse = this.recapResponse;
+			state_cache.isValid = true;
+			this.setState(state_cache,function(){
+				this.props.signin({"email": this.state.email, "password": MD5(this.state.password), "recapResponse": this.state.recapResponse});
+			});
+		}else{
+			state_cache.isValid = false;
+			this.setState(state_cache);
+		}
+
 	}
 
   	render(){
@@ -240,7 +250,10 @@ class SignupPage extends Component {
 			    			underlineFocusStyle={style.underlineFocus}
 		    			/><br />
 
-		    			<Gautocomplete handleLocaltion={this.handleLocaltion} /><br />
+		    			<Gautocomplete 
+		    				handleLocaltion={this.handleLocaltion} 
+		    				autocompleteOnChange={this.autocompleteOnChange}
+		    			/><br />
 		    			<p className="locationError">{this.state.errorLocation}</p>
 					    <ReCAPTCHA
 					    	className="recaptcha"

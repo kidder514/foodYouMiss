@@ -13,7 +13,7 @@ export default class extends Component{
 
 		this.fillInAddress = this.fillInAddress.bind(this);
 		this.geolocate = this.geolocate.bind(this);
-
+		this.onChange = this.onChange.bind(this);
 	}
 
 	shouldComponentUpdate(){
@@ -56,6 +56,10 @@ export default class extends Component{
 		this.props.handleLocaltion(this.autocomplete.getPlace())
 	}
 
+	onChange(e){
+		this.props.autocompleteOnChange(e);
+	}
+	
 	render(){
 		let style = this.props.style;
 
@@ -66,6 +70,7 @@ export default class extends Component{
 				ref="autocomplete"
 				onFocus={this.geolocate}
 				type="text"
+				onChange={this.onChange}
 			/>
 
 		);
