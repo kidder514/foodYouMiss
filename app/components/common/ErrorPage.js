@@ -20,10 +20,12 @@ class ErrorPage extends Component {
 	}
 
 	render() {
+
 	  	const button = [
 	  		<FlatButton
 	  		   label="Ok"
 	  		   primary={true}
+	  		   backgroundColor={"#B56148"}
 	  		   onTouchTap={this.handleClose}
 	  		/>,
 	  	]
@@ -34,6 +36,8 @@ class ErrorPage extends Component {
 	          	title="Ooooops."
 	          	modal={true}
 	          	open={this.props.error != ""}
+	          	bodyStyle={{color:"#B56148"}}
+	          	titleStyle={{color:"#B56148"}}
 	          	onRequestClose={this.handleClose}
 	        >
 	        {this.props.error}

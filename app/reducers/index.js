@@ -7,7 +7,6 @@ import userStatus from "./userStatus"
 
 const rootReducer = combineReducers({
   nearbyPosts: nearByPostsReducer,
-  subscriptionsPosts: subscriptionsPostsReducer,
   ui: uiReducer,
   userStatus,  
   routing

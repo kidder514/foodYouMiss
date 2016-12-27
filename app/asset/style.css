@@ -216,8 +216,10 @@ h5{
 
 .content-wrapper{
 	width:940px;
-	margin:0 auto;
+	max-width:100%;
+	margin:60px auto 0;
 	height:100%;
+
 }
 
 .subscriptions{
@@ -226,11 +228,16 @@ h5{
 	padding-top:40px;
 }
 
+.post-list{
+	width:66%;
+	float:left;
+}
+
 .sidebar{
-	width:300px;
+	width:31%;
 	float:right;
-	margin-left:30px;
-	height:90px;
+	margin-left:3%;
+	height:auto;
 	background-color: red;
 }
 
@@ -274,6 +281,7 @@ h5{
     background-size: contain;
     background-repeat: no-repeat;
 }
+
 
 /* 4.2 home */
 

@@ -4,6 +4,7 @@ const initialUserStatus = {
     token: "",
     hasLocation: false,
     currentLocation: "",
+    currentPage:""
 }
 
 function userStatus(state = initialUserStatus, action) {

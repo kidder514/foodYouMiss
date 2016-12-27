@@ -2,11 +2,11 @@ import axios from "axios";
 import {errorPopup} from "./errorActions";
 import {startLoading, finishLoading} from "./loadingActions";
 
-export const searchPostsCall = (request) => {
+export const searchPostsCall = (keyword) => {
 	return dispatch => {
 		
 		dispatch(startLoading())
-		axios.post("/api/search", {"keyword" : request})
+		axios.post("/api/search", {"keyword" : keyword})
 		.then(
 			(response) => { dispatch(finishLoading()); }		
 		)

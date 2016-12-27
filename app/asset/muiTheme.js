@@ -7,7 +7,7 @@ const muiTheme = getMuiTheme({
 	    primary3Color: "#F9A48B",
 	    accent1Color: "#F98563",
 	    textColor: "#fff"
-  	}
+  	},
 });
 
 export default muiTheme;
