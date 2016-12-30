@@ -21,25 +21,31 @@ class HomePage extends Component{
   	}
 
   	render(){
-  		if(this.props.userStatus.isLoggedIn){
-  			console.log("user is logged in");
+  		if(this.props.postListData.length > 0){
+	  		return(
+	  			<div className="full-width-wrapper">
+		  			<div className="content-wrapper">
+		  				<div className="post-list">
+		  					<SearchBox />
+		  					<PostList data={this.props.postListData} />
+		  				</div>
+		            	<div className="sidebar">
+		            		<SideBar currentPage={"home"} />
+		                </div>
+		  			</div>
+	        	</div>
+	  		);
   		}else{
-  			console.log("user is NOT logged in");
+  			return (
+  				<div className="full-width-wrapper">
+  					<div className="content-wrapper">
+  						Sorry, there is no cook in this area.
+  					</div>
+  				</div>
+  			);
   		}
 
-  		return(
-  			<div className="full-width-wrapper">
-	  			<div className="content-wrapper">
-	  				<div className="post-list">
-	  					<SearchBox />
-	  					<PostList data={this.props.postListData} />
-	  				</div>
-	            	<div className="sidebar">
-	            		<SideBar currentPage={"home"} />
-	                </div>
-	  			</div>
-        	</div>
-  			);
+
     }
 }
 

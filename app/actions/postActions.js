@@ -18,14 +18,14 @@ export const initNearbyPostsAction = (posts) => {
 export const postListCall = (query) => {
 	return dispatch => {
 		dispatch(startLoading());
-		axios.get('http://www.mocky.io/v2/57e900410f0000c0128439a1'+ query)
+		axios.get('http://www.mocky.io/v2/58634a5d0f00000224175621'+ query)
 		.then(function (res) {
 			dispatch(finishLoading());
 			dispatch(initNearbyPostsAction(res.data));
 	  	})
 	  	.catch(function (error) {
 			dispatch(finishLoading());
-			dispatch(errorPopup("Unable to load Initial Post"));
+			dispatch(errorPopup("Unable to load dishes' Post from server"));
 	  	});
 	}	
 }

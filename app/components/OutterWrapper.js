@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import ErrorPopup from "../containers/common/ErrorPopup";
 import LoadingSpinner from "../containers/common/LoadingSpinner";
 import LoginButton from "./common/LoginButton"
+import ImgLayer from "../containers/common/ImgLayer"
 
 class OutterWrapper extends Component{
 
@@ -12,6 +13,7 @@ class OutterWrapper extends Component{
 				<ErrorPopup />
 				<LoadingSpinner />
 				<LoginButton />
+				<ImgLayer />
 			{/*
 				there should be also a initilization function here 
 				1. load the stored data from browser storage or cookie.

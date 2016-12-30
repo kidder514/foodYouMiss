@@ -1,7 +1,10 @@
 
 const initialUIState = {
 	errorMessage : "",
-	loading:false
+	loading:false,
+	imgs:"",
+	imgIndex:"",
+	imgLayerIsOpen:false
 }
 
 function uiReducer(state = initialUIState, action) {
@@ -12,6 +15,10 @@ function uiReducer(state = initialUIState, action) {
     	return {...state, loading: action.loading}
     case "FINISH_LOADING":
     	return {...state, loading: action.loading}
+    case "OPEN_IMG_LAYER":
+    	return {...state, imgLayerIsOpen:action.imgLayerIsOpen, imgs: action.imgs, imgIndex: action.imgIndex}
+    case "CLOSE_IMG_LAYER":
+    	return {...state, imgLayerIsOpen:action.imgLayerIsOpen, imgs: "", imgIndex: ""}
     default:
     	return state
     }
