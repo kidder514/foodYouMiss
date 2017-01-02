@@ -121,6 +121,10 @@ h5{
    clear: both;
 }
 
+.clearboth{
+	clear:both;
+}
+
 .hidden{
 	display:none;
 }
@@ -425,7 +429,23 @@ h5{
 	background-position:center;
 }
 
+.purchase-buttons{
+	float:right;
+	clear:both;
+}
 
+.more-section{
+	float:right;
+	position:relative;
+	clear:both;
+}
+
+.others-section{
+	display:none;
+	position: absolute;
+    top: 14px;
+    right: 40px;
+}
 
 /*=====================5.0 footer===========================*/
 
