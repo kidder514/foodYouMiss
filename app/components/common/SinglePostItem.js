@@ -7,6 +7,7 @@ import IconButton from 'material-ui/IconButton';
 import FlatButton from 'material-ui/FlatButton';
 import MoreVert from 'material-ui/svg-icons/navigation/more-vert';
 import CommunicationLocationOn from 'material-ui/svg-icons/communication/location-on';
+import Forum from 'material-ui/svg-icons/communication/forum';
 import ThumbUp from 'material-ui/svg-icons/action/thumb-up';
 import Comment from 'material-ui/svg-icons/Communication/comment';
 import Share from 'material-ui/svg-icons/Social/share';
@@ -109,26 +110,25 @@ class SinglePostItem extends Component {
 	            <div className="right-section clearfix">
 	            	<Link to={"/post/:" + post.postId}><h3>{post.title}</h3></Link>
 	            	<p>{post.postDescription}</p>
-	            	<section className="image_gallery clearfix">
+	            	<section className="image-gallery clearfix">
 	            		{ this.generateGallery(post.postImgUrls) }
 	            	</section>
-	            	<Link to={"/map/:" + post.postCoordinate.latitude + "+" + post.postCoordinate.longitude} className="post-location clearfix" >
-						<FlatButton style={style.flatButton}  icon={<CommunicationLocationOn style={style.icon} color={style.icon}/>} />
-	            		{post.postLocation}
-	            	</Link>
 	            	<div>
 		            	<div className="more-section">
 			            	<div className="others-section" id="others-section" ref={(div) => { this.othersSection = div; }}>
-			            		<a onClick={this.toggleLike()}> 
-								<FlatButton style={style.flatButton} icon={<ThumbUp style={style.icon} color={style.icon}/>} />
+			            		<a className="more-icon" onClick={this.toggleLike()}> 
+									<FlatButton  style={style.flatButton} icon={<ThumbUp style={style.icon} color={style.icon}/>} />
 			            			{post.postLikes.length}
 			            		</a>
-			            		<Link to={"/post/:" + post.postId + "/comment"}>
+			            		<Link className="more-icon" to={"/post/:" + post.postId + "/comment"}>
 									<FlatButton style={style.flatButton} icon={<Comment style={style.icon} color={style.icon}/>} />
 			            			{post.postComments.length}
 			            		</Link>
-			            		<Link to={"/post/:" + post.postId + "/share"}>
+			            		<Link className="more-icon" to={"/post/:" + post.postId + "/share"}>
 									<FlatButton style={style.flatButton} icon={<Share style={style.icon} color={style.icon}/>} />
+			            		</Link>
+			            		<Link className="more-icon" to={"chat/:" + post.authorId}>
+									<FlatButton style={style.flatButton} icon={<Forum style={style.icon} color={style.icon}/>} />
 			            		</Link>
 			            	</div>
 			            	<div className="expand-button">
@@ -137,6 +137,10 @@ class SinglePostItem extends Component {
 		            	</div>
 	            		<p>${post.postPrice}/ per serve | ({post.postPortions}) portions left</p>
 	            	</div>
+	            	<Link to={"/map/:" + post.postCoordinate.latitude + "+" + post.postCoordinate.longitude} className="post-location clearfix" >
+						<FlatButton style={style.flatButton}  icon={<CommunicationLocationOn style={style.icon} color={style.icon}/>} />
+	            		{post.postLocation}
+	            	</Link>
 	            	<div className="purchase-buttons">
 	            		<RaisedButton label="add to list" primary="true" style={style.button}/>
 	            		<RaisedButton label="Order" primary="true" style={style.button}/>

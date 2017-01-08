@@ -388,10 +388,9 @@ h5{
 }
 /*  4.3. subscription */
 
-.image_gallery{
+.image-gallery{
 	display:block;
 	clear:both;
-	padding-bottom:30px;
 }
 
 .nine-layout{
@@ -443,10 +442,13 @@ h5{
 .others-section{
 	display:none;
 	position: absolute;
-    top: 14px;
     right: 40px;
+    width:175px;
 }
 
+.more-icon{
+	display:inline-block;
+}
 /*=====================5.0 footer===========================*/
 
 /*=====================6.0 Responsive===========================*/
