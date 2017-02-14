@@ -1,6 +1,7 @@
 import axios from "axios";
 import {errorPopup} from "./errorActions";
 import {startLoading, finishLoading} from "./loadingActions"
+
 export const initSubscriptionsPostsAction = (posts) => {
     return {
     	type: "INIT_POSTS",
@@ -18,7 +19,7 @@ export const initNearbyPostsAction = (posts) => {
 export const postListCall = (query) => {
 	return dispatch => {
 		dispatch(startLoading());
-		axios.get('http://www.mocky.io/v2/58634a5d0f00000224175621'+ query)
+		axios.post('http://www.mocky.io/v2/58634a5d0f00000224175621',query)
 		.then(function (res) {
 			dispatch(finishLoading());
 			dispatch(initNearbyPostsAction(res.data));

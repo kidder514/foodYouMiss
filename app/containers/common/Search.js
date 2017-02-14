@@ -1,13 +1,14 @@
 import React, {Component} from 'react';
 import {connect} from "react-redux";
-import SearchAction from "../../actions/SearchActions"
+import { postListCall } from "../../actions/postActions"
 import SearchBox from "../../components/common/SearchBox"
 
 const mapDispatchToProps = (dispatch) => {
 	return {
-		doSearch: (keyword) =>{
-			dispatch(searchPostsCall(keyword));
+		doSearch: (query) =>{
+			dispatch(postListCall(query));
 		}
 	};
 };
+
 export default connect(null, mapDispatchToProps)(SearchBox);

@@ -266,6 +266,10 @@ h5{
 
 /* 4.1 general */
 
+body{
+	background-color: #f25d30;
+}
+
 .full-width-wrapper{
 	display: block;
 	width:100%;
@@ -290,9 +294,14 @@ h5{
 	padding-top:40px;
 }
 
-.post-list-container{
+.post-list{
 	width:66%;
 	float:left;
+}
+
+.post-list-container,
+.search-box{
+	width:100%;
 }
 
 .sidebar{

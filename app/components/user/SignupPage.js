@@ -114,7 +114,8 @@ class SignupPage extends Component {
 			if(isPasswordValid(this.state.password)){
 				state_cache.errorPassword = "";
 			}else{
-				state_cache.errorPassword = "Password must has at least 8 characters with only letters and numbers, and contain at least one capital letter and one number.";
+				state_cache.errorPassword = "Password must has at least 8 characters with only letters"
+				+ "and numbers, and contain at least one capital letter and one number.";
 			}
 		}
 
@@ -167,7 +168,11 @@ class SignupPage extends Component {
 			state_cache.recapResponse = this.recapResponse;
 			state_cache.isValid = true;
 			this.setState(state_cache,function(){
-				this.props.signin({"email": this.state.email, "password": MD5(this.state.password), "recapResponse": this.state.recapResponse});
+				this.props.signin({
+					"email": this.state.email, 
+					"password": MD5(this.state.password), 
+					"recapResponse": this.state.recapResponse
+				});
 			});
 		}else{
 			state_cache.isValid = false;

@@ -29,7 +29,7 @@ class HomePage extends Component{
 		  					<SearchBox />
 		  					<PostList data={this.props.postListData} />
 		  				</div>
-		            	<div className="sidebar">
+						<div className="sidebar">
 		            		<SideBar currentPage={"home"} />
 		                </div>
 		  			</div>
@@ -39,7 +39,15 @@ class HomePage extends Component{
   			return (
   				<div className="full-width-wrapper">
   					<div className="content-wrapper">
-  						Sorry, there is no cook in this area.
+  						<div className="post-list">
+		  					<SearchBox />
+	  						<div>
+	  							Sorry, there is no cook in this area.
+	  						</div>
+  						</div>
+						<div className="sidebar">
+		            		<SideBar currentPage={"home"} />
+		                </div>
   					</div>
   				</div>
   			);
