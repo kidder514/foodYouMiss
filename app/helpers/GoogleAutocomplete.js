@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import TextField from 'material-ui/TextField';
+import TextField from '../uicomponent/form/TextField';
 
 export default class extends Component{
 	constructor(props){
@@ -61,18 +61,21 @@ export default class extends Component{
 	}
 	
 	render(){
-		let style = this.props.style;
 
 		return(
-			<input 
-				id="autocomplete"
-				className="autocomplete"
-				ref="autocomplete"
-				onFocus={this.geolocate}
-				type="text"
-				onChange={this.onChange}
-			/>
-
+	    	<div className="textfield-wrapper" >
+				<input 
+					id="autocomplete"
+					className="autocomplete textfield-input"
+					ref="autocomplete"
+					onFocus={this.geolocate}
+					onChange={this.onChange}
+					style={this.props.style ? this.props.style : {}}
+	    			width={this.props.width ? this.props.width : ""}
+		    		placeholder={this.props.placeHolder ? this.props.placeHolder : ""}
+				/>
+				<p className="textfield-error-text">{this.props.errorText ? this.props.errorText : ""}</p>
+			</div>
 		);
 	}
 }

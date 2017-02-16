@@ -1,9 +1,8 @@
 import React, {Component} from 'react';
-import IconButton from 'material-ui/IconButton';
-import TextField from 'material-ui/TextField';
-import Search from 'material-ui/svg-icons/action/search';
-import SelectField from 'material-ui/SelectField';
-import MenuItem from 'material-ui/MenuItem';
+import TextField from '../../uicomponent/form/TextField';
+import SingleSelection from '../../uicomponent/form/SingleSelection';
+import OptionItem from '../../uicomponent/form/OptionItem';
+import IconButton from '../../uicomponent/button/IconButton'
 import Gautocomplete from "../../helpers/GoogleAutocomplete"
 
 class SearchBox extends Component {
@@ -18,7 +17,7 @@ class SearchBox extends Component {
 			location:"",
 			errorLocation:"",
 			coordinate:"",
-			ratio:"",
+			ratio:"1",
 			errorRatio:""
 		};
 
@@ -82,34 +81,35 @@ class SearchBox extends Component {
     				autocompleteOnChange={this.autocompleteOnChange}
     			/>
 	    		<TextField 
+	    			id="id"
 	    			value={this.state.keyword}
 	    			onChange={this.onChange}
-	    			type="text"
 	    			name="keyword"
 	    			errorText={this.state.errorKeyword}
-	    			errorStyle={style.error}
-	    			floatingLabelText="Search keyword"
-	    			floatingLabelStyle={style.hint} 
-	    			underlineFocusStyle={style.underlineFocus}
+	    			placeHolder="Search keyword"
 		    	/>
-                <SelectField
-                	value={this.state.ratio}
+		    	<SingleSelection
+	    			label="Ratio"
                 	onChange={this.onChange}
+	    			value={this.state.ratio}
                 	name="ratio"
-	    			floatingLabelText="Ratio"
-	    			// floatingLableStyle={style.hint}
-	    			// menuItemStyle={style.menuStyle}
+	    			errorText={this.state.errorRatio}
                 >
-                	<MenuItem value={1} primaryText="1 KM"/>
-                	<MenuItem value={2} primaryText="2 KM" />
-                	<MenuItem value={5} primaryText="5 KM " />
-                	<MenuItem value={10} primaryText="10 KM" />
-                	<MenuItem value={15} primaryText="15 KM" />
-                </SelectField>
-	            <IconButton style={style.button} iconStyle={style.icon} onClick={this.validateData}>
-                    <Search className="menu-icon" color={"#fff"}/>
-                </IconButton>
+                	<OptionItem value={1} label="1 KM" />
+                	<OptionItem value={2} label="2 KM" />
+                	<OptionItem value={5} label="5 KM " />
+                	<OptionItem value={10} label="10 KM" />
+                	<OptionItem value={15} label="15 KM" />
+                </SingleSelection>
 
+                {
+	            <IconButton 
+	            	style={style.button}
+	            	iconStyle={style.icon} 
+	            	onClick={this.validateData}
+	            	icon="search"
+	            />
+				}
 	    	</div>
 	    );
  	}

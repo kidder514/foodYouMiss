@@ -7,7 +7,7 @@ class Wrapper extends Component {
 	    return (
 	        <div className="wrapper">
 	            {/*<MenuLayer />*/}
-	            {/*this.props.children*/}
+	            {this.props.children}
 	        </div>
 	    )
   	}
