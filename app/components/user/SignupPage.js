@@ -1,10 +1,7 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import validator from "Validator";
-import TextField from 'material-ui/TextField';
-import ExpandTransition from 'material-ui/internal/ExpandTransition';
-import RaisedButton from 'material-ui/RaisedButton';
-import FlatButton from 'material-ui/FlatButton';
+import TextField from '../../uicomponent/form/TextField';
 import ReCAPTCHA from "react-google-recaptcha";
 import MD5 from "../../helpers/MD5";
 import Gautocomplete from "../../helpers/GoogleAutocomplete"
@@ -206,53 +203,43 @@ class SignupPage extends Component {
 			    			name="email"
 			    			errorText={this.state.errorEmail}
 			    			errorStyle={style.error}
-			    			floatingLabelText="E-mail"
-			    			floatingLabelStyle={style.hint} 
-			    			underlineFocusStyle={style.underlineFocus}
+			    			placeholder="E-mail"
 		    			/><br />
 						<TextField 
 			    			value={this.state.password}
 			    			onChange={this.onChange}
 			    			type="password"
 			    			name="password"
-			    			floatingLabelText="Password"
+			    			placeholder="Password"
 			    			errorText={this.state.errorPassword}
 			    			errorStyle={style.error}
-			    			floatingLabelStyle={style.hint} 
-			    			underlineFocusStyle={style.underlineFocus}
 		    			/><br />
 						<TextField 
 			    			value={this.state.confirmPassword}
 			    			onChange={this.onChange}
 			    			type="password"
 			    			name="confirmPassword"
-			    			floatingLabelText="Confirm Password"
+			    			placeholder="Confirm Password"
 			    			errorText={this.state.errorConfirmPassword}
 			    			errorStyle={style.error}
-			    			floatingLabelStyle={style.hint} 
-			    			underlineFocusStyle={style.underlineFocus}
 		    			/><br />
 						<TextField 
 			    			value={this.state.firstName}
 			    			onChange={this.onChange}
 			    			type="text"
 			    			name="firstName"
-			    			floatingLabelText="First Name"
+			    			placeholder="First Name"
 			    			errorText={this.state.errorFirstName}
 			    			errorStyle={style.error}
-			    			floatingLabelStyle={style.hint} 
-			    			underlineFocusStyle={style.underlineFocus}
 		    			/><br />
 						<TextField 
 			    			value={this.state.lastName}
 			    			onChange={this.onChange}
 			    			type="text"
 			    			name="lastName"
-			    			floatingLabelText="Last Name"
+			    			placeholder="Last Name"
 			    			errorText={this.state.errorLastName}
 			    			errorStyle={style.error}
-			    			floatingLabelStyle={style.hint} 
-			    			underlineFocusStyle={style.underlineFocus}
 		    			/><br />
 
 		    			<Gautocomplete 
@@ -268,13 +255,12 @@ class SignupPage extends Component {
 					      	onExpired={this.recaptchaExpiredCallback}
 					    />
 		    			<p>{this.state.errorRecaptcha}</p>
-		    			<RaisedButton 
+		    			<button 
 			    			label="Sign Up" 
-			    			primary={true} 
 			    			type="submit"
 			    			onClick={this.validateData}
 			    			disabled={this.state.disableSubmit}
-						/>
+						>Sign Up</button>
 
 	            	</form>
 		        </div>

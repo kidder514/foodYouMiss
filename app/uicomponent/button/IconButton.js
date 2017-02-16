@@ -12,5 +12,4 @@ class IconButton extends Component {
  	}
 }
 
-
 export default IconButton;

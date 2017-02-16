@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
-import Dialog from 'material-ui/Dialog';
-import FlatButton from 'material-ui/FlatButton';
+import Dialog from '../../uicomponent/component/Dialog';
 
 class ErrorPage extends Component {
 
@@ -21,27 +20,13 @@ class ErrorPage extends Component {
 
 	render() {
 
-	  	const button = [
-	  		<FlatButton
-	  		   label="Ok"
-	  		   primary={true}
-	  		   backgroundColor={"#B56148"}
-	  		   onTouchTap={this.handleClose}
-	  		/>,
-	  	]
-
 	    return (
 	        <Dialog
-	        	actions={button}
 	          	title="Ooooops."
-	          	modal={true}
+	          	msg="We can't find the content you are looking for"
 	          	open={this.props.error != ""}
-	          	bodyStyle={{color:"#B56148"}}
-	          	titleStyle={{color:"#B56148"}}
 	          	onRequestClose={this.handleClose}
-	        >
-	        {this.props.error}
-	        </Dialog>
+	        />
 	    )
 	}
 }

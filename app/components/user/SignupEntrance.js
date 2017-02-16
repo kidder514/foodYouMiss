@@ -1,5 +1,4 @@
 import React, {Component} from "react";
-import RaisedButton from 'material-ui/RaisedButton';
 import {Link} from "react-router";
 
 class SignupEntrance extends Component{
@@ -10,27 +9,24 @@ class SignupEntrance extends Component{
 				<div className="signupentrance-content-wrapper">
 					<h1>Sign in with existing account</h1>
 					<Link to="/signup">
-						<RaisedButton
-							className="raised-button" 
+						<button
+							className="raised-button btn default-btn" 
 			    			label="Sign Up"
-			    			secondary={true}
-						/>
+						>Sign Up</button>
 					</Link>
 					<br />
 					
-	    			<RaisedButton 
-						className="raised-button" 
+	    			<button 
+						className="raised-button btn btn-default"
 		    			label="Sign up with google"
-		    			secondary={true} 
 		    			type="submit"
-					/>
+					>Sign up with google</button>
 					<br />
 
-	    			<RaisedButton 
-						className="raised-button" 
+	    			<button 
+						className="raised-button btn btn-default" 
 		    			label="Sign up with facebook"
-		    			secondary={true} 
-					/>
+					>Sign up with facebook</button>
 					<br />
 				</div>
 			</div>

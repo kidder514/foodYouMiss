@@ -23,7 +23,7 @@ class TextField extends Component {
 	    			placeholder={props.placeHolder ? props.placeHolder : ""}
 	    			value={props.value ? props.value : ""}
 	    		/>
-	    		<p className="textfield-error-text">{props.errorText ? props.errorText : ""}</p>
+	    		<p className="textfield-error-text" style={props.errorStyle}>{props.errorText ? props.errorText : ""}</p>
 	    	</div>
 	    );
  	}

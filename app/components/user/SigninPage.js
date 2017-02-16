@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import validator from "Validator";
-import TextField from 'material-ui/TextField';
-import RaisedButton from 'material-ui/RaisedButton';
+import TextField from '../../uicomponent/form/TextField';
 import ReCAPTCHA from "react-google-recaptcha";
 import MD5 from "../../helpers/MD5";
 
@@ -111,20 +110,16 @@ class SigninPage extends Component {
 			    			name="email"
 			    			errorText={this.state.errorEmail}
 			    			errorStyle={style.error}
-			    			floatingLabelText="E-mail"
-			    			floatingLabelStyle={style.hint} 
-			    			underlineFocusStyle={style.underlineFocus}
+			    			placeholder="E-mail"
 		    			/><br />
 						<TextField 
 			    			value={this.state.password}
 			    			onChange={this.onChange}
 			    			type="password"
 			    			name="password"
-			    			floatingLabelText="Password"
+			    			placeholder="Password"
 			    			errorText={this.state.errorPassword}
 			    			errorStyle={style.error}
-			    			floatingLabelStyle={style.hint} 
-			    			underlineFocusStyle={style.underlineFocus}
 		    			/><br />
 
 					    <ReCAPTCHA
@@ -135,13 +130,12 @@ class SigninPage extends Component {
 					      	onExpired={this.recaptchaExpiredCallback}
 					    />
 		    			<p>{this.state.errorRecaptcha}</p>
-		    			<RaisedButton 
+		    			<button 
+		    				class="btn default-btn"
 			    			label="Sign In"
-			    			primary={true} 
 			    			type="submit"
 			    			onClick={this.onSubmit}
-						/>
-
+						>Sign In</button>
 	            	</form>
 	            </div>
 	        </div>

@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import {connect} from "react-redux";
-import RefreshIndicator from "material-ui/RefreshIndicator";
 
 class ImgLayerPage extends Component {
 	constructor(props){
@@ -46,13 +45,13 @@ class ImgLayerPage extends Component {
  		}
 
 	    return (
-	    	<div className={"img-layer " + imgLayerIsOpen} onTouchTap={() => this.handleCloseLayer()} >
-	    			<span className="icon icon-arrow-left" onTouchTap={(e) => this.handleArrowClick(e,imgList,-1)}>{'<'}</span>
+	    	<div className={"img-layer " + imgLayerIsOpen} onClick={() => this.handleCloseLayer()} >
+	    			<span className="icon icon-arrow-left" onClick={(e) => this.handleArrowClick(e,imgList,-1)}>{'<'}</span>
 	    			<div className="img-wrapper">
 	    				<span></span>
-	    				<img src={currentImgUrl} className="item-image" onTouchTap={(e) => this.handleImageClick(e)}/>
+	    				<img src={currentImgUrl} className="item-image" onClick={(e) => this.handleImageClick(e)}/>
 	    			</div>
-	    			<span className="icon icon-arrow-right" onTouchTap={(e) => this.handleArrowClick(e,imgList,1)}>{'>'}</span>
+	    			<span className="icon icon-arrow-right" onClick={(e) => this.handleArrowClick(e,imgList,1)}>{'>'}</span>
 	    	</div>
 	    );
  	}

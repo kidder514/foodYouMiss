@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
-import {connect} from "react-redux";
-import RefreshIndicator from "material-ui/RefreshIndicator";
+import RefreshIndicator from "../../uicomponent/button/RefreshIndicator";
 
 class LoadingPage extends Component {
 
@@ -25,7 +24,6 @@ class LoadingPage extends Component {
 	    return (
 	    	<div className={"loading-spinner " + display} >
 		    	<RefreshIndicator
-					size={40}
 		    	 	style={style.spinner}
 		    		status="loading"
 		    	/>
