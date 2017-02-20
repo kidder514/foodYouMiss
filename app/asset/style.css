@@ -1,463 +1,68 @@
 /*=====================1.0 CSS Reset===========================*/
 
-/* 1.1 general reset*/
-
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
-	font-family: Roboto, sans-serif, Helvetica Neue,HelveticaNeue,Helvetica,Arial,sans-serif;
-}
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
-}
-body {
-	line-height: 1;
-}
-ol, ul {
-	list-style: none;
-}
-blockquote, q {
-	quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
-}
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
-}
-
-/* 1.2 Browser specific reset*/
-
-input:-webkit-autofill,
-input:-webkit-autofill:hover,
-input:-webkit-autofill:focus,
-input:-webkit-autofill:active,
-textarea:-webkit-autofill,
-select:-webkit-autofill{
-    -webkit-transition-delay: 9999s;
-    -webkit-transition: color 9999s ease-out, background-color 9999s ease-out;
-}
-
-
+/*remove the blue border of default chrome style*/
+:focus{outline:0 !important;}
 /*=====================2.0 General===========================*/
-
-span, h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td{
-	line-height: 1.4em;
-	font-size:13px;
-	color:#fff;
+.outter-wrapper{
+	background-color: #F25D30;
+	padding-top: 70px;
+	overflow: hidden;
 }
 
-p, blockquote, pre,
-abbr, acronym, address, big, cite, code,
-del, dfn, em, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center{
-	padding:5px 0;
-	color:#fff;
+.wrapper{
+	padding-top:30px;
 }
 
-h1{
-	font-size:24px;
-	padding:10px 0;
-}
-
-h2{
-	font-size:22px;
-	padding:9px 0;
-}
-
-h3{
-	font-size:20px;
-	padding:8px 0;
-}
-
-h4{
-	font-size:18px;
-	padding:7px 0;
-}
-
-h5{
-	font-size:16px;
-	padding:6px 0;
-}
-
-::-webkit-input-placeholder{
-	color: rgba(255, 255, 255, 0.6);
-	font-size:13px;
-}
-
-.clearfix:after { 
-   content: " ";
-   display: block; 
-   height: 0; 
-   clear: both;
-}
-
-.clearboth{
-	clear:both;
-}
-
-.hidden{
-	display:none;
-}
-
-.icon{
-    position: absolute;
-    font-size: 24px;
-    top: 50%;
-    padding: 5px 15px;
-    border: 2px solid #fff;
-    border-radius: 50%;
-}
-
-.icon:hover{
-	background-color: rgba(255, 255, 255, 0.3);
-	cursor:pointer;
-}
-
-.icon-arrow-left{
-	left:5%;
-}
-
-.icon-arrow-right{
-	right:5%;
-}
-
-.map {
-	height:100%;
-}
-
-.recaptcha > div{
-	margin:auto;
-}
-
-.raised-button{
-	margin: 5px 3px;
-}
-
-.autocomplete{
-	width:256px;
-	height:24px;
-	font-size:16px;
-	margin:15px 0;
-    border: none;
-    border-bottom:1px solid rgba(255, 255, 255, 0.6);
-    outline: none;
-    background-color: rgba(0, 0, 0, 0);
-    color: rgb(255, 255, 255);
-    box-sizing: border-box;
-}
-
-/* google map -> places autocomplete -> pridicted locations style */
-.pac-item span{
-	color:#000;
-}
-
-.img-layer{
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    background-color: rgba(0, 0, 0,0.9);
-    z-index: 99;
-    overflow:hidden;
-}
-
-.img-wrapper{
-	width:70%;
-	height:70%;
-	overflow:hidden;	
-	margin:15% 0 0 15%;
-	text-align: center;
-}
-
-.img-wrapper > *{
-	vertical-align: middle;
-}
-
-.img-wrapper span{
-	display: inline-block;
-	height:100%;
-}
-
-.img-wrapper img{
-	width:auto;
-	max-width:100%;
-	height:auto;
-	max-height:100%;
-}
 
 /*=====================3.0 Header===========================*/
-.menu-layer{
-	position: fixed;
-	left:0;
+
+.menu{
+	position:fixed;
 	top:0;
-	z-index: 99;
-	height:60px;
+	left:0;
 	width:100%;
-	background-color:#F4511E;
+	background-color:#F25D30;
+-webkit-box-shadow: 0px 3px 6px 0px rgba(143,143,143,1);
+-moz-box-shadow: 0px 3px 6px 0px rgba(143,143,143,1);
+box-shadow: 0px 3px 6px 0px rgba(143,143,143,1);
+}
+
+.menu .menu-item-button{
+	padding:0;
+	height:64px;
+	width:64px;
+}
+
+.menu-item-button button{
 	color:#fff;
+	height:100%;
+	border:none;
+	background-color:transparent;
+	border-radius: 0;
+	box-shadow:none;
 }
 
-.menu-layer a{
-	color: #fff;
-	text-decoration: none;
-	display: block;
-	margin:0;
-}
-
-.logo
-{
-	float:left;
-}
-
-.menu-list{
-	float:right;
-}
-
-.menu-item{
-	display:inline-block;
-	float:left;
-}
-.menu-item-button > button{
-	transition: background-color 0.6s ease !important;
-	border-radius:50%;
-}
-
-.current-menu-item > button{
-	transition: background-color 0.6s ease !important;
-	background-color:#E64A19 !important;
-}
-
-.mobile-menu{
-	display:none;
+.menu-item-button button:hover,
+.menu-item-button button:focus,
+.menu-item-button button:active,
+.menu-item-button button:active:focus,
+.current-menu-item button{
+	background-color:#fff;
+	color:#F25D30;
 }
 
 /*=====================4.0 Body===========================*/
 
 /* 4.1 general */
 
-body{
-	background-color: #f25d30;
-}
-
-.full-width-wrapper{
-	display: block;
-	width:100%;
-	min-height:100vh;
-	height:auto;
-	background-color: #f25d30;
-	background-size: cover;
-	padding-top:60px;
-}
-
-.content-wrapper{
-	width:940px;
-	max-width:100%;
-	margin:60px auto 0;
-	height:100%;
-
-}
-
-.subscriptions{
-	width:640px;
-	float:left;
-	padding-top:40px;
-}
-
-.post-list{
-	width:66%;
-	float:left;
-}
-
-.post-list-container,
-.search-box{
-	width:100%;
-}
-
-.sidebar{
-	width:31%;
-	float:right;
-	margin-left:3%;
-	height:auto;
-	background-color: red;
-}
-
-.raised-button{
-	margin:5px 10px;
-}
-
-.loading-spinner{
-	background-color:rgba(0,0,0, 0.541176);
-	position:fixed;
-	display: block;
-	left:0;
-	top:0;
-	overflow-x:hidden;
-	overflow-y:hidden;
-	width:100%;
-	height:100%;
-	z-index: 999;
-}
-
-.loading-spinner.hidden{
-	display:none;
-}
-
-.login{
-	position:fixed;
-	right: 5px;
-	top:65px;
-}
-.signup{
-	position:fixed;
-	right: 5px;
-	top:85px;
-}
-
-.content-logo{
-	background-image:url("img/content-logo.png");
-    display: block;
-    height: 37px;
-    width: 100%;
-    background-size: contain;
-    background-repeat: no-repeat;
-}
 
 
 /* 4.2 home */
 
-.signin-content-wrapper,
-.signupentrance-content-wrapper
-{
-	display:block;
-	position:absolute;
-	width:500px;
-	height:auto;
-	top:50%;
-	left:50%;
-	margin-top:-70px;
-	margin-left:-250px;
-	border-radius: 15px;
-	text-align: center;
-	/*background:rgba(256,256,256,0.3);*/
-	color:#fff;
-}
-.signup-content-wrapper{
-	text-align: center;
-    margin-top: 30px;
-}
 
-.homepage-button{
-	display: block;
-    margin: 10px auto;
-    width: 300px; 
-}
-
-.signup-section{
-	float:left;
-}
-
-.single-post{
-	background-color:#fff;
-	margin-bottom:30px;
-}
-
-.single-post *{
-	color:#000;
-}
 /*  4.3. subscription */
 
-.image-gallery{
-	display:block;
-	clear:both;
-}
 
-.nine-layout{
-	box-sizing: border-box;
-	display: block;
-	float: left;
-	width:33.333333%;
-	border: 2px solid #fff;
-	padding-bottom: 33.33333%;
-	overflow: hidden;
-}
-
-.four-layout{
-	box-sizing: border-box;
-	display: block;
-	float: left;
-	width:50%;
-	border: 2px solid #fff;
-	padding-bottom: 50%;
-	overflow: hidden;
-}
-
-.one-layout{
-	box-sizing: border-box;
-	display: block;
-	width:100%;
-	border: 2px solid #fff;
-	padding-bottom: 100%;
-	overflow: hidden;
-}
-
-.single-image{
-	background-size: cover;
-	background-repeat:no-repeat;
-	background-position:center;
-}
-
-.purchase-buttons{
-	float:right;
-	clear:both;
-}
-
-.more-section{
-	float:right;
-	position:relative;
-	clear:both;
-}
-
-.others-section{
-	display:none;
-	position: absolute;
-    right: 40px;
-    width:175px;
-}
-
-.more-icon{
-	display:inline-block;
-}
 /*=====================5.0 footer===========================*/
 
 /*=====================6.0 Responsive===========================*/

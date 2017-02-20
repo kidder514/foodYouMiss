@@ -8,7 +8,7 @@ class OutterWrapper extends Component{
 
     render(){
 	    return (
-	    	<div className="outter-wrapper">
+	    	<div className="outter-wrapper clearfix">
 				{this.props.children}
 					<ErrorPopup />
 					<LoadingSpinner />
