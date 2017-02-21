@@ -23,7 +23,7 @@ class ErrorPage extends Component {
 	    return (
 	        <Dialog
 	          	title="Ooooops."
-	          	msg="We can't find the content you are looking for"
+	          	msg="We can't find the content you are looking for."
 	          	open={this.props.error != ""}
 	          	onRequestClose={this.handleClose}
 	        />
