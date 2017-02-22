@@ -5,23 +5,16 @@ import {Link} from "react-router";
 class LoginButton extends Component{
 
   	render(){
-      var display;
-      if(this.props.userStatus.isLoggedIn){
-          display = "hidden";
-      }else{
-          display = "";
-      }
-
   		return (
-          <div>
-              <Link to="/signin" className={"login " + display}>
-                	login
-      			  </Link>	
-              <Link to="/signupentrance" className={"signup" + display}>
-                   Sign-up
-              </Link>
-          </div>
-  			);
+			<div className="login-button" style={this.props.userStatus.isLoggedIn ? {display:"none"} : {display:"block"}}>
+			  	<Link to="/signin" className="login ">
+			    	<button className="btn btn-default btn-sm btn-block">login</button>
+				</Link>	
+			  	<Link to="/signupentrance">
+			    	<button className="btn btn-default btn-sm btn-block">Sign-up</button>
+			  	</Link>
+			</div>
+  		);
     }
 }
 

@@ -14,6 +14,12 @@
 		width:auto;
 	}
 
+	.login-button{
+		position:fixed;
+		top:46px;
+
+	}
+
 }
 /*=====================3.0 Body===========================*/
 

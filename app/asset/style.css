@@ -1,7 +1,13 @@
 /*=====================1.0 CSS Reset===========================*/
 
 /*remove the blue border of default chrome style*/
-:focus{outline:0 !important;}
+:focus{
+	outline:0 !important;
+}
+
+a:hover{
+	text-decoration:none !important;
+}
 /*=====================2.0 General===========================*/
 .outter-wrapper{
 	background-color: #F25D30;
@@ -20,6 +26,7 @@
 	width:100%;
 	height:100%;
 	background-color:rgba(56, 56, 56,0.7);
+	z-index:10;
 }
 
 .centerbox-wrapper{
@@ -48,11 +55,11 @@
 }
 
 .centerbox.spinner{
-	background-color:transparent;
-	color:#fff;
+	border-radius: 20px;
+	color:#F25D30;
 	padding:0;
 	height:40px;
-    -webkit-animation: spin 2s infinite linear;
+    -webkit-animation: spin 1.5s infinite linear;
 }
 
 .material-icons.spinner{
@@ -62,6 +69,16 @@
 @-webkit-keyframes spin {
     0%  {-webkit-transform: rotate(0deg);}
     100% {-webkit-transform: rotate(360deg);}   
+}
+
+.login-button{
+	position:fixed;
+	top:70px;
+	right:10px;
+}
+
+.login-button button{
+	margin:6px 0;
 }
 /*=====================3.0 Header===========================*/
 
