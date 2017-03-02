@@ -61,12 +61,11 @@ class SignupPage extends Component {
 
 	onChange(e){
 		this.setState({[e.target.name]: e.target.value},() => {this.validateSubmitButton()});
-		console.log(this.state.disableSubmit);
-		console.log(this.state)
 	}
 
 	autocompleteOnChange(e){
-		if(this.location != "" && e.target.value != "" ){
+		console.log("autocompleteOnChange");
+		if(this.state.location != ""){
 			this.setState({location:"",coordinate:""},() => {this.validateSubmitButton()});
 		}
 	}
@@ -142,13 +141,13 @@ class SignupPage extends Component {
 			}
 		}
 
-		if(this.location_cache == ""){
+		if(this.state.location == "" || this.state.location == undefined){
 			state_cache.errorLocation = "Please choose a location from prompted list";
 		}else{
 			state_cache.errorLocation = "";
 		}
 
-		if(this.recapResponse == ""){
+		if(this.state.recapResponse == ""){
 			state_cache.errorRecaptcha = "Please check the Recaptcha, your Recaptcha is not valid or expired.";
 		}else{
 			state_cache.errorRecaptcha = "";
@@ -165,7 +164,7 @@ class SignupPage extends Component {
 			state_cache.recapResponse = this.recapResponse;
 			state_cache.isValid = true;
 			this.setState(state_cache,function(){
-				this.props.signin({
+				this.props.signup({
 					"email": this.state.email, 
 					"password": MD5(this.state.password), 
 					"recapResponse": this.state.recapResponse
@@ -179,90 +178,76 @@ class SignupPage extends Component {
 	}
 
   	render(){
-		let style={
-			hint:{
-				color: "rgba(255, 255, 255, 0.6)"
-			},
-			underlineFocus:{
-		        borderColor: "#fff",
-			},
-			error:{
-				color: "#fff",
-			}
-		};
 
 	    return (
-	        <div className="full-width-wrapper">
-		        <div className="signup-content-wrapper">
-					<form onSubmit={this.onSubmit}>
-	            		<h1>Register a new account</h1>
-						<TextField 
-			    			value={this.state.email}
-			    			onChange={this.onChange}
-			    			type="text"
-			    			name="email"
-			    			errorText={this.state.errorEmail}
-			    			errorStyle={style.error}
-			    			placeholder="E-mail"
-		    			/><br />
-						<TextField 
-			    			value={this.state.password}
-			    			onChange={this.onChange}
-			    			type="password"
-			    			name="password"
-			    			placeholder="Password"
-			    			errorText={this.state.errorPassword}
-			    			errorStyle={style.error}
-		    			/><br />
-						<TextField 
-			    			value={this.state.confirmPassword}
-			    			onChange={this.onChange}
-			    			type="password"
-			    			name="confirmPassword"
-			    			placeholder="Confirm Password"
-			    			errorText={this.state.errorConfirmPassword}
-			    			errorStyle={style.error}
-		    			/><br />
-						<TextField 
-			    			value={this.state.firstName}
-			    			onChange={this.onChange}
-			    			type="text"
-			    			name="firstName"
-			    			placeholder="First Name"
-			    			errorText={this.state.errorFirstName}
-			    			errorStyle={style.error}
-		    			/><br />
-						<TextField 
-			    			value={this.state.lastName}
-			    			onChange={this.onChange}
-			    			type="text"
-			    			name="lastName"
-			    			placeholder="Last Name"
-			    			errorText={this.state.errorLastName}
-			    			errorStyle={style.error}
-		    			/><br />
-
-		    			<Gautocomplete 
-		    				handleLocaltion={this.handleLocaltion} 
-		    				autocompleteOnChange={this.autocompleteOnChange}
-		    			/><br />
-		    			<p className="locationError">{this.state.errorLocation}</p>
-					    <ReCAPTCHA
-					    	className="recaptcha"
-					      	ref="recaptcha"
-					      	sitekey="6Lf5EwwUAAAAAEddev4kBP7COg1RHlQWsI81uWdt"
-					      	onChange={this.recaptchaCallback}
-					      	onExpired={this.recaptchaExpiredCallback}
-					    />
-		    			<p>{this.state.errorRecaptcha}</p>
-		    			<button 
-			    			label="Sign Up" 
-			    			type="submit"
-			    			onClick={this.validateData}
-			    			disabled={this.state.disableSubmit}
-						>Sign Up</button>
-
-	            	</form>
+	        <div className="container">
+		        <div className="row">
+			        <div className="col-sm-8 col-sm-offset-2">
+						<form onSubmit={this.onSubmit}>
+		            		<h1>Register a new account</h1>
+							<TextField 
+				    			value={this.state.email}
+				    			onChange={this.onChange}
+				    			type="text"
+				    			name="email"
+				    			errorText={this.state.errorEmail}
+				    			placeholder="E-mail"
+			    			/><br />
+							<TextField 
+				    			value={this.state.password}
+				    			onChange={this.onChange}
+				    			type="password"
+				    			name="password"
+				    			placeholder="Password"
+				    			errorText={this.state.errorPassword}
+			    			/><br />
+							<TextField 
+				    			value={this.state.confirmPassword}
+				    			onChange={this.onChange}
+				    			type="password"
+				    			name="confirmPassword"
+				    			placeholder="Confirm Password"
+				    			errorText={this.state.errorConfirmPassword}
+			    			/><br />
+							<TextField 
+				    			value={this.state.firstName}
+				    			onChange={this.onChange}
+				    			type="text"
+				    			name="firstName"
+				    			placeholder="First Name"
+				    			errorText={this.state.errorFirstName}
+			    			/><br />
+							<TextField 
+				    			value={this.state.lastName}
+				    			onChange={this.onChange}
+				    			type="text"
+				    			name="lastName"
+				    			placeholder="Last Name"
+				    			errorText={this.state.errorLastName}
+			    			/><br />
+			    			<Gautocomplete 
+			    				handleLocaltion={this.handleLocaltion} 
+			    				autocompleteOnChange={this.autocompleteOnChange}
+				    			placeholder="Your Location"
+			    			/>
+			    			<p>{this.state.errorLocation}</p>
+			    			<br />
+						    <ReCAPTCHA
+						    	className="recaptcha"
+						      	ref="recaptcha"
+						      	sitekey="6Lf5EwwUAAAAAEddev4kBP7COg1RHlQWsI81uWdt"
+						      	onChange={this.recaptchaCallback}
+						      	onExpired={this.recaptchaExpiredCallback}
+						    />
+			    			<p>{this.state.errorRecaptcha}</p>
+			    			<button 
+			    				className={"btn btn-default " + (this.state.disableSubmit ? "disabled" : "")}
+				    			label="Sign Up" 
+				    			type="submit"
+				    			onClick={this.validateData}
+							>Sign Up</button>
+		            	</form>
+			        </div>
 		        </div>
 	        </div>
 	    )

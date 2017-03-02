@@ -85,58 +85,45 @@ class SigninPage extends Component {
 	}
 
   	render(){
-		let style={
-			hint:{
-				color: "rgba(255, 255, 255, 0.6)"
-			},
-			underlineFocus:{
-		        borderColor: "#fff",
-			},
-			error:{
-				color: "#fff",
-			}
-		};
-
 	    return (
-	        <div className="full-width-wrapper">
-	            <div className="signin-content-wrapper">
+	        <div className="container">
+		        <div className="row">
+			        <div className="col-sm-8 col-sm-offset-2">
 	            	<h1 className="content-logo"></h1>
-	            	<form onSubmit={this.onSubmit}>
-	            		<h1>Sign in with existing account</h1>
-						<TextField 
-			    			value={this.state.email}
-			    			onChange={this.onChange}
-			    			type="text"
-			    			name="email"
-			    			errorText={this.state.errorEmail}
-			    			errorStyle={style.error}
-			    			placeholder="E-mail"
-		    			/><br />
-						<TextField 
-			    			value={this.state.password}
-			    			onChange={this.onChange}
-			    			type="password"
-			    			name="password"
-			    			placeholder="Password"
-			    			errorText={this.state.errorPassword}
-			    			errorStyle={style.error}
-		    			/><br />
-
-					    <ReCAPTCHA
-					    	className="recaptcha"
-					      	ref="recaptcha"
-					      	sitekey="6Lf5EwwUAAAAAEddev4kBP7COg1RHlQWsI81uWdt"
-					      	onChange={this.recaptchaCallback}
-					      	onExpired={this.recaptchaExpiredCallback}
-					    />
-		    			<p>{this.state.errorRecaptcha}</p>
-		    			<button 
-		    				class="btn default-btn"
-			    			label="Sign In"
-			    			type="submit"
-			    			onClick={this.onSubmit}
-						>Sign In</button>
-	            	</form>
+		            	<form onSubmit={this.onSubmit}>
+		            		<h1>Sign in with existing account</h1>
+							<TextField 
+				    			value={this.state.email}
+				    			onChange={this.onChange}
+				    			type="text"
+				    			name="email"
+				    			errorText={this.state.errorEmail}
+				    			placeholder="E-mail"
+			    			/><br />
+							<TextField 
+				    			value={this.state.password}
+				    			onChange={this.onChange}
+				    			type="password"
+				    			name="password"
+				    			placeholder="Password"
+				    			errorText={this.state.errorPassword}
+			    			/><br />
+						    <ReCAPTCHA
+						    	className="recaptcha"
+						      	ref="recaptcha"
+						      	sitekey="6Lf5EwwUAAAAAEddev4kBP7COg1RHlQWsI81uWdt"
+						      	onChange={this.recaptchaCallback}
+						      	onExpired={this.recaptchaExpiredCallback}
+						    />
+			    			<p>{this.state.errorRecaptcha}</p>
+			    			<button 
+			    				className={"btn default-btn " + (this.state.disableSubmit ? "disabled" : "")}
+				    			label="Sign In"
+				    			type="submit"
+				    			onClick={this.onSubmit}
+							>Sign In</button>
+		            	</form>
+	            	</div>
 	            </div>
 	        </div>
 	    )

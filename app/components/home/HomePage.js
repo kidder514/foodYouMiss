@@ -23,13 +23,13 @@ class HomePage extends Component{
   	render(){
   		if(this.props.postListData.length > 0){
 	  		return(
-	  			<div className="full-width-wrapper">
-		  			<div className="content-wrapper">
-		  				<div className="post-list">
+	  			<div className="container">
+		  			<div className="row">
+		  				<div className="col-md-8">
 		  					<SearchBox />
 		  					<PostList data={this.props.postListData} />
 		  				</div>
-						<div className="sidebar">
+						<div className="col-md-4 hidden-sm">
 		            		<SideBar currentPage={"home"} />
 		                </div>
 		  			</div>
@@ -37,15 +37,15 @@ class HomePage extends Component{
 	  		);
   		}else{
   			return (
-  				<div className="full-width-wrapper">
-  					<div className="content-wrapper">
-  						<div className="post-list">
+  				<div className="container">
+  					<div className="row">
+  						<div className="col-md-8">
 		  					<SearchBox />
 	  						<div>
 	  							Sorry, there is no cook in this area.
 	  						</div>
   						</div>
-						<div className="sidebar">
+						<div className="col-md-4 hidden-sm">
 		            		<SideBar currentPage={"home"} />
 		                </div>
   					</div>

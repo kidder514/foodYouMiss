@@ -32,7 +32,9 @@ export default class extends Component{
 	}
 
 	componentWillUnmount(){
-		this.autocomplete.removeListener("place_changed", this.fillInAddress);
+		// this causes error, so it is commented out, now we need to make sure it does not
+		// duplicate autocomplete instance.
+		// this.autocomplete.removeListener("place_changed", this.fillInAddress);
 	}
 
 	geolocate(){
@@ -66,15 +68,12 @@ export default class extends Component{
 	    	<div className="textfield-wrapper" >
 				<input 
 					id="autocomplete"
-					className="autocomplete textfield-input"
+					className="autocomplete textfield-input form-control"
 					ref="autocomplete"
 					onFocus={this.geolocate}
 					onChange={this.onChange}
-					style={this.props.style ? this.props.style : {}}
-	    			width={this.props.width ? this.props.width : ""}
-		    		placeholder={this.props.placeHolder ? this.props.placeHolder : ""}
+		    		placeholder={this.props.placeholder  !== undefined ? this.props.placeholder : ""}
 				/>
-				<p className="textfield-error-text">{this.props.errorText ? this.props.errorText : ""}</p>
 			</div>
 		);
 	}

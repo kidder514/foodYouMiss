@@ -7,7 +7,6 @@ class MenuLayer extends Component{
     render() {
 
     return (
-        <div className="">
             <div className="menu clearfix">
                 <Link to="/" className="logo menu-item-button col-xs-2 col-sm-1 pull-left">
                     <IconButton icon={"home"} />
@@ -29,7 +28,6 @@ class MenuLayer extends Component{
                     <IconButton icon={"location_on"} />
                 </Link>
             </div>
-        </div>
         )
     }
 }

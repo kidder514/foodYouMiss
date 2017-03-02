@@ -11,19 +11,17 @@ class TextField extends Component {
 	    return (
 	    	<div className="textfield-wrapper" >
 	    		<input
-	    			id={props.id ? props.id : ""}
-	    		    className={props.className ? props.className : "textfield-input form-control " + props.className}
-	    		    ref={this.ref ? this.ref : ""}
-	    		    style={props.style ? props.style : {}}
-	    			type={props.type ? props.type : ""}
-	    			name={props.name ? props.name : ""}
-	    			width={props.width ? props.width : ""}
-	    			onChange={props.onChange ? props.onChange : ""}
-	    			onFocus={props.onFocus ? props.onFocus : ""}
-	    			placeholder={props.placeHolder ? props.placeHolder : ""}
-	    			value={props.value ? props.value : ""}
+	    			id={props.id !== undefined ? props.id : ""}
+	    		    className={props.className !== undefined ? "textfield-input form-control " + props.className : "textfield-input form-control"}
+	    		    ref={this.ref !== undefined ? this.ref : ""}
+	    			type={props.type !== undefined ? props.type : ""}
+	    			name={props.name !== undefined ? props.name : ""}
+	    			onChange={props.onChange !== undefined ? props.onChange : ""}
+	    			onFocus={props.onFocus !== undefined ? props.onFocus : ""}
+	    			placeholder={props.placeholder !== undefined ? props.placeholder : ""}
+	    			value={props.value !== undefined ? props.value : ""}
 	    		/>
-	    		<p className="textfield-error-text" style={props.errorStyle}>{props.errorText ? props.errorText : ""}</p>
+				<p className="textfield-error-text">{this.props.errorText !== undefined ? this.props.errorText : ""}</p>
 	    	</div>
 	    );
  	}

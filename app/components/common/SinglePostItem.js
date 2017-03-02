@@ -130,8 +130,8 @@ class SinglePostItem extends Component {
 	            		{post.postLocation}
 	            	</Link>
 	            	<div className="purchase-buttons">
-	            		<button label="add to list" className="primary btn btn-default" style={style.button}>add to list<button/>
-	            		<button label="Order" className="primary btn btn-default" style={style.button}/>Order</button>
+	            		<button label="add to list" className="primary btn btn-default" style={style.button}>add to list</button>
+	            		<button label="Order" className="primary btn btn-default" style={style.button}>Order</button>
 	            	</div>
 
 

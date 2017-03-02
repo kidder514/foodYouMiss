@@ -8,10 +8,14 @@ class LoginButton extends Component{
   		return (
 			<div className="login-button" style={this.props.userStatus.isLoggedIn ? {display:"none"} : {display:"block"}}>
 			  	<Link to="/signin" className="login ">
-			    	<button className="btn btn-default btn-sm btn-block">login</button>
+		    		<button className="btn btn-default btn-sm btn-block">
+		    			login
+			    	</button>
 				</Link>	
 			  	<Link to="/signupentrance">
-			    	<button className="btn btn-default btn-sm btn-block">Sign-up</button>
+			    	<button className="btn btn-sm btn-default btn-block">
+					  	Sign-up
+			    	</button>
 			  	</Link>
 			</div>
   		);
