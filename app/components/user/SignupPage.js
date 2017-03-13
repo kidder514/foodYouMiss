@@ -6,6 +6,7 @@ import ReCAPTCHA from "react-google-recaptcha";
 import MD5 from "../../helpers/MD5";
 import Gautocomplete from "../../helpers/GoogleAutocomplete"
 import isPasswordValid from "../../helpers/passwordChecker"
+import config from "../../config"
 
 class SignupPage extends Component {
 
@@ -235,7 +236,7 @@ class SignupPage extends Component {
 						    <ReCAPTCHA
 						    	className="recaptcha"
 						      	ref="recaptcha"
-						      	sitekey="6Lf5EwwUAAAAAEddev4kBP7COg1RHlQWsI81uWdt"
+						      	sitekey={config.GrecaptchaSitekey}
 						      	onChange={this.recaptchaCallback}
 						      	onExpired={this.recaptchaExpiredCallback}
 						    />

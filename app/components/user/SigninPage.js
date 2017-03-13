@@ -3,6 +3,7 @@ import validator from "Validator";
 import TextField from '../../uicomponent/form/TextField';
 import ReCAPTCHA from "react-google-recaptcha";
 import MD5 from "../../helpers/MD5";
+import config from "../../config"
 
 class SigninPage extends Component {
 
@@ -75,7 +76,7 @@ class SigninPage extends Component {
 			state_cache.isValid = true;
 			this.setState(state_cache,function(){
 				this.props.signin({"email": this.state.email, "password": "123456"});
-				// this.props.signin({"email": this.state.email, "password": MD5(this.state.password), "recapResponse": this.state.recapResponse});
+				// this.props.signin({"emaila": this.state.email, "password": MD5(this.state.password), "recapResponse": this.state.recapResponse});
 			});
 		}else{
 			state_cache.isValid = false;
@@ -111,16 +112,16 @@ class SigninPage extends Component {
 						    <ReCAPTCHA
 						    	className="recaptcha"
 						      	ref="recaptcha"
-						      	sitekey="6Lf5EwwUAAAAAEddev4kBP7COg1RHlQWsI81uWdt"
+						      	sitekey={config.GrecaptchaSitekey}
 						      	onChange={this.recaptchaCallback}
 						      	onExpired={this.recaptchaExpiredCallback}
 						    />
 			    			<p>{this.state.errorRecaptcha}</p>
 			    			<button 
-			    				className={"btn default-btn " + (this.state.disableSubmit ? "disabled" : "")}
-				    			label="Sign In"
+			    				className={"btn btn-default " + (this.state.disableSubmit ? "disabled" : "")}
+				    			label="Sign In" 
 				    			type="submit"
-				    			onClick={this.onSubmit}
+				    			onClick={this.validateData}
 							>Sign In</button>
 		            	</form>
 	            	</div>
