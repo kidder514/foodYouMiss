@@ -91,11 +91,13 @@ class SinglePostItem extends Component {
 		};
 				
 		return (
-			<article disabled={true} className="single-post" style={style.singlePost}>
-				<div className="left-section" style={style.leftSection}>
-	            	<Link to={"/author/:" + post.authorId} ><Avatar src={post.authorImg} alt={post.authorName}/></Link>
+			<article disabled={true} className="single-post row" style={style.singlePost}>
+				<div className="col-xs-1 avatar-wrapper" style={style.leftSection}>
+	            	<Link to={"/author/:" + post.authorId} >
+	            		<Avatar src={post.authorImg} alt={post.authorName}/>
+	            	</Link>
 	            </div>
-	            <div className="right-section clearfix">
+	            <div className="clearfix col-xs-11">
 	            	<Link to={"/post/:" + post.postId}><h3>{post.title}</h3></Link>
 	            	<p>{post.postDescription}</p>
 	            	<section className="image-gallery clearfix">

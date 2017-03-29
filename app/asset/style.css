@@ -135,6 +135,18 @@ h1{
 
 /* 4.2 home */
 
+.avatar{
+	width:100%;
+	height:auto;
+}
+
+.avatar-wrapper{
+	padding-right:0 !important;
+}
+
+.single-post{
+	background-color:#fff;
+}
 
 /*  4.3. subscription */
 
@@ -145,6 +157,9 @@ h1{
 	margin:20px 0;
 	background-color:#fff;
 }
+
+
+
 
 /*=====================5.0 footer===========================*/
 

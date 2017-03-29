@@ -9,10 +9,10 @@ class TextField extends Component {
  	render() {
  		var props = this.props;
 	    return (
-	    	<div className="textfield-wrapper" >
+	    	<div className={props.className !== undefined ? "textfield-wrapper " + props.className : "textfield-wrapper"} >
 	    		<input
 	    			id={props.id !== undefined ? props.id : ""}
-	    		    className={props.className !== undefined ? "textfield-input form-control " + props.className : "textfield-input form-control"}
+	    		    className="textfield-input form-control"
 	    		    ref={this.ref !== undefined ? this.ref : ""}
 	    			type={props.type !== undefined ? props.type : ""}
 	    			name={props.name !== undefined ? props.name : ""}

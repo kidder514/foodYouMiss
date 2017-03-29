@@ -65,7 +65,7 @@ export default class extends Component{
 	render(){
 
 		return(
-	    	<div className="textfield-wrapper" >
+	    	<div className={this.props.className !== undefined ? "textfield-wrapper " + this.props.className : "textfield-wrapper"} >
 				<input 
 					id="autocomplete"
 					className="autocomplete textfield-input form-control"

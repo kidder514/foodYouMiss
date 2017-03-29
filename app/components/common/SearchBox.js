@@ -75,42 +75,52 @@ class SearchBox extends Component {
 		};
 
 	    return (
-	    	<div className="search-box" >
-    			<Gautocomplete 
-    				handleLocaltion={this.handleLocaltion} 
-    				autocompleteOnChange={this.autocompleteOnChange}
-    			/>
-	    		<TextField 
-	    			id="id"
-	    			value={this.state.keyword}
-	    			onChange={this.onChange}
-	    			name="keyword"
-	    			errorText={this.state.errorKeyword}
-	    			placeHolder="Search keyword"
-		    	/>
-		    	<SingleSelection
-	    			label="Ratio"
-                	onChange={this.onChange}
-	    			value={this.state.ratio}
-                	name="ratio"
-	    			errorText={this.state.errorRatio}
-                >
-                	<OptionItem value={1} label="1 KM" />
-                	<OptionItem value={2} label="2 KM" />
-                	<OptionItem value={5} label="5 KM " />
-                	<OptionItem value={10} label="10 KM" />
-                	<OptionItem value={15} label="15 KM" />
-                </SingleSelection>
-
-                {
-	            <IconButton 
-	            	style={style.button}
-	            	iconStyle={style.icon} 
-	            	onClick={this.validateData}
-	            	icon="search"
-	            />
-				}
+	    	<div className="row"> 		
+				<div className="search-box row" >
+	    			<Gautocomplete
+	    				className="col-xs-6"
+	    				placeholder="Search for location..."
+	    				handleLocaltion={this.handleLocaltion} 
+	    				autocompleteOnChange={this.autocompleteOnChange}
+	    			/>
+		    		<TextField 
+		    			id="id"
+		    			className="col-xs-6"
+		    			value={this.state.keyword}
+		    			onChange={this.onChange}
+		    			name="keyword"
+		    			errorText={this.state.errorKeyword}
+		    			placeholder="Search keyword"
+			    	/>
+			    </div>
+			    <div className="row">
+			    	<label className="col-xs-2">Ratio:</label>				
+				</div>
+			    <div className="row">
+			    	<SingleSelection
+		    			className="col-xs-10"
+	                	onChange={this.onChange}
+		    			value={this.state.ratio}
+	                	name="ratio"
+		    			errorText={this.state.errorRatio}
+	                >
+	                	<OptionItem value={1} label="1 KM" />
+	                	<OptionItem value={2} label="2 KM" />
+	                	<OptionItem value={5} label="5 KM " />
+	                	<OptionItem value={10} label="10 KM" />
+	                	<OptionItem value={15} label="15 KM" />
+	                </SingleSelection>
+	                <div className="col-xs-2">
+			            <IconButton
+			            	style={style.button}
+			            	iconStyle={style.icon} 
+			            	onClick={this.validateData}
+			            	icon="search"
+			            />
+		            </div>
+    			</div>
 	    	</div>
+	    	
 	    );
  	}
 }

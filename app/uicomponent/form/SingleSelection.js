@@ -6,11 +6,10 @@ class SingleSelection extends Component {
  		var props = this.props;
 
 	    return (
-	    	<div className="single-selection-wrapper" >
-	    		<label>{props.label}</label>
+	    	<div className={props.className ? "single-selection-wrapper " + props.className : "single-selection-wrapper"}>
 	    		<select
 	    			id={props.id ? props.id : ""}
-	    		    className={props.className ? props.className : "single-selection-input form-control " + props.className}
+	    		    className="single-selection-input form-control col-xs-9"
 	    		    ref={this.ref ? this.ref : ""}
 	    		    style={props.style ? props.style : {}}
 	    			name={props.name ? props.name : ""}
@@ -20,7 +19,7 @@ class SingleSelection extends Component {
 	    		    value={props.value}
 	    		>
 	    			{props.children}
-	    		</select>
+	    		</select>	
 	    		<p className="single-selection-error-text">{props.errorText ? props.errorText : ""}</p>
 	    	</div>
 	    );

@@ -5,9 +5,7 @@ import SearchBox from "../../containers/common/Search"
 
 class HomePage extends Component{
 
-
 	componentDidMount() {
-
 		let query = "";
 		let userStatus = this.props.userStatus;
 		
@@ -25,11 +23,11 @@ class HomePage extends Component{
 	  		return(
 	  			<div className="container">
 		  			<div className="row">
-		  				<div className="col-md-8">
+		  				<div className="col-sm-8">
 		  					<SearchBox />
 		  					<PostList data={this.props.postListData} />
 		  				</div>
-						<div className="col-md-4 hidden-sm">
+						<div className="col-sm-4 hidden-xs">
 		            		<SideBar currentPage={"home"} />
 		                </div>
 		  			</div>
@@ -39,13 +37,13 @@ class HomePage extends Component{
   			return (
   				<div className="container">
   					<div className="row">
-  						<div className="col-md-8">
+  						<div className="col-sm-8">
 		  					<SearchBox />
 	  						<div>
 	  							Sorry, there is no cook in this area.
 	  						</div>
   						</div>
-						<div className="col-md-4 hidden-sm">
+						<div className="col-sm-4 hidden-xs">
 		            		<SideBar currentPage={"home"} />
 		                </div>
   					</div>
