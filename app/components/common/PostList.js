@@ -5,7 +5,7 @@ class PostList extends Component {
 
 	render(){
 	    return (
-	    	<div className="post-list-container">
+	    	<div className="container-fluid">
 	          	{
 	          	this.props.data.map(post => <SinglePost key={post.postId} post={post} />)
 	          	}

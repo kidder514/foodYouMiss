@@ -90,6 +90,77 @@ h1{
 .login-button button{
 	margin:6px 0;
 }
+
+.img-layer{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0,0.9);
+    z-index: 99;
+    overflow:hidden;
+}
+
+.img-wrapper{
+	width:70%;
+	height:70%;
+	overflow:hidden;	
+	margin:15% 0 0 15%;
+	text-align: center;
+}
+
+.img-wrapper > *{
+	vertical-align: middle;
+}
+
+.outter-wrapper{
+	background-color: #F25D30;
+	padding-top: 70px;
+	overflow: hidden;
+}
+
+.img-wrapper span{
+	display: inline-block;
+	height:100%;
+}
+
+.wrapper{
+	padding-top:30px;
+}
+
+.img-wrapper img{
+	width:auto;
+	max-width:100%;
+	height:auto;
+	max-height:100%;
+}
+
+.icon{
+    position: absolute;
+    font-size: 24px;
+    top: 50%;
+    padding: 5px 15px;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    color:#fff;
+}
+
+.icon:hover{
+	background-color: rgba(255, 255, 255, 0.3);
+	cursor:pointer;
+}
+
+.icon-arrow-left{
+	left:5%;
+}
+
+.icon-arrow-right{
+	right:5%;
+}
+
+
+
 /*=====================3.0 Header===========================*/
 
 .menu{
@@ -146,7 +217,76 @@ h1{
 
 .single-post{
 	background-color:#fff;
+	padding:20px 0 ;
+	margin-bottom: 20px;
 }
+
+.nine-layout{
+	box-sizing: border-box;
+	display: block;
+	float: left;
+	border: 2px solid #fff;
+	padding-bottom: 33.33333%;
+	overflow: hidden;
+}
+
+.four-layout{
+	box-sizing: border-box;
+	display: block;
+	float: left;
+	border: 2px solid #fff;
+	padding-bottom: 50%;
+	overflow: hidden;
+}
+
+.one-layout{
+	box-sizing: border-box;
+	display: block;
+	width:100%;
+	border: 2px solid #fff;
+	padding-bottom: 100%;
+	overflow: hidden;
+}
+
+.single-image{
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	cursor: pointer;
+}
+
+.expand-button{
+	float:right;
+	width:50px;
+}
+
+.more-section{
+	float:right;
+	position:relative;
+	clear:both;
+}
+
+.more-icon{
+	width:50px;
+	float:right;
+}
+
+.purchase-buttons{
+	float:right;
+	clear:both;
+}
+
+.others-section{
+	display:none;
+	position: absolute;
+    right: 50px;
+    width:250px;
+}
+
+.post-location{
+	width:100px;
+}
+
 
 /*  4.3. subscription */
 

@@ -50,8 +50,6 @@ class HomePage extends Component{
   				</div>
   			);
   		}
-
-
     }
 }
 
