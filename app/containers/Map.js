@@ -1,14 +1,21 @@
 import React, {Component} from 'react';
+import {connect} from "react-redux";
+import MapPage from "../components/MapPage"
+import { mapPostListCall } from "../actions/postActions"
 
-class Map extends Component {
-
-  	render(){
-	    return (
-	        <div className="wrapper">
-	            Map
-	        </div>
-	    )
-  	}
+const mapStateToProps = (state) => {
+	return {
+		userStatus: state.userStatus,
+		mapPostListData: state.mapNearByPosts
+	}
 }
 
-export default Map;
+const mapDispatchToProps = (dispatch) => {
+    return {
+        mapInitPosts: (query) => {
+            dispatch(mapPostListCall(query))
+        }
+    };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(MapPage);

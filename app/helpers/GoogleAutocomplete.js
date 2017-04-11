@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import TextField from '../uicomponent/form/TextField';
 
-export default class extends Component{
+export default class GoogleAutocomplete extends Component{
 	constructor(props){
 		super(props);
 		this.state = {
