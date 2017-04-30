@@ -287,8 +287,42 @@ h1{
 	width:100px;
 }
 
+/* 4.3 map */
 
-/*  4.3. subscription */
+.map-wrapper{
+	padding:2px;
+	background-color:#fff;
+	margin: 10px 0;
+	height:500px;
+}
+
+#googlemap{
+	height:100%;
+	width:100%;
+}
+
+.gm-style-iw{
+	height:300px;
+}
+
+.info-window{
+	text-align: center;
+}
+
+.info-header{
+	width:20%;
+	display:inline-block;
+}
+
+.info-header img{
+	width:100%;
+	height:auto;
+}
+
+.map-img-section{
+	height:200px
+}
+/*  4.4. subscription */
 
 
 /* 4.4 login & sign in*/

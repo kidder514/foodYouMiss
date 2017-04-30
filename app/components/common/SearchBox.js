@@ -17,8 +17,8 @@ class SearchBox extends Component {
 			location:"",
 			errorLocation:"",
 			coordinate:"",
-			ratio:"1",
-			errorRatio:""
+			tag:"",
+			errorTag:"",
 		};
 
 		this.onChange = this.onChange.bind(this);
@@ -54,8 +54,6 @@ class SearchBox extends Component {
 
 	validateData(){
 		let state_cache = {};
-
-		console.log(this.state);
 	}
 
  	render() {
@@ -93,23 +91,17 @@ class SearchBox extends Component {
 		    			placeholder="Search keyword"
 			    	/>
 			    </div>
+
 			    <div className="row">
-			    	<label className="col-xs-2">Ratio:</label>				
-				</div>
-			    <div className="row">
-			    	<SingleSelection
-		    			className="col-xs-10"
-	                	onChange={this.onChange}
-		    			value={this.state.ratio}
-	                	name="ratio"
-		    			errorText={this.state.errorRatio}
-	                >
-	                	<OptionItem value={1} label="1 KM" />
-	                	<OptionItem value={2} label="2 KM" />
-	                	<OptionItem value={5} label="5 KM " />
-	                	<OptionItem value={10} label="10 KM" />
-	                	<OptionItem value={15} label="15 KM" />
-	                </SingleSelection>
+		    		<TextField 
+		    			id="id"
+		    			className="col-xs-6"
+		    			value={this.state.tag}
+		    			onChange={this.onChange}
+		    			name="tag"
+		    			errorText={this.state.errorTag}
+		    			placeholder="Search Tag"
+			    	/>
 	                <div className="col-xs-2">
 			            <IconButton
 			            	style={style.button}
