@@ -14,11 +14,6 @@ class OutterWrapper extends Component{
 					<LoadingSpinner />
 					<LoginButton />
 					<ImgLayer />
-			{/*
-				there should be also a initilization function here 
-				1. load the stored data from browser storage or cookie.
-				2. initilize the app.
-			*/}
 	    	</div>
 	    )
   	}

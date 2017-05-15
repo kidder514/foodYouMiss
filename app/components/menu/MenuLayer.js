@@ -6,15 +6,23 @@ class MenuLayer extends Component{
 
     render() {
 
-    return (
+    	var userAction;
+
+    	if (this.props.userStatus.isLoggedIn){
+    		userAction = <img src={userStatus.avatar} className="img-rounded" />;
+    	}else{
+    		userAction = <IconButton icon={"menu"}/>;
+    	}
+
+    	return (
             <div className="menu clearfix">
                 <Link to="/" className="logo menu-item-button col-xs-2 col-sm-1 pull-left">
                     <IconButton icon={"home"} />
                 </Link>
 
-                <Link to="/account" className="menu-item-button col-xs-2 col-sm-1 pull-right " activeClassName="current-menu-item">
-                    <IconButton  icon={"menu"}/>
-                </Link>
+		    	<a className="menu-item-button col-xs-2 col-sm-1 pull-right " activeClassName="current-menu-item">
+		            {userAction}
+				</a>
                 <Link to="/mypage" className="menu-item-button col-xs-2 col-sm-1 pull-right" activeClassName="current-menu-item">
                     <IconButton icon={"face"} />
                 </Link>

@@ -12,7 +12,7 @@ class HomePage extends Component{
 		if(userStatus.hasLocation){
 			query = "location=" + userStatus.currentLocation;
 		}
-
+		
         if(this.props.postListData.length <= 0){
       	    this.props.initPosts(query);
         }

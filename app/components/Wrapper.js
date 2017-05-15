@@ -1,12 +1,12 @@
 import React, {Component} from 'react';
-import MenuLayer from "./menu/MenuLayer";
+import Menu from "../containers/Menu";
 
 class Wrapper extends Component {
 
   	render(){
 	    return (
 	        <div className="wrapper">
-	            <MenuLayer />
+	            <Menu />
 	            {this.props.children}
 	        </div>
 	    )
