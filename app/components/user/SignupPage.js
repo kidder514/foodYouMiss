@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import validator from "Validator";
+import { browserHistory } from "react-router"
 import TextField from '../../uicomponent/form/TextField';
 import ReCAPTCHA from "react-google-recaptcha";
 import MD5 from "../../helpers/MD5";
@@ -40,6 +41,12 @@ class SignupPage extends Component {
 		this.recaptchaCallback = this.recaptchaCallback.bind(this);
 		this.recaptchaExpiredCallback = this.recaptchaExpiredCallback.bind(this);
 		this.validateData = this.validateData.bind(this);
+	}
+
+	componentWillMount(){
+		if(this.props.userStatus.isLoggedIn){
+			browserHistory.push('/');
+		}
 	}
 
 	handleLocaltion(locationObj){

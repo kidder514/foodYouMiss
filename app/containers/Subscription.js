@@ -1,14 +1,21 @@
 import React, {Component} from 'react';
+import {connect} from "react-redux";
+import SubscribedPostPage from "../components/SubscribedPostPage"
+import { subscribedListCall } from "../Action/postAction"
 
-class Subscription extends Component {
-
-  	render(){
-	    return (
-	        <div>
-	        	Subscription
-	        </div>
-	    )
-  	}
+const mapStateToProps = (state) => {
+	return {
+		userStatus: state.userStatus,
+		subscribedPostListData: state.subscribedPost
+	}
 }
 
-export default Subscription;
+const mapDispatchToProps = (dispatch) => {
+    return {
+        initSubscribedPost: (query) => {
+            dispatch(subscribedListCall(query))
+        }
+    };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(SubscribedPostPage);

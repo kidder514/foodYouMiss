@@ -1,18 +1,18 @@
 import React, {Component} from 'react';
 import {connect} from "react-redux";
 import HomePage from "../../components/home/HomePage"
-import { postListCall } from "../../actions/postActions"
+import { postListCall } from "../../Action/postAction"
 
 const mapStateToProps = (state) => {
 	return {
 		userStatus: state.userStatus,
-		postListData: state.nearByPosts
+		postListData: state.nearByPost
 	}
 }
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        initPosts: (query) => {
+        initPost: (query) => {
             dispatch(postListCall(query))
         }
     };

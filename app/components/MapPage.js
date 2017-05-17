@@ -14,7 +14,7 @@ class MapPage extends Component {
 		}
 
         if(this.props.mapPostListData.length <= 0){
-      	    this.props.mapInitPosts(query);
+      	    this.props.mapInitPost(query);
         }
   	}
 

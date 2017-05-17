@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import validator from "Validator";
+import { browserHistory } from "react-router"
 import TextField from '../../uicomponent/form/TextField';
 import ReCAPTCHA from "react-google-recaptcha";
 import MD5 from "../../helpers/MD5";
@@ -26,6 +27,12 @@ class SigninPage extends Component {
 		this.onSubmit = this.onSubmit.bind(this);
 		this.recaptchaCallback = this.recaptchaCallback.bind(this);
 		this.recaptchaExpiredCallback = this.recaptchaExpiredCallback.bind(this);
+	}
+
+	componentWillMount(){
+		if(this.props.userStatus.isLoggedIn){
+			browserHistory.push('/');
+		}
 	}
 
 	recaptchaCallback(value){

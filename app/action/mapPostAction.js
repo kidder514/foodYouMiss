@@ -1,11 +1,11 @@
 import axios from "axios";
-import {errorPopup} from "./errorActions";
-import {startLoading, finishLoading} from "./loadingActions"
+import {errorPopup} from "./errorAction";
+import {startLoading, finishLoading} from "./loadingAction"
 
-export const mapInitPostsAction = (posts) => {
+export const mapInitPostAction = (post) => {
 	return {
-		type: "MAP_INIT_POSTS",
-		mapNewPosts: posts
+		type: "MAP_INIT_POST",
+		mapNewPost: post
 	}
 }
 
@@ -15,7 +15,7 @@ export const mapPostListCall = (query) => {
 		axios.post('http://www.mocky.io/v2/58634a5d0f00000224175621',query)
 		.then(function (res) {
 			dispatch(finishLoading());
-			dispatch(mapInitPostsAction(res.data));
+			dispatch(mapInitPostAction(res.data));
 	  	})
 	  	.catch(function (error) {
 			dispatch(finishLoading());

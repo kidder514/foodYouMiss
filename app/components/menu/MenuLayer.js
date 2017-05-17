@@ -20,7 +20,7 @@ class MenuLayer extends Component{
                     <IconButton icon={"home"} />
                 </Link>
 
-		    	<a className="menu-item-button col-xs-2 col-sm-1 pull-right " activeClassName="current-menu-item">
+		    	<a className="menu-item-button col-xs-2 col-sm-1 pull-right ">
 		            {userAction}
 				</a>
                 <Link to="/mypage" className="menu-item-button col-xs-2 col-sm-1 pull-right" activeClassName="current-menu-item">

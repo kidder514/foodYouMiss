@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from "react-redux";
-import {openImgLayer} from "../../actions/SinglePostActions"
+import {openImgLayer} from "../../Action/SinglePostAction"
 import SinglePostItem from "../../components/common/SinglePostItem"
 
 const mapDispatchToProps = (dispatch) => {

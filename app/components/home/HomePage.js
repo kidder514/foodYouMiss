@@ -14,7 +14,7 @@ class HomePage extends Component{
 		}
 		
         if(this.props.postListData.length <= 0){
-      	    this.props.initPosts(query);
+      	    this.props.initPost(query);
         }
   	}
 

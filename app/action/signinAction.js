@@ -1,11 +1,11 @@
 import axios from "axios";
-import {startLoading, finishLoading} from "./loadingActions";
+import {startLoading, finishLoading} from "./loadingAction";
 import config from "../config"
 
-export const signupCall = (userInfo) => {
+export const signinCall = (userInfo) => {
 	return dispatch => {
 		dispatch(startLoading());
-		axios.post(config.APIserver + "auth/signup", userInfo)
+		axios.post(config.APIserver + "auth/signin", userInfo)
 		.then((res)=>{
 			console.log("login successfully");
 			dispatch(finishLoading())}

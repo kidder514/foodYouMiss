@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from "react-redux";
-import { mapPostListCall } from "../../actions/postActions"
+import { mapPostListCall } from "../../Action/postAction"
 import MapSearchBox from "../../components/common/MapSearchBox"
 
 const mapDispatchToProps = (dispatch) => {

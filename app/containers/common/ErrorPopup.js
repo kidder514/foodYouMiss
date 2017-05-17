@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from "react-redux";
-import {errorPopup} from "../../actions/errorActions"
+import {errorPopup} from "../../Action/errorAction"
 import ErrorPage from "../../components/common/ErrorPage"
 
 const mapStateToProps = (state) => {

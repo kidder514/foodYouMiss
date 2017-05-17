@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from "react-redux";
 import ImgLayerPage from "../../components/common/ImgLayerPage";
-import {openImgLayer,closeImgLayer} from "../../actions/SinglePostActions"
+import {openImgLayer,closeImgLayer} from "../../Action/SinglePostAction"
 
 const mapStateToProps = (state) => {
 	return {

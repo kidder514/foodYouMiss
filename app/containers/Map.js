@@ -1,18 +1,18 @@
 import React, {Component} from 'react';
 import {connect} from "react-redux";
 import MapPage from "../components/MapPage"
-import { mapPostListCall } from "../actions/mapPostActions"
+import { mapPostListCall } from "../Action/mapPostAction"
 
 const mapStateToProps = (state) => {
 	return {
 		userStatus: state.userStatus,
-		mapPostListData: state.mapNearByPosts
+		mapPostListData: state.mapNearByPost
 	}
 }
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        mapInitPosts: (query) => {
+        mapInitPost: (query) => {
             dispatch(mapPostListCall(query))
         }
     };
