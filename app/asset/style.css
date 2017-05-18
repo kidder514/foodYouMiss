@@ -199,6 +199,26 @@ h1{
 	color:#F25D30;
 }
 
+.user-menu{
+	position: absolute;
+	top: 64px;
+	right: 0;
+	background-color: #fff;
+	width: 256px;
+	height: 256px;
+	z-index: 10;
+	-webkit-transition: right 0.5s; /* Safari */
+    transition: right 0.5s;
+}
+
+.user-menu.user-menu-show{
+	right:0px;
+}
+
+.user-menu.user-menu-hide{
+	right:-256px;
+}
+
 /*=====================4.0 Body===========================*/
 
 /* 4.1 general */
@@ -331,8 +351,6 @@ h1{
 	margin:20px 0;
 	background-color:#fff;
 }
-
-
 
 
 /*=====================5.0 footer===========================*/

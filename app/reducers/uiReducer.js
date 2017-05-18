@@ -4,7 +4,8 @@ const initialUIState = {
 	loading:false,
 	imgs:"",
 	imgIndex:"",
-	imgLayerIsOpen:false
+	imgLayerIsOpen:false,
+	showUserMenu: false
 }
 
 function uiReducer(state = initialUIState, action) {
@@ -16,9 +17,11 @@ function uiReducer(state = initialUIState, action) {
     case "FINISH_LOADING":
     	return {...state, loading: action.loading}
     case "OPEN_IMG_LAYER":
-    	return {...state, imgLayerIsOpen:action.imgLayerIsOpen, imgs: action.imgs, imgIndex: action.imgIndex}
+    	return {...state, imgLayerIsOpen: action.imgLayerIsOpen, imgs: action.imgs, imgIndex: action.imgIndex}
     case "CLOSE_IMG_LAYER":
-    	return {...state, imgLayerIsOpen:action.imgLayerIsOpen, imgs: "", imgIndex: ""}
+    	return {...state, imgLayerIsOpen: action.imgLayerIsOpen, imgs: "", imgIndex: ""}
+    case "SHOW_USER_MENU":
+    	return {...state, showUserMenu: action.isShown}
     default:
     	return state
     }
