@@ -4,7 +4,7 @@
 	"private": false,
   	"description": "",
 	"scripts": {
-		"start": "webpack-dev-server --progress --colors --hot --inline",
+		"start": "webpack-dev-server --progress --colors --hot --inline --history-api-fallback",
 	    "start-native": "node node_modules/react-native/local-cli/cli.js start",
 	    "ios":"react-native run-ios",
 	    "android-simulator":"android avd",

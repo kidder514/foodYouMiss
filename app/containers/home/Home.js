@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from "react-redux";
 import HomePage from "../../components/home/HomePage"
-import { postListCall } from "../../Action/postAction"
+import { postListCall } from "../../action/postAction"
 
 const mapStateToProps = (state) => {
 	return {

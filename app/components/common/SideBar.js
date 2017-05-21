@@ -5,7 +5,10 @@ class SideBar extends Component{
   	render(){
   		return(
   			<div>
-  				SideBar
+  				<h4>sidebar</h4>
+  				<img src="http://placehold.it/350x150" />
+  				<img src="http://placehold.it/350x450" />
+
         	</div>
   			);
     }

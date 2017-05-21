@@ -47,7 +47,7 @@ function userStatus(state = initialUserStatus, action) {
 					localStorage.removeItem("user");
 				}
 			}
-	        return { ...state, userName: undefined, password: undefined, isLoggedIn: false, token: ""};
+	        return initialUserStatus;
 	    case "LOCATE":
 	    	return { ...state, hasLocation: true, currentLocation: action.location};
 	    case "UNLOCATE":

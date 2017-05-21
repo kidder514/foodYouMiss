@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from "react-redux";
 import SigninPage from "../../components/user/SigninPage"
-import {signinCall} from "../../Action/signinAction"
+import {signinCall} from "../../Action/userAction"
 
 const mapStateToProps = (state) => {
 	return {

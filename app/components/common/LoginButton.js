@@ -12,7 +12,7 @@ class LoginButton extends Component{
 		    			login
 			    	</button>
 				</Link>	
-			  	<Link to="/signupentrance">
+			  	<Link to="/signup-entrance">
 			    	<button className="btn btn-sm btn-default btn-block">
 					  	Sign-up
 			    	</button>

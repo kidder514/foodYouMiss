@@ -1,14 +1,15 @@
 import React, {Component} from 'react';
 
-class Account extends Component {
+class Dashboard extends Component {
 
   	render(){
 	    return (
 	        <div className="wrapper">
-	            Account
+	            Dashboard
+	            {this.props.children}
 	        </div>
 	    )
   	}
 }
 
-export default Account;
+export default Dashboard;

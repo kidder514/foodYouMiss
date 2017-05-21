@@ -19,7 +19,7 @@ class MenuLayer extends Component{
 		    		onClick={() => this.props.toggleUserMenu(isShown)}>
 		            {userAction}
 				</a>
-                <Link to="/mypage" className="menu-item-button col-xs-2 col-sm-1 pull-right" activeClassName="current-menu-item">
+                <Link to="/mydish" className="menu-item-button col-xs-2 col-sm-1 pull-right" activeClassName="current-menu-item">
                     <IconButton icon={"face"} />
                 </Link>
                 <Link to="/chat" className="menu-item-button col-xs-2 col-sm-1 pull-right" activeClassName="current-menu-item">
