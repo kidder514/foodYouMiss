@@ -1,5 +1,5 @@
 import axios from "axios";
-import {errorPopup} from "./errorAction";
+import {popupError} from "./errorAction";
 import {startLoading, finishLoading} from "./loadingAction"
 
 export const mapInitPostAction = (post) => {
@@ -19,7 +19,7 @@ export const mapPostListCall = (query) => {
 	  	})
 	  	.catch(function (error) {
 			dispatch(finishLoading());
-			dispatch(errorPopup("Unable to load dishes' Post from server"));
+			dispatch(popupError("Unable to load dishes' Post from server"));
 	  	});
 	}	
 }

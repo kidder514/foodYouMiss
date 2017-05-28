@@ -2,6 +2,18 @@ import axios from "axios"
 import {startLoading, finishLoading} from "./loadingAction"
 import config from "../config"
 
+export const loginAction = (action) => {
+	return { type: "LOGIN", action:action}
+}
+
+export const logoutAction = () => {
+	return { type: "LOGOUT" }
+}
+
+export const loadUserDataAction = (action) => {
+	return { type: "LOAD_USER_DATA", action:action}
+}
+
 export const signinCall = (userInfo) => {
 	return dispatch => {
 		dispatch(startLoading());
@@ -27,11 +39,23 @@ export const signupCall = (userInfo) => {
 			)
 		.catch((error)=>{
 			console.log("login failed");
-			dispatch(finishLoading())};
+			dispatch(finishLoading())}
 			)
 	}
 }
 
-export const logoutAction = () => {
-	return { type: "LOGOUT" }
+
+export const userDataCall = (userId) => {
+	return dispatch => {
+		dispatch(startLoading());
+		axios.post(config.APIserver + "userdata", userId)
+		.then((res)=>{
+			console.log("user data retrieved successfully");
+			dispatch(finishLoading())}
+			)
+		.catch((error)=>{
+			console.log("user data retrieved failed");
+			dispatch(finishLoading())}
+			)
+	}
 }

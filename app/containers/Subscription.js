@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from "react-redux";
 import SubscribedPostPage from "../components/SubscribedPostPage"
-import { subscribedListCall } from "../Action/postAction"
+import { subscribedListCall } from "../action/postAction"
 
 const mapStateToProps = (state) => {
 	return {

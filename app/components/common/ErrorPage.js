@@ -11,11 +11,11 @@ class ErrorPage extends Component {
 	}
 
 	handleOpen(msg) {
-		this.props.errorPopup(this.props.error)
+		this.props.popupError(this.props.error)
 	}
 
 	handleClose(){
-		this.props.errorPopup("")
+		this.props.popupError("")
 	}
 
 	render() {

@@ -1,5 +1,5 @@
 import axios from "axios";
-import {errorPopup} from "./errorAction";
+import {popupError} from "./errorAction";
 import {startLoading, finishLoading} from "./loadingAction"
 
 export const initSubscribedPostAction = (post) => {
@@ -33,7 +33,7 @@ export const postListCall = (query) => {
 	  	})
 	  	.catch(function (error) {
 			dispatch(finishLoading());
-			dispatch(errorPopup("Unable to load dishes' Post from server"));
+			dispatch(popupError("Unable to load dishes' Post from server"));
 	  	});
 	}	
 }
@@ -48,7 +48,7 @@ export const subscribedListCall = (query) => {
 	  	})
 	  	.catch(function (error) {
 			dispatch(finishLoading());
-			dispatch(errorPopup("Unable to load dishes' Post from server"));
+			dispatch(popupError("Unable to load dishes' Post from server"));
 	  	});
 	}	
 }
@@ -63,7 +63,7 @@ export const myPostListCall = (query) => {
 	  	})
 	  	.catch(function (error) {
 			dispatch(finishLoading());
-			dispatch(errorPopup("Unable to load dishes' Post from server"));
+			dispatch(popupError("Unable to load dishes' Post from server"));
 	  	});
 	}	
 }

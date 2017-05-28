@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from "react-redux";
 import MapPage from "../components/MapPage"
-import { mapPostListCall } from "../Action/mapPostAction"
+import { mapPostListCall } from "../action/mapPostAction"
 
 const mapStateToProps = (state) => {
 	return {

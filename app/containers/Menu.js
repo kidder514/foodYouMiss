@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from "react-redux";
 import MenuLayer from "../components/menu/MenuLayer"
-import { ShowUserMenu } from "../Action/uiAction"
+import { ShowUserMenu } from "../action/uiAction"
 
 const mapStateToProps = (state) => {
 	return {

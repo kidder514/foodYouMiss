@@ -368,7 +368,42 @@ h1{
 	background-color:#fff;
 }
 
+/* 4.5 Dashboard */
 
+.dashboard-content{
+	background-color:#fff;
+	padding:5% 0;
+}
+
+.dashboard-sidebar{
+	border-right: 1px solid #eaeaea;
+}
+
+.dashboard-avatar{
+	padding:20%
+}
+
+.dashboard-avatar,
+.dashboard-avatar img{
+	width:100%;
+	height:auto;
+}
+
+.dashboard-menu li{
+	border-bottom: 1px solid #eaeaea;
+	padding-left:10px;
+}
+
+.dashboard-menu a{
+	display:inline-block;
+	line-height:40px;
+	width:100%;
+	vertical-align: baseline;
+}
+
+.dashboard-menu a:hover{
+	background-color:#f2f2f2;
+}
 /*=====================5.0 footer===========================*/
 
 /*=====================6.0 Responsive===========================*/

@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from "react-redux";
-import {errorPopup} from "../../Action/errorAction"
+import {popupError} from "../../action/errorAction"
 import ErrorPage from "../../components/common/ErrorPage"
 
 const mapStateToProps = (state) => {
@@ -11,8 +11,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    errorPopup: (msg) => {
-      dispatch(errorPopup(msg))
+    popupError: (msg) => {
+      dispatch(popupError(msg))
     }
   }
 }

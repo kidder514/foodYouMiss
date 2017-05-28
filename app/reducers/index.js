@@ -6,6 +6,8 @@ import mapNearByPostReducer from "./mapNearByPostReducer"
 import myPostReducer from "./myPostReducer"
 import uiReducer from "./uiReducer"
 import userStatus from "./userStatus"
+import userData from "./userData"
+
 
 const rootReducer = combineReducers({
   nearByPost: nearByPostReducer,
@@ -14,6 +16,7 @@ const rootReducer = combineReducers({
   myPost:myPostReducer,
   ui: uiReducer,
   userStatus,  
+  userData,
   routing
 })
 
