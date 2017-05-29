@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import ErrorPopup from "../containers/common/ErrorPopup";
 import LoadingSpinner from "../containers/common/LoadingSpinner";
-import LoginButton from "./common/LoginButton"
 import ImgLayer from "../containers/common/ImgLayer"
 
 class OutterWrapper extends Component{
@@ -12,7 +11,6 @@ class OutterWrapper extends Component{
 				{this.props.children}
 					<ErrorPopup />
 					<LoadingSpinner />
-					<LoginButton />
 					<ImgLayer />
 	    	</div>
 	    )

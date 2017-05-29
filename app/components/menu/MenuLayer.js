@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {Link} from "react-router";
 import IconButton from '../../uicomponent/button/IconButton';
+import GoogleLogin from 'react-google-login';
 
 class MenuLayer extends Component{
 
@@ -12,9 +13,8 @@ class MenuLayer extends Component{
     	return (
             <div className="menu clearfix">
                 <Link to="/" className="logo menu-item-button col-xs-2 col-sm-1 pull-left" activeClassName="current-menu-item">
-                    <IconButton icon={"home"} />
+            		<img src="https://www.finalcall.com.au/site/img/agency_logo_placeholder.png" className="logo" />
                 </Link>
-
 		    	<a className={"menu-item-button col-xs-2 col-sm-1 pull-right " + (this.props.ui.showUserMenu ? "current-menu-item" : "")}  
 		    		onClick={() => this.props.toggleUserMenu(isShown)}>
 		            {userAction}
@@ -30,6 +30,9 @@ class MenuLayer extends Component{
                 </Link>
                 <Link to="/map" className="menu-item-button col-xs-2 col-sm-1 pull-right" activeClassName="current-menu-item">
                     <IconButton icon={"location_on"} />
+                </Link>
+                <Link to="/" className="menu-item-button col-xs-2 col-sm-1 pull-right" activeClassName="current-menu-item">
+                    <IconButton icon={"home"} />
                 </Link>
             </div>
         )

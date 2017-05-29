@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import PostList from "./common/PostList"
-import SideBar from "./common/SideBar"
+import SideBar from "../containers/common/SideBar"
 import SearchBox from "../containers/common/Search"
 
 class SubscribedPostPage extends Component{

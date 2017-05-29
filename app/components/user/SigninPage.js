@@ -5,6 +5,8 @@ import TextField from '../../uicomponent/form/TextField';
 import ReCAPTCHA from "react-google-recaptcha";
 import MD5 from "../../helpers/MD5";
 import config from "../../config"
+import GoogleLogin from 'react-google-login';
+import FacebookLogin from 'react-facebook-login';
 
 class SigninPage extends Component {
 
@@ -92,12 +94,28 @@ class SigninPage extends Component {
 
 	}
 
+	googleLoginSuccess(){
+
+	}
+
+	googleLoginFail(){
+
+	}
+
+	responseFacebook(){
+
+	}
+
+	componentClicked(){
+		
+	}
+
   	render(){
 	    return (
 	        <div className="container">
 		        <div className="row">
 			        <div className="col-sm-8 col-sm-offset-2">
-	            	<h1 className="content-logo"></h1>
+	            		<h1 className="content-logo"></h1>
 		            	<form onSubmit={this.onSubmit}>
 		            		<h1>Sign in with existing account</h1>
 							<TextField 
@@ -131,6 +149,19 @@ class SigninPage extends Component {
 				    			onClick={this.validateData}
 							>Sign In</button>
 		            	</form>
+					  <GoogleLogin
+					    clientId="215051426109-bnlsa6i3klfvsctep2qor59mp4rk31g3.apps.googleusercontent.com"
+					    buttonText="Login with google"
+					    onSuccess={this.googleLoginSuccess}
+					    onFailure={this.googleLoginFail}
+					  />
+
+					  <FacebookLogin
+					    appId="1088597931155576"
+					    autoLoad={true}
+					    fields="name,email,picture"
+					    onClick={this.componentClicked}
+					    callback={this.responseFacebook} />
 	            	</div>
 	            </div>
 	        </div>

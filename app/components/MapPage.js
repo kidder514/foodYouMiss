@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import MapSearchBox from "../containers/common/MapSearch"
-import SideBar from "./common/SideBar"
+import SideBar from "../containers/common/SideBar"
 import Googlemap from "../helpers/GoogleMap"
 
 class MapPage extends Component {
