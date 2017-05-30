@@ -31,8 +31,8 @@ class MenuLayer extends Component{
                 <Link to="/map" className="menu-item-button col-xs-2 col-sm-1 pull-right" activeClassName="current-menu-item">
                     <IconButton icon={"location_on"} />
                 </Link>
-                <Link to="/" className="menu-item-button col-xs-2 col-sm-1 pull-right" activeClassName="current-menu-item">
-                    <IconButton icon={"home"} />
+                <Link to="/nearby" className="menu-item-button col-xs-2 col-sm-1 pull-right" activeClassName="current-menu-item">
+                    <IconButton icon={"my_location"} />
                 </Link>
             </div>
         )

@@ -3,7 +3,8 @@ import {Route, IndexRoute} from "react-router"
 import OutterWrapper from "./components/OutterWrapper"
 import Wrapper from "./components/Wrapper"
 import SlidingPage from "./components/common/SlidingPage"
-import Home from "./containers/home/Home"
+import Front from "./containers/static/Front"
+import Nearby from "./containers/Nearby"
 import Signin from "./containers/user/Signin"
 import Signup from "./containers/user/Signup"
 import SignupEntrance from "./components/user/SignupEntrance"
@@ -23,7 +24,8 @@ import Author from "./containers/Author"
 export default (
 	<Route component={OutterWrapper}>
 		<Route path="/" component={Wrapper}>
-	  		<IndexRoute component={Home} />
+	  		<IndexRoute component={Front} />
+	  		<Route path="nearby" component={Nearby} />
 	  		<Route path="signin" component={Signin} />
 	  		<Route path="signup-entrance" component={SignupEntrance} />
 	  		<Route path="signup" component={Signup} />

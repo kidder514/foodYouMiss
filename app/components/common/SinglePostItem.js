@@ -23,59 +23,32 @@ class SinglePostItem extends Component {
 		return ;
 	}
 
-	generateGallery(imgs) {
-		const post = this.props.post;
-		var imgNodes = [];
-
-		if(imgs.length > 4){
-			//only load the first nine even if the imgs.length exceed the maximal length
-			for(let i = 0; i < imgs.length; i++){
-				if( imgs[i].thumbnail != null)
-					imgNodes.push(<div 
-						key={"post"+post.postId+"img"+ i} 
-						onClick={() => this.handleImageClick(imgs,i)}
-						className="nine-layout single-image col-xs-4" 
-						style={{backgroundImage:'url(' + imgs[i].thumbnail + ')'}}></div>);
-			}
-		}else if(imgs.length >= 2 && imgs.length <= 4){
-			for(let i = 0; i < imgs.length; i++){
-				if( imgs[i].thumbnail != null)
-					imgNodes.push(<div 
-						key={"post"+post.postId+"img"+ i} 
-						onClick={() => this.handleImageClick(imgs,i)}
-						className="four-layout single-image col-xs-6"
-						style={{backgroundImage:'url(' + imgs[i].thumbnail + ')'}}></div>);
-			}
-		}else{
-			for(let i = 0; i < imgs.length; i++){
-				if( imgs[i].thumbnail != null)
-					imgNodes.push(<div 
-						key={"post"+post.postId+"img"+ i} 
-						onClick={() => this.handleImageClick(imgs,i)}
-						className="one-layout single-image col-xs-12"
-						style={{backgroundImage:'url(' + imgs[i].thumbnail + ')'}}></div>);
-			}
-		}
-		return imgNodes;
-	}
 
 	generateContent(){
 
 		const post = this.props.post;
 				
 		return (
-			<article disabled={true} className="single-post row" >
-				<div className="col-xs-1 avatar-wrapper">
-	            	<Link to={"/author/:" + post.authorId} >
-	            		<Avatar src={post.authorImg} alt={post.authorName}/>
-	            	</Link>
-	            </div>
-	            <div className="clearfix col-xs-11">
+			<article disabled={true} className="col-sm-4 col-xs-6" >
+	            <section className="clearfix image-wrapper">
+	            	<img src={this.props.post.postImgUrls[0].thumbnail} />
+	            </section>
+	            <div className="short-summary">
+					<div className="container-fluid">
+		            	<div className="row">
+							<div className="col-xs-3 col-sm-3">
+				            	<Link to={"/author/:" + post.authorId} >
+				            		<Avatar src={post.authorImg} alt={post.authorName}/>
+				            	</Link>
+				            </div>
+				            <div className="col-xs-9 col-sm-9">
+				            	<strong>
+				            		{post.authorName}
+				            	</strong>
+				            </div>
+		            	</div>
+		            </div>
 	            	<Link to={"/post/:" + post.postId}><h3>{post.title}</h3></Link>
-	            	<p>{post.postDescription}</p>
-	            	<section className="image-gallery clearfix container-fluid">
-	            		{ this.generateGallery(post.postImgUrls) }
-	            	</section>
 	            	<div className="clearfix">
 		            	<div className="more-section">
 			            	<div className="others-section" id="others-section" ref={(div) => { this.othersSection = div; }}>
@@ -91,6 +64,9 @@ class SinglePostItem extends Component {
 			            		<Link className="more-icon" to={"chat/:" + post.authorId}>
 									<IconButton icon={"forum"} />
 			            		</Link>
+				            	<Link className="more-icon" to={"/map/:" + post.postCoordinate.latitude + "+" + post.postCoordinate.longitude}>
+									<IconButton icon={"location_on"} />
+				            	</Link>
 			            	</div>
 			            	<div className="expand-button">
 								<IconButton onClick={() => this.expandOthers(this.othersSection)} icon={"morevert"} />
@@ -98,12 +74,8 @@ class SinglePostItem extends Component {
 		            	</div>
 	            		<p>${post.postPrice}/ per serve | ({post.postPortions}) portions left</p>
 	            	</div>
-	            	<Link to={"/map/:" + post.postCoordinate.latitude + "+" + post.postCoordinate.longitude} className="clearfix" >
-	            		<div className="post-location">
-							<IconButton icon={"location_on"} />
-	            		</div>
-	            		<p>{post.postLocation}</p>
-	            	</Link>
+
+
 	            	<div className="purchase-buttons">
 	            		<button label="add to list" className="primary btn btn-default" >add to list</button>
 	            		<button label="Order" className="primary btn btn-default" >Order</button>

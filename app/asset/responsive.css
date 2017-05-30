@@ -21,7 +21,12 @@
 	}
 
 	.user-menu{
-		top: 41px;
+		top: 45px;
+	}
+
+	.logo{
+		width:41px;
+		height:41px;
 	}
 
 }

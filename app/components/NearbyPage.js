@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
-import PostList from "../common/PostList"
-import SideBar from "../../containers/common/SideBar"
-import SearchBox from "../../containers/common/Search"
+import PostList from "./common/PostList"
+import SideBar from "../containers/common/SideBar"
+import SearchBox from "../containers/common/Search"
 
-class HomePage extends Component{
+class NearbyPage extends Component{
 
 	componentDidMount() {
 		let query = "";
@@ -53,4 +53,4 @@ class HomePage extends Component{
     }
 }
 
-export default HomePage;
+export default NearbyPage;

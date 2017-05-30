@@ -6,9 +6,11 @@ class PostList extends Component {
 	render(){
 	    return (
 	    	<div className="container-fluid">
-	          	{
-	          	this.props.data.map(post => <SinglePost key={post.postId} post={post} />)
-	          	}
+	    		<div className="row">
+		          	{
+		          	this.props.data.map(post => <SinglePost key={post.postId} post={post} />)
+		          	}
+	          	</div>
 	    	</div>
 	    )
 	};

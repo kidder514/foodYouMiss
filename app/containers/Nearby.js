@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from "react-redux";
-import HomePage from "../../components/home/HomePage"
-import { postListCall } from "../../action/postAction"
+import NearbyPage from "../components/NearbyPage"
+import { postListCall } from "../action/postAction"
 
 const mapStateToProps = (state) => {
 	return {
@@ -18,4 +18,4 @@ const mapDispatchToProps = (dispatch) => {
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(HomePage);
+export default connect(mapStateToProps, mapDispatchToProps)(NearbyPage);
