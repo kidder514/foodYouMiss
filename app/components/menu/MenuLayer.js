@@ -13,26 +13,26 @@ class MenuLayer extends Component{
     	return (
             <div className="menu clearfix">
                 <Link to="/" className="logo menu-item-button col-xs-2 col-sm-1 pull-left" activeClassName="current-menu-item">
-            		<img src="https://www.finalcall.com.au/site/img/agency_logo_placeholder.png" className="logo" />
+            		<img src="https://www.gympal.ie/images/logo-placeholder-generic-200x200.png" className="logo" />
                 </Link>
 		    	<a className={"menu-item-button col-xs-2 col-sm-1 pull-right " + (this.props.ui.showUserMenu ? "current-menu-item" : "")}  
 		    		onClick={() => this.props.toggleUserMenu(isShown)}>
 		            {userAction}
 				</a>
                 <Link to="/mydish" className="menu-item-button col-xs-2 col-sm-1 pull-right" activeClassName="current-menu-item">
-                    <IconButton icon={"face"} />
+                    <IconButton icon={"face"} text="my page"/>
                 </Link>
                 <Link to="/chat" className="menu-item-button col-xs-2 col-sm-1 pull-right" activeClassName="current-menu-item">
-                    <IconButton icon={"textsms"} />
+                    <IconButton icon={"textsms"} text="inbox"/>
                 </Link>
                 <Link to="/subscriptions" className="menu-item-button col-xs-2 col-sm-1 pull-right" activeClassName="current-menu-item">
-                    <IconButton icon={"recent_actors"} />
+                    <IconButton icon={"recent_actors"} text="subscriptions"/>
                 </Link>
                 <Link to="/map" className="menu-item-button col-xs-2 col-sm-1 pull-right" activeClassName="current-menu-item">
-                    <IconButton icon={"location_on"} />
+                    <IconButton icon={"location_on"} text="map" />
                 </Link>
                 <Link to="/nearby" className="menu-item-button col-xs-2 col-sm-1 pull-right" activeClassName="current-menu-item">
-                    <IconButton icon={"my_location"} />
+                    <IconButton icon={"my_location"} text="nearby"/>
                 </Link>
             </div>
         )
