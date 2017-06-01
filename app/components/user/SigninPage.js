@@ -19,10 +19,10 @@ class SigninPage extends Component {
 			email: "",
 			password:"",
 			recapResponse:"",
-			isValid:false,
 			errorEmail:"",
 			errorPassword:"",
-			errorRecaptcha:""
+			errorRecaptcha:"",
+			disableSubmit:false
 		};
 		
 		this.onChange = this.onChange.bind(this);
@@ -51,7 +51,6 @@ class SigninPage extends Component {
 
 	onSubmit(e){
 		e.preventDefault();
-
 		let state_cache = {};
 
 		if(this.state.email == ""){
@@ -82,13 +81,13 @@ class SigninPage extends Component {
 			&&(!this.recapResponse == "")){
 
 			state_cache.recapResponse = this.recapResponse;
-			state_cache.isValid = true;
-			this.setState(state_cache,function(){
-				this.props.signin({"email": this.state.email, "password": "123456"});
-				// this.props.signin({"emaila": this.state.email, "password": MD5(this.state.password), "recapResponse": this.state.recapResponse});
-			});
+			console.log("recaptcha");
+			console.log(this.recapResponse);
+			this.setState(state_cache,
+				this.props.signin({"email": this.state.email, "password": MD5(this.state.password), "recapResponse": this.recapResponse})
+			);
+			
 		}else{
-			state_cache.isValid = false;
 			this.setState(state_cache);
 		}
 
@@ -146,7 +145,7 @@ class SigninPage extends Component {
 			    				className={"btn btn-default " + (this.state.disableSubmit ? "disabled" : "")}
 				    			label="Sign In" 
 				    			type="submit"
-				    			onClick={this.validateData}
+				    			onClick={this.onSubmit}
 							>Sign In</button>
 		            	</form>
 					  <GoogleLogin
