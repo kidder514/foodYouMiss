@@ -1,4 +1,5 @@
 import axios from "axios"
+import {popupError} from "./errorAction";
 import {startLoading, finishLoading} from "./loadingAction"
 import config from "../config"
 
@@ -22,12 +23,12 @@ export const signinCall = (userInfo, rememberLogin) => {
 		axios.post(config.APIserver + "auth/signin", userInfo)
 		.then((res)=>{
 			console.log("login successfully");
-			dispatch(finishLoading())}
-			)
+			dispatch(finishLoading())
+			})
 		.catch((error)=>{
-			console.log("login failed");
-			dispatch(finishLoading())}
-			)
+			dispatch(finishLoading())
+			dispatch(popupError("Unable to signin"));
+		})
 	}
 }
 
@@ -36,16 +37,18 @@ export const signupCall = (userInfo) => {
 		dispatch(startLoading());
 		axios.post(config.APIserver + "auth/signup", userInfo)
 		.then((res)=>{
+			//TODO: assemble and push the data into store.
 			console.log("login successfully");
 			dispatch(finishLoading())}
+			//TODO: go to the page that you can add user's password and address
+			// use userId as parameter of the page and then send to the backend togather.
 			)
 		.catch((error)=>{
-			console.log("login failed");
-			dispatch(finishLoading())}
-			)
+			dispatch(finishLoading())
+			dispatch(popupError("Unable to signup"))
+			})
 	}
 }
-
 
 export const userDataCall = (userId) => {
 	return dispatch => {
@@ -53,11 +56,11 @@ export const userDataCall = (userId) => {
 		axios.post(config.APIserver + "userdata", userId)
 		.then((res)=>{
 			console.log("user data retrieved successfully");
-			dispatch(finishLoading())}
-			)
+			dispatch(finishLoading())
+			})
 		.catch((error)=>{
-			console.log("user data retrieved failed");
-			dispatch(finishLoading())}
-			)
+			dispatch(finishLoading())
+			dispatch(popupError("user data retrieved failed"))
+			})
 	}
 }

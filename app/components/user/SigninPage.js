@@ -29,6 +29,7 @@ class SigninPage extends Component {
 		this.onChange = this.onChange.bind(this);
 		this.onSubmit = this.onSubmit.bind(this);
 		this.jumpTo = this.jumpTo.bind(this);
+		this.gLoginSuccess = this.gLoginSuccess.bind(this);
 		this.recaptchaCallback = this.recaptchaCallback.bind(this);
 		this.recaptchaExpiredCallback = this.recaptchaExpiredCallback.bind(this);
 	}
@@ -102,15 +103,24 @@ class SigninPage extends Component {
 			browserHistory.push('/signup');
 	}
 
-	googleLoginSuccess(){
+	gSignout(){
+	    var auth2 = gapi.auth2.getAuthInstance();
+	    auth2.signOut().then(function () {
+	      	console.log('User signed out.');
+	    });
+	}
+
+	gLoginSuccess(googleUser){
+		if(googleUser !== undefined && googleUser.getAuthResponse().id_token !== ""){
+			this.props.signin(googleUser.getAuthResponse().id_token, this.state.rememberLogin);
+		}
+	}
+
+	gLoginFail(){
 
 	}
 
-	googleLoginFail(){
-
-	}
-
-	responseFacebook(){
+	responseFb(){
 
 	}
 
@@ -169,20 +179,22 @@ class SigninPage extends Component {
 								sign up a new account
 							</button>
 		            	</form>
-					  <GoogleLogin
-					    clientId={config.googleLoginKey}
-					    buttonText="Login with google"
-					    onSuccess={this.googleLoginSuccess}
-					    onFailure={this.googleLoginFail}
-					  />
+						<GoogleLogin
+						    clientId={config.googleLoginKey}
+						    buttonText="Login with google"
+						    onSuccess={this.gLoginSuccess}
+						    onFailure={this.gLoginFail}
+						/>
 
-					  <FacebookLogin
-					    appId="1088597931155576"
-					    autoLoad={true}
-					    fields="name,email,picture"
-					    onClick={this.componentClicked}
-					    callback={this.responseFacebook} />
-	            	</div>
+					  	<FacebookLogin
+						    appId="1088597931155576"
+						    autoLoad={true}
+						    fields="name,email,picture"
+						    onClick={this.componentClicked}
+						    callback={this.responseFb} />
+
+						<button className="btn btn-default" onClick={this.gSignout}>g Signout</button>
+		            </div>
 	            </div>
 	        </div>
 	    )

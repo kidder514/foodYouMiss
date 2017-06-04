@@ -3,6 +3,7 @@ var initialUserStatus = {
 	userId: undefined,
 	avatar: "",
 	userName: undefined,
+	userEmail:"",
     isLoggedIn: false,
     token: "",
     hasLocation: false,
@@ -30,6 +31,7 @@ function userStatus(state = initialUserStatus, action) {
 				var user = {
 					userId: action.userId,
 					userName: action.userName,
+					userEmail: action.userEmail,
 				    token: action.token,
 				    currentLocation: action.location,
 				    avatar:action.avatar
@@ -40,6 +42,7 @@ function userStatus(state = initialUserStatus, action) {
 	    	return { ...state, 
 				userId: action.userId,	
 	    		userName: action.userName,
+				userEmail: action.userEmail,
 	    		isLoggedIn: true,
 			    avatar:action.avatar,
 	    		token: action.token,
