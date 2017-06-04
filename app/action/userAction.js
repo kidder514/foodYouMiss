@@ -14,9 +14,11 @@ export const loadUserDataAction = (action) => {
 	return { type: "LOAD_USER_DATA", action:action}
 }
 
-export const signinCall = (userInfo) => {
+//TODO: handle the backend data.
+export const signinCall = (userInfo, rememberLogin) => {
 	return dispatch => {
 		dispatch(startLoading());
+		
 		axios.post(config.APIserver + "auth/signin", userInfo)
 		.then((res)=>{
 			console.log("login successfully");

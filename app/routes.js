@@ -7,7 +7,6 @@ import Front from "./containers/static/Front"
 import Nearby from "./containers/Nearby"
 import Signin from "./containers/user/Signin"
 import Signup from "./containers/user/Signup"
-import SignupEntrance from "./components/user/SignupEntrance"
 import Signout from "./containers/user/Signout"
 import Subscription from "./containers/Subscription"
 import Map from "./containers/Map"
@@ -27,7 +26,6 @@ export default (
 	  		<IndexRoute component={Front} />
 	  		<Route path="nearby" component={Nearby} />
 	  		<Route path="signin" component={Signin} />
-	  		<Route path="signup-entrance" component={SignupEntrance} />
 	  		<Route path="signup" component={Signup} />
 		  	<Route path="signout" component={Signout} />
 		  	<Route path="map" component={Map} />

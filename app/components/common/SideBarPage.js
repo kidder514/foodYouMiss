@@ -16,7 +16,7 @@ class SideBarPage extends Component{
 			    			login
 				    	</button>
 					</Link>	
-				  	<Link to="/signup-entrance">
+				  	<Link to="/signup">
 				    	<button className="btn btn-sm btn-default btn-block">
 						  	Sign-up
 				    	</button>

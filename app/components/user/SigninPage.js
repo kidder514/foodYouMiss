@@ -22,11 +22,13 @@ class SigninPage extends Component {
 			errorEmail:"",
 			errorPassword:"",
 			errorRecaptcha:"",
+			rememberLogin:true,
 			disableSubmit:false
 		};
 		
 		this.onChange = this.onChange.bind(this);
 		this.onSubmit = this.onSubmit.bind(this);
+		this.jumpTo = this.jumpTo.bind(this);
 		this.recaptchaCallback = this.recaptchaCallback.bind(this);
 		this.recaptchaExpiredCallback = this.recaptchaExpiredCallback.bind(this);
 	}
@@ -46,7 +48,11 @@ class SigninPage extends Component {
 	}
 
 	onChange(e){
-		this.setState({[e.target.name]: e.target.value});
+		if(e.target.type === "checkbox"){
+			this.setState({[e.target.name]: e.target.checked});			
+		}else{
+			this.setState({[e.target.name]: e.target.value});			
+		}
 	}
 
 	onSubmit(e){
@@ -75,22 +81,25 @@ class SigninPage extends Component {
 			state_cache.errorRecaptcha = "";
 		}
 
+		state_cache.rememberLogin = this.state.rememberLogin;
+
 		if((!this.state.email == "")
 			&&(validator.isEmail(this.state.email))
 			&&(!this.state.password == "")
 			&&(!this.recapResponse == "")){
 
 			state_cache.recapResponse = this.recapResponse;
-			console.log("recaptcha");
-			console.log(this.recapResponse);
 			this.setState(state_cache,
-				this.props.signin({"email": this.state.email, "password": MD5(this.state.password), "recapResponse": this.recapResponse})
+				this.props.signin({"email": this.state.email, "password": MD5(this.state.password), "recapResponse": this.recapResponse}, this.state.rememberLogin)
 			);
-			
 		}else{
 			this.setState(state_cache);
 		}
 
+	}
+
+	jumpTo(){
+			browserHistory.push('/signup');
 	}
 
 	googleLoginSuccess(){
@@ -141,15 +150,27 @@ class SigninPage extends Component {
 						      	onExpired={this.recaptchaExpiredCallback}
 						    />
 			    			<p>{this.state.errorRecaptcha}</p>
+						    <input
+						    	type="checkbox" 
+						    	name="rememberLogin"
+						    	value={this.state.rememberLogin}
+						    	onChange={this.onChange} />
+							remember your login status on this browser
+							<p>please think twice when ticking this box if you are on a public computer</p>
 			    			<button 
 			    				className={"btn btn-default " + (this.state.disableSubmit ? "disabled" : "")}
 				    			label="Sign In" 
 				    			type="submit"
 				    			onClick={this.onSubmit}
 							>Sign In</button>
+
+							or 
+							<button className="btn btn-default" onClick={this.jumpTo}>
+								sign up a new account
+							</button>
 		            	</form>
 					  <GoogleLogin
-					    clientId="215051426109-bnlsa6i3klfvsctep2qor59mp4rk31g3.apps.googleusercontent.com"
+					    clientId={config.googleLoginKey}
 					    buttonText="Login with google"
 					    onSuccess={this.googleLoginSuccess}
 					    onFailure={this.googleLoginFail}

@@ -1,9 +1,8 @@
 
 var initialUserStatus = {
 	userId: undefined,
-	avatar: "https://t3.ftcdn.net/jpg/01/06/07/16/240_F_106071621_UwCztl7yyMbVNSMijfuYyZrzbtmoxJPH.jpg",
+	avatar: "",
 	userName: undefined,
-	password: undefined,
     isLoggedIn: false,
     token: "",
     hasLocation: false,
@@ -11,6 +10,7 @@ var initialUserStatus = {
     currentPage:""
 }
 
+//initialise user data from localstorage 
 if (typeof(Storage) !== "undefined") {
 	if(localStorage.user !== undefined){
 		initialUserStatus = localStorage.user;
@@ -18,32 +18,33 @@ if (typeof(Storage) !== "undefined") {
 }
 
 function userStatus(state = initialUserStatus, action) {
-  	switch(action.type){
+  	switch (action.type){
 	    case "LOGIN":
-			if (typeof(Storage) !== "undefined") {
+	    	//store user data into localstorage if user choose to remember login
+			if (typeof(Storage) !== "undefined" && action.rememberLogin) {
 
-				if(localStorage.user !== undefined){
+				if (localStorage.user !== undefined){
 					localStorage.removeItem("user");
 				}
 
 				var user = {
 					userId: action.userId,
 					userName: action.userName,
-					password: action.password,
 				    token: action.token,
-				    currentLocation: action.location
+				    currentLocation: action.location,
+				    avatar:action.avatar
 				};
-
 				localStorage.setItem("user", user);
 			}
 
 	    	return { ...state, 
 				userId: action.userId,	
 	    		userName: action.userName,
-	    		password: action.password,
 	    		isLoggedIn: true,
+			    avatar:action.avatar,
 	    		token: action.token,
-	    		hasLocation: true
+	    		hasLocation: true,
+	    		currentLocation:action.location 
 	    	};
 	    case "LOGOUT":
 			if (typeof(Storage) !== "undefined") {
