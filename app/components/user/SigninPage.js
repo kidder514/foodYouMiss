@@ -30,6 +30,7 @@ class SigninPage extends Component {
 		this.onSubmit = this.onSubmit.bind(this);
 		this.jumpTo = this.jumpTo.bind(this);
 		this.gLoginSuccess = this.gLoginSuccess.bind(this);
+		this.responseFb = this.responseFb.bind(this);
 		this.recaptchaCallback = this.recaptchaCallback.bind(this);
 		this.recaptchaExpiredCallback = this.recaptchaExpiredCallback.bind(this);
 	}
@@ -106,12 +107,19 @@ class SigninPage extends Component {
 	gSignout(){
 	    var auth2 = gapi.auth2.getAuthInstance();
 	    auth2.signOut().then(function () {
-	      	console.log('User signed out.');
+	    	// google signout callback
 	    });
 	}
 
+	fbSignout(){
+
+		FB.logout(function(response) {
+			// fb sign out call back
+		});
+	}
+
 	gLoginSuccess(googleUser){
-		if(googleUser !== undefined && googleUser.getAuthResponse().id_token !== ""){
+		if (googleUser !== undefined && googleUser.getAuthResponse().id_token !== ""){
 			this.props.signin(googleUser.getAuthResponse().id_token, this.state.rememberLogin);
 		}
 	}
@@ -120,8 +128,11 @@ class SigninPage extends Component {
 
 	}
 
-	responseFb(){
-
+	responseFb(res){
+		if (res !== undefined)
+		{
+			this.props.signin({"email": res.email, "name": res.name, "Id": res.id, "avatar": res.picture.data.url }, this.state.rememberLogin);
+		}
 	}
 
 	componentClicked(){
@@ -187,13 +198,14 @@ class SigninPage extends Component {
 						/>
 
 					  	<FacebookLogin
-						    appId="1088597931155576"
+						    appId="1330278720421075"
 						    autoLoad={true}
 						    fields="name,email,picture"
 						    onClick={this.componentClicked}
 						    callback={this.responseFb} />
-
+						<br />
 						<button className="btn btn-default" onClick={this.gSignout}>g Signout</button>
+						<button className="btn btn-default" onClick={this.fbSignout}>fb Signout</button>
 		            </div>
 	            </div>
 	        </div>
