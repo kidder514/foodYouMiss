@@ -19,6 +19,7 @@ import Notification from "./containers/dashboard/Notification"
 import Setting from "./containers/dashboard/Setting"
 import Help from "./containers/dashboard/Help"
 import Author from "./containers/Author"
+import SingleDish from "./containers/SingleDish"
 
 export default (
 	<Route component={OutterWrapper}>
@@ -32,6 +33,7 @@ export default (
 	  		<Route path="subscriptions" component={Subscription} />
 		  	<Route path="mydish" component={MyDish} />
 		  	<Route path="chat" component={Chat} />
+		  	<Route path="dish/:dishid" component={SingleDish} />
 		  	<Route path="dashboard" component={Dashboard} >
 		  		<IndexRoute component={Overview}/>
 		  		<Route path="order-history" component={OrderHistory} />

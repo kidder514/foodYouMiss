@@ -23,7 +23,6 @@ class SinglePostItem extends Component {
 		return ;
 	}
 
-
 	generateContent(){
 
 		const post = this.props.post;
@@ -37,7 +36,7 @@ class SinglePostItem extends Component {
 					<div className="container-fluid">
 		            	<div className="row">
 							<div className="col-xs-3 col-sm-3">
-				            	<Link to={"/author/:" + post.authorId} >
+				            	<Link to={"/author/" + post.authorId} >
 				            		<Avatar src={post.authorImg} alt={post.authorName}/>
 				            	</Link>
 				            </div>
@@ -48,23 +47,23 @@ class SinglePostItem extends Component {
 				            </div>
 		            	</div>
 		            </div>
-	            	<Link to={"/post/:" + post.postId}><h3>{post.title}</h3></Link>
+	            	<Link to={"/dish/" + post.postId}><h3>{post.title + "title"}</h3></Link>
 	            	<div className="clearfix">
 		            	<div className="more-section">
 			            	<div className="others-section" id="others-section" ref={(div) => { this.othersSection = div; }}>
 			            		<a className="more-icon" onClick={this.toggleLike()}> 
 									<IconButton icon={"thumb_up"} text={post.postLikes.length}/>
 			            		</a>
-			            		<Link className="more-icon" to={"/post/:" + post.postId + "/comment"}>
+			            		<Link className="more-icon" to={"/post/" + post.postId + "/comment"}>
 									<IconButton icon={"comment"} text={post.postComments.length}/>
 			            		</Link>
-			            		<Link className="more-icon" to={"/post/:" + post.postId + "/share"}>
+			            		<Link className="more-icon" to={"/post/" + post.postId + "/share"}>
 									<IconButton icon={"share"} />
 			            		</Link>
-			            		<Link className="more-icon" to={"chat/:" + post.authorId}>
+			            		<Link className="more-icon" to={"chat/" + post.authorId}>
 									<IconButton icon={"forum"} />
 			            		</Link>
-				            	<Link className="more-icon" to={"/map/:" + post.postCoordinate.latitude + "+" + post.postCoordinate.longitude}>
+				            	<Link className="more-icon" to={"/map/" + post.postCoordinate.latitude + "+" + post.postCoordinate.longitude}>
 									<IconButton icon={"location_on"} />
 				            	</Link>
 			            	</div>
