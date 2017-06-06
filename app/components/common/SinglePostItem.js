@@ -47,7 +47,7 @@ class SinglePostItem extends Component {
 				            </div>
 		            	</div>
 		            </div>
-	            	<Link to={"/dish/" + post.postId}><h3>{post.title + "title"}</h3></Link>
+	            	<Link to={"/dish/" + post.postId}><h3>{post.title} fried rice</h3></Link>
 	            	<div className="clearfix">
 		            	<div className="more-section">
 			            	<div className="others-section" id="others-section" ref={(div) => { this.othersSection = div; }}>
