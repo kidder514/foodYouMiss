@@ -8,6 +8,7 @@ import uiReducer from "./uiReducer"
 import userStatus from "./userStatus"
 import userData from "./userData"
 import singleDishData from "./singleDishData"
+import authorData from "./authorData"
 
 const rootReducer = combineReducers({
   nearByPost: nearByPostReducer,
@@ -18,6 +19,7 @@ const rootReducer = combineReducers({
   userStatus,  
   userData,
   singleDishData,
+  authorData,
   routing
 })
 

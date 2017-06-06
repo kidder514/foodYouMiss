@@ -34,6 +34,7 @@ export default (
 		  	<Route path="mydish" component={MyDish} />
 		  	<Route path="chat" component={Chat} />
 		  	<Route path="dish/:dishid" component={SingleDish} />
+		  	<Route path="author/:authorid" component={Author} />
 		  	<Route path="dashboard" component={Dashboard} >
 		  		<IndexRoute component={Overview}/>
 		  		<Route path="order-history" component={OrderHistory} />
@@ -42,8 +43,11 @@ export default (
 		  		<Route path="help" component={Help} />
 		  	</Route>
 		</Route>
-		<Route component={SlidingPage}>
-		  	<Route path="author" component={Author} />
-		</Route>
+		{
+		// maybe we need this slidingpage in the future
+		//<Route component={SlidingPage}>
+		//  	<Route path="author" component={Author} />
+		//</Route>
+		}
 	</Route>
 )

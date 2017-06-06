@@ -1,14 +1,21 @@
 import React, {Component} from 'react';
+import {connect} from "react-redux";
+import AuthorPage from "../components/AuthorPage"
+import { authorInfoCall } from "../action/authorAction"
 
-class Author extends Component {
-
-  	render(){
-	    return (
-	        <div className="wrapper">
-	            Author
-	        </div>
-	    )
-  	}
+const mapStateToProps = (state) => {
+	return {
+		userStatus: state.userStatus,
+		authorData: state.authorData
+	}
 }
 
-export default Author;
+const mapDispatchToProps = (dispatch) => {
+    return {
+        initAuthorCall: (query) => {
+            dispatch(authorInfoCall(query))
+        }
+    };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(AuthorPage);
