@@ -1,26 +1,35 @@
-import 'babel-polyfill'
-import React from 'react'
-import { render } from 'react-dom'
-import { browserHistory } from 'react-router'
-import { syncHistoryWithStore } from 'react-router-redux'
-import Root from './containers/Root'
-import configureStore from './store/configureStore'
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import injectTapEventPlugin from 'react-tap-event-plugin';
+import React from 'react';
+import {render} from 'react-dom';
+import {Provider} from 'react-redux';
+import {createStore, applyMiddleware} from 'redux';
+import {Router, browserHistory} from 'react-router';
+import {syncHistoryWithStore} from 'react-router-redux';
+import thunk from 'redux-thunk';
+import createLogger from 'redux-logger';
+import rootReducer from './app/reducers';
+import routes from "./app/routes";
 
-require("./asset/style.css");
-require("./asset/googlefont/roboto.css");
+require("./app/asset/style.css");
+require("./app/asset/responsive.css");
+require("./app/asset/googlefont/roboto.css");
+require("./app/asset/bootstrap/css/bootstrap-theme.min.css");
+require("./app/asset/bootstrap/css/bootstrap.min.css");
 
-// the structure follow the redux official github -> example -> real-world
-const store = configureStore()
-const history = syncHistoryWithStore(browserHistory, store)
-
-//this line stablise the Material UI
-injectTapEventPlugin();
+const logger = createLogger();
+const store = createStore(rootReducer, applyMiddleware(thunk, logger));
+const history = syncHistoryWithStore(browserHistory, store);
 
 render(
-	<MuiThemeProvider>
-  		<Root store={store} history={history} />
-  	</MuiThemeProvider>,
+    <Provider store={store}>
+    	<div>
+    		<Router history={history} routes={routes} />
+    	</div>
+	</Provider>,
   	document.getElementById('root')
 )
+
+
+
+
+
+

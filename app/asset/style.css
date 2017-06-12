@@ -1,0 +1,426 @@
+/*=====================1.0 CSS Reset===========================*/
+
+/*remove the blue border of default chrome style*/
+:focus{
+	outline:0 !important;
+}
+
+a {
+	color:#333 !important;
+}
+
+a:hover,
+a:focus{
+	text-decoration:none !important;
+}
+
+h1{
+	color:#fff !important;
+}
+
+.icon-button{
+	display: block;
+	width:100%;
+    margin-bottom: 0;
+    font-weight: normal;
+    text-align: center;
+    vertical-align: middle;
+    touch-action: manipulation;
+    cursor: pointer;
+    background-image: none;
+    white-space: nowrap;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+	user-select: none;
+	text-shadow: 0 -1px 0 rgba(0,0,0,0.2);
+}
+
+
+/*=====================2.0 General===========================*/
+.outter-wrapper{
+	background-color: #F25D30;
+	padding-top: 70px;
+    min-height: 100vh;
+	overflow: hidden;
+}
+
+.wrapper{
+	padding-top:30px;
+}
+
+.centerbox-outter-wrapper{
+	position:fixed;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	background-color:rgba(56, 56, 56,0.7);
+	z-index:100;
+}
+
+.centerbox-wrapper{
+	position:fixed;
+	top:50%;
+	left:50%;
+	width:70%;
+	height:0;
+}
+
+.centerbox{
+	position:relative;
+	left:-50%;
+    -webkit-transform: translateY(-50%) translateZ(0);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%) translateZ(0);
+	background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.centerbox-wrapper.spinner{
+	width:auto;
+}
+
+.centerbox.spinner{
+	border-radius: 20px;
+	color:#F25D30;
+	padding:0;
+	height:40px;
+    -webkit-animation: spin 1.5s infinite linear;
+}
+
+.material-icons.spinner{
+    font-size:40px;
+}
+
+@-webkit-keyframes spin {
+    0%  {-webkit-transform: rotate(0deg);}
+    100% {-webkit-transform: rotate(360deg);}   
+}
+
+.login-button{
+	width:100%;
+}
+
+.login-button a{
+	display:inline-block;
+	width:50%;
+}
+
+.login-button button{
+	margin:6px 0;
+}
+
+.img-layer{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0,0.9);
+    z-index: 99;
+    overflow:hidden;
+}
+
+.img-wrapper{
+	width:70%;
+	height:70%;
+	overflow:hidden;	
+	margin:15% 0 0 15%;
+	text-align: center;
+}
+
+.img-wrapper > *{
+	vertical-align: middle;
+}
+
+.outter-wrapper{
+	background-color: #F25D30;
+	padding-top: 70px;
+	overflow: hidden;
+}
+
+.img-wrapper span{
+	display: inline-block;
+	height:100%;
+}
+
+.wrapper{
+	padding-top:30px;
+}
+
+.img-wrapper img{
+	width:auto;
+	max-width:100%;
+	height:auto;
+	max-height:100%;
+}
+
+.icon{
+    position: absolute;
+    font-size: 24px;
+    top: 50%;
+    padding: 5px 15px;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    color:#fff;
+}
+
+.icon:hover{
+	background-color: rgba(255, 255, 255, 0.3);
+	cursor:pointer;
+}
+
+.icon-arrow-left{
+	left:5%;
+}
+
+.icon-arrow-right{
+	right:5%;
+}
+
+
+
+/*=====================3.0 Header===========================*/
+.logo{
+	width:100%;
+	height:100%;
+}
+
+.menu{
+	position:fixed;
+	top:0;
+	left:0;
+	width:100%;
+	background-color:#F25D30;
+	-webkit-box-shadow: 0px 3px 6px 0px rgba(143,143,143,1);
+	-moz-box-shadow: 0px 3px 6px 0px rgba(143,143,143,1);
+	box-shadow: 0px 3px 6px 0px rgba(143,143,143,1);
+	z-index:10;
+}
+
+.menu .menu-item-button{
+	padding:0;
+	height:60px;
+	width:60px;
+	position:relative;
+}
+
+.menu-item-button button{
+	color:#fff;
+	height:100%;
+	border:none;
+	background-color:transparent;
+	border-radius: 0;
+	box-shadow:none;
+}
+
+.menu-item-button
+{
+	border-top:4px solid transparent;
+}
+
+.current-menu-item:not(.logo){
+	border-top:4px solid #fff;
+}
+
+.menu-item-button button:hover,
+.menu-item-button button:focus,
+.menu-item-button button:active,
+.menu-item-button button:active:focus,
+.current-menu-item button{
+	color:#fff;
+	background-color:#F25D30;
+	border-color:transparent;
+	box-shadow:none;
+}
+
+.button-text{
+    display: block;
+    position: absolute;
+    bottom: 2px;
+    width: 100%;
+    left: 0;
+    font-size: 10px;
+}
+
+.user-menu{
+	position: fixed;
+	top: 60px;
+	right: 0;
+	background-color: #fff;
+	width: 192px;
+	height: auto;
+	z-index: 10;
+	-webkit-transition: right 0.3s; /* Safari */
+    transition: right 0.3s;
+}
+
+.user-menu.user-menu-show{
+	right:0px;
+}
+
+.user-menu.user-menu-hide{
+	right:-192px;
+}
+
+
+.user-menu li{
+	height:40px;
+	padding-left:20px;
+	border-bottom:1px solid #f1f1f1;
+}
+
+.user-menu li:hover{
+	background-color:#f1f1f1;
+}
+
+.user-menu li a {
+	display: block;
+	height:100%;
+	line-height: 40px;
+}
+
+
+/*=====================4.0 Body===========================*/
+
+/* 4.1 general */
+
+
+/* 4.2 home */
+
+.avatar{
+	width:100%;
+	height:auto;
+}
+
+.image-wrapper,
+.image-wrapper img{
+	width:100%;
+	height:auto;
+}
+
+.short-summary{
+	background-color: #fff;
+}
+
+.expand-button{
+	float:right;
+	width:50px;
+}
+
+.more-section{
+	float:right;
+	position:relative;
+	clear:both;
+}
+
+.more-icon{
+	width:50px;
+	float:right;
+}
+
+.purchase-buttons{
+	float:right;
+	clear:both;
+}
+
+.others-section{
+	display:none;
+	position: absolute;
+    right: 50px;
+    width:250px;
+}
+
+
+/* 4.3 map */
+
+.map-wrapper{
+	padding:2px;
+	background-color:#fff;
+	margin: 10px 0;
+	height:500px;
+}
+
+#googlemap{
+	height:100%;
+	width:100%;
+}
+
+.gm-style-iw{
+	height:300px;
+}
+
+.info-window{
+	text-align: center;
+}
+
+.info-header{
+	width:20%;
+	display:inline-block;
+}
+
+.info-header img{
+	width:100%;
+	height:auto;
+}
+
+.map-img-section{
+	height:200px
+}
+/*  4.4. subscription */
+
+
+/* 4.4 login & sign in*/
+.signup-button{
+	width:200px;
+	margin:20px 0;
+	background-color:#fff;
+}
+
+/* 4.5 Dashboard */
+
+.dashboard-content{
+	background-color:#fff;
+	padding:5% 0;
+}
+
+.dashboard-sidebar{
+	border-right: 1px solid #eaeaea;
+}
+
+.dashboard-avatar{
+	padding:20%
+}
+
+.dashboard-avatar,
+.dashboard-avatar img{
+	width:100%;
+	height:auto;
+}
+
+.dashboard-menu li{
+	border-bottom: 1px solid #eaeaea;
+	padding-left:10px;
+}
+
+.dashboard-menu a{
+	display:inline-block;
+	line-height:40px;
+	width:100%;
+	vertical-align: baseline;
+}
+
+.dashboard-menu a:hover{
+	background-color:#f2f2f2;
+}
+/*=====================5.0 footer===========================*/
+
+/*=====================6.0 Responsive===========================*/
+
+
+
+
