@@ -48,11 +48,6 @@ class UserMenuLayer extends Component{
 			                </Link>
 		    			</li>
 		    			<li>
-			                <Link to="/how-it-works" className="user-menu-item" activeClassName="current-menu-item"> 
-			                	How it works
-			                </Link>
-		    			</li>
-		    			<li>
 			                <Link to="/signout" className="user-menu-item" activeClassName="current-menu-item"> 
 			                	Logout
 			                </Link>
@@ -74,11 +69,6 @@ class UserMenuLayer extends Component{
 			                	Sign up
 			                </Link>
 		                </li>
-		                <li>
-			                <Link to="/how-it-works" className="user-menu-item" activeClassName="current-menu-item"> 
-			                	How it works
-			                </Link>
-		    			</li>
 					</ul>
 		    	</div>
     			);
