@@ -56,11 +56,6 @@ class DashboardPage extends Component {
 						                </Link>
 					    			</li>
 					    			<li>
-						                <Link to="/how-it-works" className="user-menu-item" activeClassName="current-menu-item"> 
-						                	How it works
-						                </Link>
-					    			</li>
-					    			<li>
 						                <Link to="/signout" className="user-menu-item" activeClassName="current-menu-item"> 
 						                	Logout
 						                </Link>
