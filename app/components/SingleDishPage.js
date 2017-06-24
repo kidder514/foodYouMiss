@@ -19,7 +19,6 @@ class SingleDishPage extends Component {
 							<img className="img-rounded" src="https://cdn2.iconfinder.com/data/icons/rcons-user/32/male-circle-128.png" alt="profile-avatar" />
 							<h2>James' indian food</h2>
 							<hr />
-							<button type="button">Subscribe</button>
 							<button type="button">Inbox</button>
 							<button type="button">Location/delievery ratio</button>
 							<button type="button">Available date</button>
