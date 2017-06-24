@@ -25,9 +25,6 @@ class MenuLayer extends Component{
                 <Link to="/chat" className="menu-item-button col-xs-2 col-sm-1 pull-right" activeClassName="current-menu-item">
                     <IconButton icon={"textsms"} text="inbox"/>
                 </Link>
-                <Link to="/subscriptions" className="menu-item-button col-xs-2 col-sm-1 pull-right" activeClassName="current-menu-item">
-                    <IconButton icon={"recent_actors"} text="subscriptions"/>
-                </Link>
                 <Link to="/map" className="menu-item-button col-xs-2 col-sm-1 pull-right" activeClassName="current-menu-item">
                     <IconButton icon={"location_on"} text="map" />
                 </Link>
