@@ -22,11 +22,11 @@ var initialUserStatus = {
 //initialise user data from localstorage 
 if (typeof(Storage) !== "undefined") {
 	if(localStorage.user !== undefined){
-		initialUserStatus = JSON.parse(localStorage.user);
+		var currentStatus = JSON.parse(localStorage.user);
 	}
 }
 
-function userStatus(state = initialUserStatus, action) {
+function userStatus(state = (currentStatus != undefined) ? currentStatus : initialUserStatus, action) {
   	switch (action.type){
 	    case "LOGIN":
 	    		var user = {
