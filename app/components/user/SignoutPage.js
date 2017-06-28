@@ -9,7 +9,7 @@ class SignoutPage extends Component {
 		this.message = "";
 	}
 
-	componentWillMount(){
+  	render(){
 		if (this.props.userStatus.isLoggedIn)
 		{
 			this.message = "You have already logged out";
@@ -17,9 +17,7 @@ class SignoutPage extends Component {
 		}else{
 			this.message = "You are not logged in yet";
 		}
-	}
 
-  	render(){
 	    return (
 	    	<div>
 	    		{this.message}

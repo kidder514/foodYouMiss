@@ -1,54 +1,63 @@
 
 var initialUserStatus = {
-	userId: undefined,
-	avatar: "",
-	userName: undefined,
-	userEmail:"",
-    isLoggedIn: false,
+	userId: "",
+	avatarUrl: "",
+	userName: "",
+	email:"",
+	firstName: "",
+	lastName: "",
+	coordinate:[],
     token: "",
-    hasLocation: false,
-    currentLocation: "",
-    currentPage:""
+    userAddress:{},
+    currentAddress:{},
+    likes:[],
+    settings:{},
+    order:{},
+    currentPage:"",
+    isLoggedIn: false,
+    hasAddress: false,
+    rememberLogin: false
 }
 
 //initialise user data from localstorage 
 if (typeof(Storage) !== "undefined") {
 	if(localStorage.user !== undefined){
-		initialUserStatus = localStorage.user;
+		var currentStatus = JSON.parse(localStorage.user);
 	}
 }
 
-function userStatus(state = initialUserStatus, action) {
+function userStatus(state = (currentStatus != undefined) ? currentStatus : initialUserStatus, action) {
   	switch (action.type){
 	    case "LOGIN":
-	    	//store user data into localstorage if user choose to remember login
-			if (typeof(Storage) !== "undefined" && action.rememberLogin) {
+	    		var user = {
+					userId: action.data.userId,
+					avatarUrl: action.data.avatarUrl,
+					userName: action.data.userName,
+					email:action.data.email,
+					firstName: action.data.firstName,
+					lastName: action.data.lastName,
+					coordinate: action.data.coordinate,
+				    token: action.data.jwtoken,
+				    userAddress: action.data.address,
+				    currentAddress:action.data.address,
+				    likes:action.data.likes,
+				    settings:action.data.settings,
+				    order:action.data.order,
+				    currentPage:"",
+				    isLoggedIn: true,
+				    hasAddress: action.data.address != {} && action.data.address != undefined,
+				    rememberLogin: action.data.rememberLogin
+				};
 
+	    	//store user data into localstorage if user choose to remember login
+			if (typeof(Storage) !== "undefined" && action.data.rememberLogin) {
 				if (localStorage.user !== undefined){
 					localStorage.removeItem("user");
 				}
-
-				var user = {
-					userId: action.userId,
-					userName: action.userName,
-					userEmail: action.userEmail,
-				    token: action.token,
-				    currentLocation: action.location,
-				    avatar:action.avatar
-				};
-				localStorage.setItem("user", user);
+				localStorage.setItem("user", JSON.stringify(user));
 			}
 
-	    	return { ...state, 
-				userId: action.userId,	
-	    		userName: action.userName,
-				userEmail: action.userEmail,
-	    		isLoggedIn: true,
-			    avatar:action.avatar,
-	    		token: action.token,
-	    		hasLocation: true,
-	    		currentLocation:action.location 
-	    	};
+	    	return user;
 	    case "LOGOUT":
 			if (typeof(Storage) !== "undefined") {
 				if(localStorage.user !== undefined){
@@ -57,9 +66,9 @@ function userStatus(state = initialUserStatus, action) {
 			}
 	        return initialUserStatus;
 	    case "LOCATE":
-	    	return { ...state, hasLocation: true, currentLocation: action.location};
+	    	return { ...state, hasAddress: true, currentAddress: action.location};
 	    case "UNLOCATE":
-	        return { ...state, hasLocation: false, currentLocation: ""};
+	        return { ...state, hasAddress: false, currentAddress: ""};
 	    default:
 	    	return state
     }
