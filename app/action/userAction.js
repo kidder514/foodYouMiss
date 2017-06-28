@@ -3,27 +3,27 @@ import {popupError} from "./errorAction";
 import {startLoading, finishLoading} from "./loadingAction"
 import config from "../config"
 
-export const loginAction = (action) => {
-	return { type: "LOGIN", action:action}
+export const loginAction = (data) => {
+	return { type: "LOGIN", data}
 }
 
 export const logoutAction = () => {
 	return { type: "LOGOUT" }
 }
 
-export const loadUserDataAction = (action) => {
-	return { type: "LOAD_USER_DATA", action:action}
+export const loadUserDataAction = (data) => {
+	return { type: "LOAD_USER_DATA", data}
 }
 
 //TODO: handle the backend data.
 export const signinCall = (userInfo, rememberLogin) => {
 	return dispatch => {
 		dispatch(startLoading());
-		
-		axios.post(config.APIserver + "auth/signin", userInfo)
+		axios.get("http://www.mocky.io/v2/595247070f00000501a3d7f5", userInfo)
 		.then((res)=>{
-			console.log("login successfully");
-			dispatch(finishLoading())
+			res.data.rememberLogin = rememberLogin;
+			dispatch(loginAction(res.data));
+			dispatch(finishLoading());
 			})
 		.catch((error)=>{
 			dispatch(finishLoading())

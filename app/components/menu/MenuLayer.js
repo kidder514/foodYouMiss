@@ -6,8 +6,8 @@ import GoogleLogin from 'react-google-login';
 class MenuLayer extends Component{
 
     render() {
-    	var userAction = this.props.userStatus.isLoggedIn ? 
-    		<img src={userStatus.avatar} className="img-rounded" /> : <IconButton icon={"menu"}/>;
+    	var userProfile = this.props.userStatus.isLoggedIn ? 
+    		<img src={this.props.userStatus.avatarUrl} className="img-circle menu-avatar" /> : <IconButton icon={"menu"}/>;
     	var isShown = !this.props.ui.showUserMenu;
 
     	return (
@@ -17,7 +17,7 @@ class MenuLayer extends Component{
                 </Link>
 		    	<a className={"menu-item-button col-xs-2 col-sm-1 pull-right " + (this.props.ui.showUserMenu ? "current-menu-item" : "")}  
 		    		onClick={() => this.props.toggleUserMenu(isShown)}>
-		            {userAction}
+		            {userProfile}
 				</a>
                 <Link to="/mydish" className="menu-item-button col-xs-2 col-sm-1 pull-right" activeClassName="current-menu-item">
                     <IconButton icon={"face"} text="my page"/>
