@@ -54,29 +54,21 @@ class SinglePostItem extends Component {
 	            	</div>
 	            	<div className="container-fluid">
 	            		<div className="row">
-		            		<a className="col-sm-3" onClick={this.toggleLike()}> 
+		            		<a className="col-sm-4" onClick={this.toggleLike()}> 
 								<IconButton icon={"thumb_up"} /><span>{post.postLikes.length}</span>
 		            		</a>
-							<Link className="col-sm-3" to={"/post/" + post.postId + "/comment"}>
-								<IconButton icon={"comment"}/><span>{post.postComments.length}</span>
-		            		</Link>
-		            		<Link className="col-sm-3" to={"chat/" + post.authorId}>
+		            		<Link className="col-sm-4" to={"inbox/" + post.authorId}>
 								<IconButton icon={"forum"} />
 		            		</Link>
-			            	<Link className="col-sm-3" to={"/map/" + post.postCoordinate.latitude + "+" + post.postCoordinate.longitude}>
+			            	<Link className="col-sm-4" to={"/map/" + post.authorId}>
 								<IconButton icon={"location_on"} />
 			            	</Link>
 	            		</div>
 	            	</div>
 
 	            	<div>
+	            		{/* TODO: add feature to the following buttons, after you have done*/ }
 	            		<span>{post.category} | {post.region} | {post.allergen}</span>
-	            	</div>
-
-
-	            	<div className="purchase-buttons">
-	            		<button label="add to list" className="primary btn btn-default" >add to Shop list</button>
-	            		<button label="Order" className="primary btn btn-default" >Order</button>
 	            	</div>
 	            </div>
 	    	</article>
