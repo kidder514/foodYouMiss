@@ -29,8 +29,11 @@ class SinglePostItem extends Component {
 				
 		return (
 			<article disabled={true} className="col-sm-4 col-xs-6" >
+
 	            <section className="clearfix image-wrapper">
-	            	<img src={this.props.post.postImgUrls[0].thumbnail} />
+	            	<Link to={"/dish/" + post.postId}>
+	            		<img src={this.props.post.postImgUrls[0].thumbnail} />
+	            	</Link>
 	            </section>
 	            <div className="short-summary">
 					<div className="container-fluid">
