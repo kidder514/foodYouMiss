@@ -29,8 +29,11 @@ class SinglePostItem extends Component {
 				
 		return (
 			<article disabled={true} className="col-sm-4 col-xs-6" >
+
 	            <section className="clearfix image-wrapper">
-	            	<img src={this.props.post.postImgUrls[0].thumbnail} />
+	            	<Link to={"/dish/" + post.postId}>
+	            		<img src={this.props.post.postImgUrls[0].thumbnail} />
+	            	</Link>
 	            </section>
 	            <div className="short-summary">
 					<div className="container-fluid">
@@ -47,37 +50,28 @@ class SinglePostItem extends Component {
 				            </div>
 		            	</div>
 		            </div>
-	            	<Link to={"/dish/" + post.postId}><h3>{post.title} fried rice</h3></Link>
+	            	<Link to={"/dish/" + post.postId}><h3>{post.postTitle}</h3></Link>
+	            	<div>rating: {post.postRating}({post.ratingNumber})</div>
 	            	<div className="clearfix">
-		            	<div className="more-section">
-			            	<div className="others-section" id="others-section" ref={(div) => { this.othersSection = div; }}>
-			            		<a className="more-icon" onClick={this.toggleLike()}> 
-									<IconButton icon={"thumb_up"} text={post.postLikes.length}/>
-			            		</a>
-			            		<Link className="more-icon" to={"/post/" + post.postId + "/comment"}>
-									<IconButton icon={"comment"} text={post.postComments.length}/>
-			            		</Link>
-			            		<Link className="more-icon" to={"/post/" + post.postId + "/share"}>
-									<IconButton icon={"share"} />
-			            		</Link>
-			            		<Link className="more-icon" to={"chat/" + post.authorId}>
-									<IconButton icon={"forum"} />
-			            		</Link>
-				            	<Link className="more-icon" to={"/map/" + post.postCoordinate.latitude + "+" + post.postCoordinate.longitude}>
-									<IconButton icon={"location_on"} />
-				            	</Link>
-			            	</div>
-			            	<div className="expand-button">
-								<IconButton onClick={() => this.expandOthers(this.othersSection)} icon={"morevert"} />
-			            	</div>
-		            	</div>
-	            		<p>${post.postPrice}/ per serve | ({post.postPortions}) portions left</p>
+	            		<p>From ${post.postPrice} | ({post.postPortions}) portions left</p>
+	            	</div>
+	            	<div className="container-fluid">
+	            		<div className="row">
+		            		<a className="col-sm-4" onClick={this.toggleLike()}> 
+								<IconButton icon={"thumb_up"} /><span>{post.postLikes.length}</span>
+		            		</a>
+		            		<Link className="col-sm-4" to={"inbox/" + post.authorId}>
+								<IconButton icon={"forum"} />
+		            		</Link>
+			            	<Link className="col-sm-4" to={"/map/" + post.authorId}>
+								<IconButton icon={"location_on"} />
+			            	</Link>
+	            		</div>
 	            	</div>
 
-
-	            	<div className="purchase-buttons">
-	            		<button label="add to list" className="primary btn btn-default" >add to list</button>
-	            		<button label="Order" className="primary btn btn-default" >Order</button>
+	            	<div>
+	            		{/* TODO: add feature to the following buttons, after you have done*/ }
+	            		<span>{post.category} | {post.region} | {post.allergen}</span>
 	            	</div>
 	            </div>
 	    	</article>

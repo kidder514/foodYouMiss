@@ -19,7 +19,7 @@ export const initMyPostAction = (post) => {
 export const postListCall = (query) => {
 	return dispatch => {
 		dispatch(startLoading());
-		axios.post('http://www.mocky.io/v2/58634a5d0f00000224175621',query)
+		axios.post('http://www.mocky.io/v2/5954a2840f0000ef00fc0d5b',query)
 		.then(function (res) {
 			dispatch(finishLoading());
 			dispatch(initNearbyPostAction(res.data));
@@ -34,7 +34,7 @@ export const postListCall = (query) => {
 export const myPostListCall = (query) => {
 	return dispatch => {
 		dispatch(startLoading());
-		axios.post('http://www.mocky.io/v2/58634a5d0f00000224175621',query)
+		axios.post('http://www.mocky.io/v2/5954a2840f0000ef00fc0d5b',query)
 		.then(function (res) {
 			dispatch(finishLoading());
 			dispatch(initMyPostAction(res.data));
