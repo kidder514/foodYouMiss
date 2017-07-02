@@ -4,7 +4,7 @@ import UserMenuLayer from "../components/UserMenuLayer"
 
 const mapStateToProps = (state) => {
 	return {
-		userStatus: state.userStatus,
+		userState: state.userState,
 		ui: state.ui
 	}
 }

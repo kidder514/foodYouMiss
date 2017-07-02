@@ -7,10 +7,10 @@ class NearbyPage extends Component{
 
 	componentDidMount() {
 		let query = "";
-		let userStatus = this.props.userStatus;
+		let userState = this.props.userState;
 		
-		if(userStatus.hasLocation){
-			query = "location=" + userStatus.currentLocation;
+		if(userState.hasLocation){
+			query = "location=" + userState.currentLocation;
 		}
 		
         if(this.props.postListData.length <= 0){

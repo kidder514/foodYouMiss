@@ -44,7 +44,7 @@ class SignupPage extends Component {
 	}
 
 	componentWillMount(){
-		if(this.props.userStatus.isLoggedIn){
+		if(this.props.userState.isLoggedIn){
 			browserHistory.push('/');
 		}
 	}

@@ -5,7 +5,7 @@ class DashboardPage extends Component {
 
 	componentWillMount() {
 		let query = "";
-		let userStatus = this.props.userStatus;
+		let userState = this.props.userState;
 		let userData = this.props.userData;
 
         if(this.props.userData.length <= 0){
@@ -19,7 +19,7 @@ class DashboardPage extends Component {
   					<div className="row dashboard-content">
 	  					<div className="col-sm-3 dashboard-sidebar">
 	  						<div className="dashboard-avatar">
-	  							<img src={this.props.userStatus.avatar} alt="User Avatar" className="img-circle"/>
+	  							<img src={this.props.userState.avatar} alt="User Avatar" className="img-circle"/>
 				                <Link to="/edit-dishes" className="user-menu-item" activeClassName="current-menu-item"> 
 				                	<button className="btn btn-default" >Edit Dishes</button>
 				                	

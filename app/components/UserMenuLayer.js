@@ -7,7 +7,7 @@ class UserMenuLayer extends Component{
 
     	var menuClass = this.props.ui.showUserMenu ? "user-menu-show" : "user-menu-hide";
 
-    	if (this.props.userStatus.isLoggedIn)
+    	if (this.props.userState.isLoggedIn)
     	{
     		return (
 		    	<div className={"user-menu " + menuClass}>

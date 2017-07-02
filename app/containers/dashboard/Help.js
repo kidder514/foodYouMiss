@@ -4,7 +4,7 @@ import HelpPage from "../../components/dashboard/HelpPage"
 
 const mapStateToProps = (state) => {
 	return {
-		userStatus: state.userStatus,
+		userState: state.userState,
 		userData: state.userData
 	}
 }

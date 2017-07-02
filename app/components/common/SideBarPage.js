@@ -5,7 +5,7 @@ class SideBarPage extends Component{
 
   	render(){
   		var loginPortal = "";
-  		if ( !this.props.userStatus.isLoggedIn)
+  		if ( !this.props.userState.isLoggedIn)
 		{
 			loginPortal = 
 			<div>

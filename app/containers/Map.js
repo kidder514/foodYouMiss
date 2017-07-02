@@ -5,16 +5,15 @@ import { mapPostListCall } from "../action/mapPostAction"
 
 const mapStateToProps = (state) => {
 	return {
-		userStatus: state.userStatus,
+		userState: state.userState,
 		mapPostListData: state.mapNearByPost
 	}
 }
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        mapInitPost: (query) => {
-            dispatch(mapPostListCall(query))
-        }
+        updateMapPost: (query) => {dispatch(mapPostListCall(query))},
+        updateSearchOptions: () => {dispatch(updateSearchOptionsCall())}
     };
 };
 

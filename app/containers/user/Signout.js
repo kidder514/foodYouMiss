@@ -5,7 +5,7 @@ import {logoutAction} from "../../action/userAction"
 
 const mapStateToProps = (state) => {
 	return {
-		userStatus: state.userStatus
+		userState: state.userState
 	}
 }
 
