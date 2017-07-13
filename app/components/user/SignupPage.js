@@ -44,7 +44,7 @@ class SignupPage extends Component {
 	}
 
 	componentWillMount(){
-		if(this.props.userStatus.isLoggedIn){
+		if(this.props.userState.isLoggedIn){
 			browserHistory.push('/');
 		}
 	}
@@ -72,7 +72,6 @@ class SignupPage extends Component {
 	}
 
 	autocompleteOnChange(e){
-		console.log("autocompleteOnChange");
 		if(this.state.location != ""){
 			this.setState({location:"",coordinate:""},() => {this.validateSubmitButton()});
 		}
@@ -237,6 +236,7 @@ class SignupPage extends Component {
 			    				handleLocaltion={this.handleLocaltion} 
 			    				autocompleteOnChange={this.autocompleteOnChange}
 				    			placeholder="Your Location"
+								types="geocode"
 			    			/>
 			    			<p>{this.state.errorLocation}</p>
 			    			<br />

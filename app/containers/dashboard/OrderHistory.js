@@ -4,7 +4,7 @@ import OrderHistoryPage from "../../components/dashboard/OrderHistoryPage"
 
 const mapStateToProps = (state) => {
 	return {
-		userStatus: state.userStatus,
+		userState: state.userState,
 		userData: state.userData
 	}
 }

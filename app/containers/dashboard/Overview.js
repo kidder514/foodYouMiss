@@ -4,7 +4,7 @@ import OverviewPage from "../../components/dashboard/OverviewPage"
 
 const mapStateToProps = (state) => {
 	return {
-		userStatus: state.userStatus,
+		userState: state.userState,
 		userData: state.userData
 	}
 }

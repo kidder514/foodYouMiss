@@ -4,7 +4,7 @@ import SideBarPage from "../../components/common/SideBarPage"
 
 const mapStateToProps = (state) => {
 	return {
-		userStatus:state.userStatus
+		userState:state.userState
 	}
 }
 

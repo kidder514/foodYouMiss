@@ -10,7 +10,7 @@ class SignoutPage extends Component {
 	}
 
   	render(){
-		if (this.props.userStatus.isLoggedIn)
+		if (this.props.userState.isLoggedIn)
 		{
 			this.message = "You have already logged out";
 			this.props.signout();

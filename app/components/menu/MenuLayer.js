@@ -6,8 +6,8 @@ import GoogleLogin from 'react-google-login';
 class MenuLayer extends Component{
 
     render() {
-    	var userProfile = this.props.userStatus.isLoggedIn ? 
-    		<img src={this.props.userStatus.avatarUrl} className="img-circle menu-avatar" /> : <IconButton icon={"menu"}/>;
+    	var userProfile = this.props.userState.isLoggedIn ? 
+    		<img src={this.props.userState.avatarUrl} className="img-circle menu-avatar" /> : <IconButton icon={"menu"}/>;
     	var isShown = !this.props.ui.showUserMenu;
 
     	return (

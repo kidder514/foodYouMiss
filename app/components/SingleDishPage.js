@@ -5,7 +5,7 @@ class SingleDishPage extends Component {
 
 	componentWillMount() {
 		let query = "";
-		let userStatus = this.props.userStatus;
+		let userState = this.props.userState;
 
   	    this.props.loadSingleDish(query);
   	}

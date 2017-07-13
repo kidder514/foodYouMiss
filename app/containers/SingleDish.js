@@ -5,7 +5,7 @@ import { singleDishCall } from "../action/singlePostAction"
 
 const mapStateToProps = (state) => {
 	return {
-		userStatus: state.userStatus,
+		userState: state.userState,
 		singleDishData: state.singleDishData
 	}
 }

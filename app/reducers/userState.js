@@ -1,5 +1,5 @@
 
-var initialUserStatus = {
+var initialUserState = {
 	userId: "",
 	avatarUrl: "",
 	userName: "",
@@ -22,11 +22,11 @@ var initialUserStatus = {
 //initialise user data from localstorage 
 if (typeof(Storage) !== "undefined") {
 	if(localStorage.user !== undefined){
-		var currentStatus = JSON.parse(localStorage.user);
+		var currentState = JSON.parse(localStorage.user);
 	}
 }
 
-function userStatus(state = (currentStatus != undefined) ? currentStatus : initialUserStatus, action) {
+function userState(state = (currentState != undefined) ? currentState : initialUserState, action) {
   	switch (action.type){
 	    case "LOGIN":
 	    		var user = {
@@ -64,7 +64,7 @@ function userStatus(state = (currentStatus != undefined) ? currentStatus : initi
 					localStorage.removeItem("user");
 				}
 			}
-	        return initialUserStatus;
+	        return initialUserState;
 	    case "LOCATE":
 	    	return { ...state, hasAddress: true, currentAddress: action.location};
 	    case "UNLOCATE":
@@ -74,4 +74,4 @@ function userStatus(state = (currentStatus != undefined) ? currentStatus : initi
     }
 }
 
-export default userStatus
+export default userState

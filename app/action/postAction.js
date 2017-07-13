@@ -16,10 +16,25 @@ export const initMyPostAction = (post) => {
     }
 }
 
+
+export const initPostListCall = (query) => {
+	return dispatch => {
+		axios.get('http://www.mocky.io/v2/596714a3110000cd0db6c077',query)
+		.then(function (res) {
+			dispatch(finishLoading());
+			dispatch(initNearbyPostAction(res.data));
+	  	})
+	  	.catch(function (error) {
+			dispatch(finishLoading());
+			dispatch(popupError("Unable to load dishes' Post from server"));
+	  	});
+	}	
+}
+
 export const postListCall = (query) => {
 	return dispatch => {
 		dispatch(startLoading());
-		axios.post('http://www.mocky.io/v2/5954a2840f0000ef00fc0d5b',query)
+		axios.post('http://www.mocky.io/v2/596714a3110000cd0db6c077',query)
 		.then(function (res) {
 			dispatch(finishLoading());
 			dispatch(initNearbyPostAction(res.data));
@@ -34,7 +49,7 @@ export const postListCall = (query) => {
 export const myPostListCall = (query) => {
 	return dispatch => {
 		dispatch(startLoading());
-		axios.post('http://www.mocky.io/v2/5954a2840f0000ef00fc0d5b',query)
+		axios.post('http://www.mocky.io/v2/596714a3110000cd0db6c077',query)
 		.then(function (res) {
 			dispatch(finishLoading());
 			dispatch(initMyPostAction(res.data));

@@ -5,7 +5,7 @@ import { authorInfoCall } from "../action/authorAction"
 
 const mapStateToProps = (state) => {
 	return {
-		userStatus: state.userStatus,
+		userState: state.userState,
 		authorData: state.authorData
 	}
 }

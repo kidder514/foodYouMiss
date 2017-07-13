@@ -8,7 +8,7 @@ class PostList extends Component {
 	    	<div className="container-fluid">
 	    		<div className="row">
 		          	{
-		          	this.props.data.map(post => <SinglePost key={post.postId} post={post} />)
+		          	this.props.data.map(post => <SinglePost key={"dish" + post.postId} post={post} />)
 		          	}
 	          	</div>
 	    	</div>

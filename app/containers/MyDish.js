@@ -5,7 +5,7 @@ import { myPostListCall } from "../action/postAction"
 
 const mapStateToProps = (state) => {
 	return {
-		userStatus: state.userStatus,
+		userState: state.userState,
 		myPostListData: state.myPost
 	}
 }

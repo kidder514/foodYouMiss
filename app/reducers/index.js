@@ -4,20 +4,22 @@ import nearByPostReducer from "./nearByPostReducer"
 import mapNearByPostReducer from "./mapNearByPostReducer"
 import myPostReducer from "./myPostReducer"
 import uiReducer from "./uiReducer"
-import userStatus from "./userStatus"
+import userState from "./userState"
 import userData from "./userData"
 import singleDishData from "./singleDishData"
 import authorData from "./authorData"
+import search from "./searchReducer"
 
 const rootReducer = combineReducers({
   nearByPost: nearByPostReducer,
   mapNearByPost: mapNearByPostReducer,
   myPost:myPostReducer,
   ui: uiReducer,
-  userStatus,  
+  userState,  
   userData,
   singleDishData,
   authorData,
+  search,
   routing
 })
 
