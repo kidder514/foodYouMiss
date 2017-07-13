@@ -2,19 +2,19 @@ import React, {Component} from 'react';
 import {connect} from "react-redux";
 import NearbyPage from "../components/NearbyPage"
 import { postListCall } from "../action/postAction"
+import { updateSearchOptionsCall } from "../action/searchAction"
 
 const mapStateToProps = (state) => {
 	return {
-		userStatus: state.userStatus,
+		userState: state.userState,
 		postListData: state.nearByPost
 	}
 }
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        initPost: (query) => {
-            dispatch(postListCall(query))
-        }
+        updatePost: (query) => {dispatch(postListCall(query))},
+        updateSearchOptions: (query) => {dispatch(updateSearchOptionsCall(query))}
     };
 };
 

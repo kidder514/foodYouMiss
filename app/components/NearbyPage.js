@@ -5,19 +5,6 @@ import SearchBox from "../containers/common/Search"
 
 class NearbyPage extends Component{
 
-	componentDidMount() {
-		let query = "";
-		let userState = this.props.userState;
-		
-		if(userState.hasLocation){
-			query = "location=" + userState.currentLocation;
-		}
-		
-        if(this.props.postListData.length <= 0){
-      	    this.props.initPost(query);
-        }
-  	}
-
   	render(){
   		if(this.props.postListData.length > 0){
 	  		return(

@@ -70,7 +70,7 @@ class UserMenuLayer extends Component{
 			                </Link>
 		                </li>
 		                <li>
-			                <Link to="/signup-entrance" className="user-menu-item" activeClassName="current-menu-item"> 
+			                <Link to="/signup" className="user-menu-item" activeClassName="current-menu-item"> 
 			                	Sign up
 			                </Link>
 		                </li>
