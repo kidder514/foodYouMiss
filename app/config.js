@@ -1,4 +1,5 @@
 const config = {
+	logoUrl:"http://logodatabases.com/wp-content/uploads/2017/06/airbnb_logo_small.png",
 	APIserver:"http://dish.visionsoft.com.au/api/",
 	GrecaptchaSitekey:"6Lf5EwwUAAAAAEddev4kBP7COg1RHlQWsI81uWdt",
 	googleLoginKey:"215051426109-bnlsa6i3klfvsctep2qor59mp4rk31g3.apps.googleusercontent.com",

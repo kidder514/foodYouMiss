@@ -146,7 +146,7 @@ class LoginPage extends Component {
 			        <div className="col-sm-8 col-sm-offset-2">
 	            		<h1 className="content-logo"></h1>
 		            	<form onSubmit={this.onSubmit}>
-		            		<h1>Sign in with existing account</h1>
+		            		<h1>Log in with existing account</h1>
 							<TextField 
 				    			value={this.state.email}
 				    			onChange={this.onChange}

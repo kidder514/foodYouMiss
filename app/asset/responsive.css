@@ -5,32 +5,11 @@
 
 /*=====================2.0 Header===========================*/
 @media screen and (max-width: 640px) {
-	.menu{
-		height:auto;		
-	}
-	.menu .menu-item-button{
-		padding:0;
-		height:auto;
-		width:auto;
-	}
-
-	.login-button{
-		position:fixed;
-		top:46px;
-
-	}
-
-	.user-menu{
-		top: 45px;
-	}
-
-	.logo{
-		width:41px;
-		height:41px;
-	}
-
-	.button-text{
+	.menu-item-button{
 		display:none;
+	}
+	.burger-menu{
+		display:block;
 	}
 }
 /*=====================3.0 Body===========================*/
