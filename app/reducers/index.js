@@ -1,7 +1,6 @@
 import { routerReducer as routing } from 'react-router-redux'
 import { combineReducers } from 'redux'
 import nearByPostReducer from "./nearByPostReducer"
-import mapNearByPostReducer from "./mapNearByPostReducer"
 import myPostReducer from "./myPostReducer"
 import uiReducer from "./uiReducer"
 import userState from "./userState"
@@ -12,7 +11,6 @@ import search from "./searchReducer"
 
 const rootReducer = combineReducers({
   nearByPost: nearByPostReducer,
-  mapNearByPost: mapNearByPostReducer,
   myPost:myPostReducer,
   ui: uiReducer,
   userState,  

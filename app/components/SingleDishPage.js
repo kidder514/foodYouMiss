@@ -29,7 +29,6 @@ class SingleDishPage extends Component {
   							<div ClassName="tab">
 								<button type="button">Dish</button>
 								<button type="button">Review</button>
-								<button type="button">Location in Map</button>
   							</div>
   							<div ClassName="tab-content">
   								<div className="row">
