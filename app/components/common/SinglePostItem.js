@@ -28,7 +28,12 @@ class SinglePostItem extends Component {
 		const post = this.props.post;
 				
 		return (
-			<article disabled={true} className="col-sm-4 col-xs-6" >
+			<article 
+				disabled={true} 
+				className="col-sm-4 col-xs-6"  
+				onMouseEnter={() => {this.props.onMouseEnter(post.authorId)}}
+				onMouseLeave={() => {this.props.onMouseLeave(post.authorId)}}
+				>
 
 	            <section className="clearfix image-wrapper">
 	            	<Link to={"/dish/" + post.postId}>
