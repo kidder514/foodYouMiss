@@ -11,7 +11,7 @@ class SideBarPage extends Component{
 			<div>
 				<p>Login or sign-up to order food</p>
 				<div className="login-button">
-				  	<Link to="/signin" className="login ">
+				  	<Link to="/login" className="login ">
 			    		<button className="btn btn-default btn-sm btn-block">
 			    			login
 				    	</button>

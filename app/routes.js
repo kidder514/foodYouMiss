@@ -5,7 +5,7 @@ import Wrapper from "./components/Wrapper"
 import SlidingPage from "./components/common/SlidingPage"
 import Front from "./containers/static/Front"
 import HomeFood from "./containers/HomeFood"
-import Signin from "./containers/user/Signin"
+import Login from "./containers/user/Login"
 import Signup from "./containers/user/Signup"
 import Signout from "./containers/user/Signout"
 import MyDish from "./containers/MyDish"
@@ -24,7 +24,7 @@ export default (
 		<Route path="/" component={Wrapper}>
 	  		<IndexRoute component={Front} />
 	  		<Route path="homefood" component={HomeFood} />
-	  		<Route path="signin" component={Signin} />
+	  		<Route path="login" component={Login} />
 	  		<Route path="signup" component={Signup} />
 		  	<Route path="signout" component={Signout} />
 		  	<Route path="mydish" component={MyDish} />

@@ -65,8 +65,8 @@ class UserMenuLayer extends Component{
 		    	<div className={"user-menu " + menuClass}>
 		    		<ul className="list-unstyled">
 		    			<li>
-			                <Link to="/signin" className="user-menu-item" activeClassName="current-menu-item"> 
-			                	Sign in
+			                <Link to="/login" className="user-menu-item" activeClassName="current-menu-item"> 
+			                	Log In
 			                </Link>
 		                </li>
 		                <li>
