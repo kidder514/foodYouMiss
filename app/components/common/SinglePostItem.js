@@ -68,9 +68,6 @@ class SinglePostItem extends Component {
 		            		<Link className="col-sm-4" to={"inbox/" + post.authorId}>
 								<IconButton icon={"forum"} />
 		            		</Link>
-			            	<Link className="col-sm-4" to={"/map/" + post.authorId}>
-								<IconButton icon={"location_on"} />
-			            	</Link>
 	            		</div>
 	            	</div>
 

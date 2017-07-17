@@ -8,7 +8,6 @@ import Nearby from "./containers/Nearby"
 import Signin from "./containers/user/Signin"
 import Signup from "./containers/user/Signup"
 import Signout from "./containers/user/Signout"
-import Map from "./containers/Map"
 import MyDish from "./containers/MyDish"
 import Chat from "./containers/Chat"
 import Dashboard from "./containers/dashboard/Dashboard"
@@ -28,7 +27,6 @@ export default (
 	  		<Route path="signin" component={Signin} />
 	  		<Route path="signup" component={Signup} />
 		  	<Route path="signout" component={Signout} />
-		  	<Route path="map" component={Map} />
 		  	<Route path="mydish" component={MyDish} />
 		  	<Route path="chat" component={Chat} />
 		  	<Route path="dish/:dishid" component={SingleDish} />
