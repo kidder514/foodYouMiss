@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from "react-redux";
-import MyDishPage from "../components/MyDishPage"
+import MyPagePage from "../components/MyPagePage"
 import { myPostListCall } from "../action/postAction"
 
 const mapStateToProps = (state) => {
@@ -18,4 +18,4 @@ const mapDispatchToProps = (dispatch) => {
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(MyDishPage);
+export default connect(mapStateToProps, mapDispatchToProps)(MyPagePage);

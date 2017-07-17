@@ -8,7 +8,7 @@ import HomeFood from "./containers/HomeFood"
 import Login from "./containers/user/Login"
 import Signup from "./containers/user/Signup"
 import Signout from "./containers/user/Signout"
-import MyDish from "./containers/MyDish"
+import MyPage from "./containers/MyPage"
 import Chat from "./containers/Chat"
 import Dashboard from "./containers/dashboard/Dashboard"
 import Overview from "./containers/dashboard/Overview"
@@ -27,7 +27,7 @@ export default (
 	  		<Route path="login" component={Login} />
 	  		<Route path="signup" component={Signup} />
 		  	<Route path="signout" component={Signout} />
-		  	<Route path="mydish" component={MyDish} />
+		  	<Route path="mypage" component={MyPage} />
 		  	<Route path="chat" component={Chat} />
 		  	<Route path="dish/:dishid" component={SingleDish} />
 		  	<Route path="author/:authorid" component={Author} />

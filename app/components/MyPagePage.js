@@ -3,7 +3,7 @@ import PostList from "./common/PostList"
 import SideBar from "../containers/common/SideBar"
 import SearchBox from "../containers/common/Search"
 
-class MyDishPage extends Component{
+class MyPagePage extends Component{
 
 	componentDidMount() {
 		let query = {};
@@ -52,4 +52,4 @@ class MyDishPage extends Component{
     }
 }
 
-export default MyDishPage;
+export default MyPagePage;
