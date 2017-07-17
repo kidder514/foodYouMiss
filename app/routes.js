@@ -4,7 +4,7 @@ import OutterWrapper from "./components/OutterWrapper"
 import Wrapper from "./components/Wrapper"
 import SlidingPage from "./components/common/SlidingPage"
 import Front from "./containers/static/Front"
-import Nearby from "./containers/Nearby"
+import HomeFood from "./containers/HomeFood"
 import Signin from "./containers/user/Signin"
 import Signup from "./containers/user/Signup"
 import Signout from "./containers/user/Signout"
@@ -23,7 +23,7 @@ export default (
 	<Route component={OutterWrapper}>
 		<Route path="/" component={Wrapper}>
 	  		<IndexRoute component={Front} />
-	  		<Route path="nearby" component={Nearby} />
+	  		<Route path="homefood" component={HomeFood} />
 	  		<Route path="signin" component={Signin} />
 	  		<Route path="signup" component={Signup} />
 		  	<Route path="signout" component={Signout} />

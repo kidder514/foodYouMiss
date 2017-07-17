@@ -1,5 +1,5 @@
 
-function nearByPostReducer(state = [], action) {
+function homeFoodPostReducer(state = [], action) {
   switch(action.type){
     case "INIT_POST":
     	return state.concat(action.newPost)
@@ -12,4 +12,4 @@ function nearByPostReducer(state = [], action) {
     }
 }
 
-export default nearByPostReducer
+export default homeFoodPostReducer

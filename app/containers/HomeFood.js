@@ -1,13 +1,13 @@
 import React, {Component} from 'react';
 import {connect} from "react-redux";
-import NearbyPage from "../components/NearbyPage"
+import HomeFoodPage from "../components/HomeFoodPage"
 import { postListCall } from "../action/postAction"
 import { updateSearchOptionsCall } from "../action/searchAction"
 
 const mapStateToProps = (state) => {
 	return {
 		userState: state.userState,
-		postListData: state.nearByPost
+		postListData: state.homeFoodPost
 	}
 }
 
@@ -18,4 +18,4 @@ const mapDispatchToProps = (dispatch) => {
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(NearbyPage);
+export default connect(mapStateToProps, mapDispatchToProps)(HomeFoodPage);

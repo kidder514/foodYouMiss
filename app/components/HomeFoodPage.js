@@ -5,7 +5,7 @@ import SearchBox from "../containers/common/Search"
 import Googlemap from "../helpers/GoogleMap"
 import config from "../config"
 
-class NearbyPage extends Component{
+class HomeFoodPage extends Component{
 	constructor(props){
 		super(props);
 		this.ItemOnMouseEnter = this.ItemOnMouseEnter.bind(this);
@@ -80,4 +80,4 @@ class NearbyPage extends Component{
     }
 }
 
-export default NearbyPage;
+export default HomeFoodPage;

@@ -6,7 +6,7 @@ import { postListCall } from "../../action/postAction"
 const mapStateToProps = (state) => {
 	return {
 		userState: state.userState,
-		postListData: state.nearByPost
+		postListData: state.homeFoodPost
 	}
 }
 

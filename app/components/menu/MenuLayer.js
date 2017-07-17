@@ -10,26 +10,50 @@ class MenuLayer extends Component{
     		<img src={this.props.userState.avatarUrl} className="img-circle menu-avatar" /> : <IconButton icon={"menu"}/>;
     	var isShown = !this.props.ui.showUserMenu;
 
-    	return (
-            <div className="menu clearfix">
-                <Link to="/" className="logo menu-item-button col-xs-2 col-sm-1 pull-left" activeClassName="current-menu-item">
-            		<img src="https://www.gympal.ie/images/logo-placeholder-generic-200x200.png" className="logo" />
-                </Link>
-		    	<a className={"menu-item-button col-xs-2 col-sm-1 pull-right " + (this.props.ui.showUserMenu ? "current-menu-item" : "")}  
-		    		onClick={() => this.props.toggleUserMenu(isShown)}>
-		            {userProfile}
-				</a>
-                <Link to="/mydish" className="menu-item-button col-xs-2 col-sm-1 pull-right" activeClassName="current-menu-item">
-                    <IconButton icon={"face"} text="my page"/>
-                </Link>
-                <Link to="/chat" className="menu-item-button col-xs-2 col-sm-1 pull-right" activeClassName="current-menu-item">
-                    <IconButton icon={"textsms"} text="inbox"/>
-                </Link>
-                <Link to="/nearby" className="menu-item-button col-xs-2 col-sm-1 pull-right" activeClassName="current-menu-item">
-                    <IconButton icon={"my_location"} text="nearby"/>
-                </Link>
-            </div>
-        )
+		if (this.props.userState.isLoggedIn){
+			return (
+	            <div className="menu clearfix">
+	                <Link to="/" className="logo menu-item-button col-xs-2 col-sm-1 pull-left" activeClassName="current-menu-item">
+	            		<img src="https://www.gympal.ie/images/logo-placeholder-generic-200x200.png" className="logo" />
+	                </Link>
+			    	<a className={"menu-item-button col-xs-2 col-sm-1 pull-right " + (this.props.ui.showUserMenu ? "current-menu-item" : "")}  
+			    		onClick={() => this.props.toggleUserMenu(isShown)}>
+			            {userProfile}
+					</a>
+	                <Link to="/mydish" className="menu-item-button col-xs-2 col-sm-1 pull-right" activeClassName="current-menu-item">
+	                    <IconButton icon={"face"} text="my page"/>
+	                </Link>
+	                <Link to="/chat" className="menu-item-button col-xs-2 col-sm-1 pull-right" activeClassName="current-menu-item">
+	                    <IconButton icon={"textsms"} text="inbox"/>
+	                </Link>
+	                <Link to="/homefood" className="menu-item-button col-xs-2 col-sm-1 pull-right" activeClassName="current-menu-item">
+	                    <IconButton icon={"my_location"} text="homefood"/>
+	                </Link>
+	            </div>
+        	)
+		}else{
+			return (
+	            <div className="menu clearfix">
+	                <Link to="/" className="logo menu-item-button col-xs-2 col-sm-1 pull-left" activeClassName="current-menu-item">
+	            		<img src="https://www.gympal.ie/images/logo-placeholder-generic-200x200.png" className="logo" />
+	                </Link>
+			    	<a className={"menu-item-button col-xs-2 col-sm-1 pull-right " + (this.props.ui.showUserMenu ? "current-menu-item" : "")}  
+			    		onClick={() => this.props.toggleUserMenu(isShown)}>
+			            {userProfile}
+					</a>
+	                <Link to="/mydish" className="menu-item-button col-xs-2 col-sm-1 pull-right" activeClassName="current-menu-item">
+	                    <IconButton icon={"face"} text="my page"/>
+	                </Link>
+	                <Link to="/chat" className="menu-item-button col-xs-2 col-sm-1 pull-right" activeClassName="current-menu-item">
+	                    <IconButton icon={"textsms"} text="inbox"/>
+	                </Link>
+	                <Link to="/homefood" className="menu-item-button col-xs-2 col-sm-1 pull-right" activeClassName="current-menu-item">
+	                    <IconButton icon={"my_location"} text="homefood"/>
+	                </Link>
+	            </div>
+        	)
+		}
+    	
     }
 }
 

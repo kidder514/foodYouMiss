@@ -2,7 +2,7 @@ import axios from "axios";
 import {popupError} from "./errorAction";
 import {startLoading, finishLoading} from "./loadingAction"
 
-export const initNearbyPostAction = (post) => {
+export const initHomeFoodPostAction = (post) => {
     return {
     	type: "INIT_POST",
     	newPost: post
@@ -22,7 +22,7 @@ export const initPostListCall = (query) => {
 		axios.get('http://www.mocky.io/v2/596714a3110000cd0db6c077',query)
 		.then(function (res) {
 			dispatch(finishLoading());
-			dispatch(initNearbyPostAction(res.data));
+			dispatch(initHomeFoodPostAction(res.data));
 	  	})
 	  	.catch(function (error) {
 			dispatch(finishLoading());
@@ -37,7 +37,7 @@ export const postListCall = (query) => {
 		axios.post('http://www.mocky.io/v2/596714a3110000cd0db6c077',query)
 		.then(function (res) {
 			dispatch(finishLoading());
-			dispatch(initNearbyPostAction(res.data));
+			dispatch(initHomeFoodPostAction(res.data));
 	  	})
 	  	.catch(function (error) {
 			dispatch(finishLoading());
