@@ -9,7 +9,7 @@ import Login from "./containers/user/Login"
 import Signup from "./containers/user/Signup"
 import Signout from "./containers/user/Signout"
 import MyPage from "./containers/MyPage"
-import Chat from "./containers/Chat"
+import Message from "./containers/Message"
 import Dashboard from "./containers/dashboard/Dashboard"
 import Overview from "./containers/dashboard/Overview"
 import OrderHistory from "./containers/dashboard/OrderHistory"
@@ -28,7 +28,7 @@ export default (
 	  		<Route path="signup" component={Signup} />
 		  	<Route path="signout" component={Signout} />
 		  	<Route path="mypage" component={MyPage} />
-		  	<Route path="chat" component={Chat} />
+		  	<Route path="message" component={Message} />
 		  	<Route path="dish/:dishid" component={SingleDish} />
 		  	<Route path="author/:authorid" component={Author} />
 		  	<Route path="dashboard" component={Dashboard} >

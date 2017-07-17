@@ -22,7 +22,7 @@ class MenuLayer extends Component{
 	                <Link to="/mypage" className="menu-item-button col-xs-2 col-sm-1 pull-right" activeClassName="current-menu-item">
 	                    {"My Page"}
 	                </Link>
-	                <Link to="/chat" className="menu-item-button pull-right" activeClassName="current-menu-item">
+	                <Link to="/message" className="menu-item-button pull-right" activeClassName="current-menu-item">
 	                    {"Message"}
 	                </Link>
 	                <Link to="/homefood" className="menu-item-button pull-right" activeClassName="current-menu-item">

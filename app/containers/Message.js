@@ -1,14 +1,14 @@
 import React, {Component} from 'react';
 
-class Chat extends Component {
+class Message extends Component {
 
   	render(){
 	    return (
 	        <div className="wrapper">
-	            Chat
+	            Message
 	        </div>
 	    )
   	}
 }
 
-export default Chat;
+export default Message;
