@@ -31,8 +31,8 @@ class SinglePostItem extends Component {
 			<article 
 				disabled={true} 
 				className="col-sm-4 col-xs-6"  
-				onMouseEnter={() => {this.props.onMouseEnter(post.authorId)}}
-				onMouseLeave={() => {this.props.onMouseLeave(post.authorId)}}
+				onMouseEnter={this.props.onMouseEnter ? () => {this.props.onMouseEnter(post.authorId)} : false}
+				onMouseLeave={this.props.onMouseEnter ? () => {this.props.onMouseLeave(post.authorId)} : false}
 				>
 
 	            <section className="clearfix image-wrapper">
