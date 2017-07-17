@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import SinglePost from "../../containers/common/SinglePost";
+import SinglePostItem from "./SinglePostItem";
 
 class PostList extends Component {
 
@@ -8,7 +8,14 @@ class PostList extends Component {
 	    	<div className="container-fluid">
 	    		<div className="row">
 		          	{
-		          	this.props.data.map(post => <SinglePost key={"dish" + post.postId} post={post} />)
+		          	this.props.data.map(
+		          		post => <SinglePostItem 
+		          			key={"dish" + post.postId} 
+		          			post={post} 
+		          			onMouseEnter={this.props.onMouseEnter}
+		          			onMouseLeave={this.props.onMouseLeave}
+		          			/>
+		          		)
 		          	}
 	          	</div>
 	    	</div>
