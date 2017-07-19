@@ -39,11 +39,5 @@ export default (
 		  		<Route path="help" component={Help} />
 		  	</Route>
 		</Route>
-		{
-		// maybe we need this slidingpage in the future
-		//<Route component={SlidingPage}>
-		//  	<Route path="author" component={Author} />
-		//</Route>
-		}
 	</Route>
 )

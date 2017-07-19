@@ -41,6 +41,7 @@ h1{
 /*=====================2.0 General===========================*/
 body{
 	font-family: Arial,Helvetica,sans-serif;
+	position:relative;
 }
 
 .outter-wrapper{
@@ -245,7 +246,6 @@ a.menu-item-button:not(.logo):hover
 	width:auto;
 }
 
-
 .button-text{
     display: block;
     position: absolute;
@@ -257,14 +257,27 @@ a.menu-item-button:not(.logo):hover
 
 .user-menu{
 	position: fixed;
-	top: 60px;
-	right: 0;
+	top: 55px;
 	background-color: #fff;
 	width: 192px;
 	height: auto;
-	z-index: 10;
+	z-index: 9;
 	-webkit-transition: right 0.3s; /* Safari */
     transition: right 0.3s;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.1) !important;
+}
+
+.main-menu{
+	display: none;
+}
+
+.main-menu, .main-user-menu{
+	padding:10px 0;
+	border-bottom:1px solid #f1f1f1;
+}
+
+.main-menu ul, .main-user-menu ul{
+	margin: 0;
 }
 
 .user-menu.user-menu-show{
@@ -275,11 +288,9 @@ a.menu-item-button:not(.logo):hover
 	right:-192px;
 }
 
-
 .user-menu li{
 	height:40px;
-	padding-left:20px;
-	border-bottom:1px solid #f1f1f1;
+	padding:0 20px;
 }
 
 .user-menu li:hover{
@@ -287,11 +298,16 @@ a.menu-item-button:not(.logo):hover
 }
 
 .user-menu li a {
-	display: block;
+	display: inline-block;
 	height:100%;
-	line-height: 40px;
+	width:100%;
+	line-height: 24px;
+	padding:8px 0 ;
 }
 
+.user-menu-item.current-menu-item{
+    border-bottom: none !important;
+}
 
 /*=====================4.0 Body===========================*/
 

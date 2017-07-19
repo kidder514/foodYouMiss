@@ -1,15 +1,36 @@
-
-
 	
 /*=====================1.0 General===========================*/
 
 /*=====================2.0 Header===========================*/
 @media screen and (max-width: 640px) {
-	.menu-item-button{
-		display:none;
+
+	.showing-menu{
+		overflow: hidden !important;
 	}
+	.menu-item-button{
+		display: none;
+	}
+
 	.burger-menu{
-		display:block;
+		display: block;
+	}
+
+	.main-menu{
+		display: block;
+	}
+
+	.user-menu{
+		width: 100%;
+		height: 100%;
+		overflow: auto;
+	}
+
+	.user-menu li{
+		padding: 0 29px 0 24px;	
+	}
+
+	.user-menu.user-menu-hide{
+		right: -100%;
 	}
 }
 /*=====================3.0 Body===========================*/
