@@ -40,7 +40,7 @@ class HomeFoodPage extends Component{
 	  		return(
 	  			<div className="container">
 		  			<div className="row">
-		  				<div className="col-sm-8">
+		  				<div className="col-md-8 col-xs-12">
 		  					<SearchBox />
 		  					<PostList 
 		  						data={this.props.postListData}
@@ -48,7 +48,7 @@ class HomeFoodPage extends Component{
 		  						onMouseLeave={this.ItemOnMouseLeave}
 		  						/>
 		  				</div>
-						<div className="col-sm-4 hidden-xs map-wrapper">
+						<div className="col-md-4 hidden-sm hidden-xs map-wrapper">
 		            		<Googlemap 
 		            			centerLocation={{lat: -33.872110, lng: 151.206559}}
 		            			data={this.props.postListData}
@@ -63,15 +63,14 @@ class HomeFoodPage extends Component{
   			return (
   				<div className="container">
   					<div className="row">
-  						<div className="col-sm-8">
+  						<div className="col-md-8 col-xs-12">
 		  					<SearchBox />
 	  						<div>
 	  							Sorry, there is no cook in this area.
 	  						</div>
   						</div>
-						<div className="col-sm-4 hidden-xs map-wrapper">
-		            		<Googlemap 
-		            			centerLocation={{lat: -33.872110, lng: 151.206559}}/>
+						<div className="col-md-4 hidden-sm hidden-xs map-wrapper">
+		            		<Googlemap centerLocation={{lat: -33.872110, lng: 151.206559}}/>
 		                </div>
   					</div>
   				</div>

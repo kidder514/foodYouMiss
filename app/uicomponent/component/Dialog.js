@@ -8,7 +8,7 @@ class Dialog extends Component {
 	    return (
 	    	<div className="centerbox-outter-wrapper" style={this.props.open ? {display:"block"} : {display:"none"}}>
 		    	<div className="centerbox-wrapper">
-			    	<div className="centerbox clearfix">
+			    	<div className="centerbox dialog clearfix">
 						<button type="button" className="close pull-right" aria-label="Close" onClick={this.props.onRequestClose}>
 			    			<span aria-hidden="true">&times;</span>
 			    		</button>

@@ -12,7 +12,7 @@ class MenuLayer extends Component{
 		if (this.props.userState.isLoggedIn){
 			return (
 	            <div className="menu container clearfix">
-	                <Link to="/" className="logo pull-left" activeClassName="current-menu-item">
+	                <Link to="/homefood" className="logo pull-left" activeClassName="current-menu-item">
 	            		<img src={config.logoUrl}/>
 	                </Link>
 			    	<a className={"menu-item-button menu-avatar pull-right " + (this.props.ui.showUserMenu ? "current-menu-item" : "")}  
