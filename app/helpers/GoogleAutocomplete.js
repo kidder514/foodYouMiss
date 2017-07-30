@@ -68,7 +68,7 @@ export default class GoogleAutocomplete extends Component{
 	    	<div className={this.props.className !== undefined ? "textfield-wrapper " + this.props.className : "textfield-wrapper"} >
 				<input 
 					id="autocomplete"
-					className="autocomplete textfield-input form-control"
+	    		    className={this.props.fieldClass !== undefined ? this.props.fieldClass + " autocomplete textfield-input form-control" : "autocomplete textfield-input form-control"}
 					ref={(c) => this.autocompleteInput = c}
 					onFocus={this.geolocate}
 					onChange={this.onChange}

@@ -8,11 +8,13 @@ class TextField extends Component {
 
  	render() {
  		var props = this.props;
+ 		var errorText = props.displayError !== undefined ? 
+ 		<p className="textfield-error-text">{this.props.errorText !== undefined ? this.props.errorText : ""}</p> : "";
 	    return (
 	    	<div className={props.className !== undefined ? "textfield-wrapper " + props.className : "textfield-wrapper"} >
 	    		<input
 	    			id={props.id !== undefined ? props.id : ""}
-	    		    className="textfield-input form-control"
+	    		    className={props.fieldClass !== undefined ? props.fieldClass + " textfield-input form-control" : "textfield-input form-control"}
 	    		    ref={this.ref !== undefined ? this.ref : ""}
 	    			type={props.type !== undefined ? props.type : ""}
 	    			name={props.name !== undefined ? props.name : ""}
@@ -21,7 +23,7 @@ class TextField extends Component {
 	    			placeholder={props.placeholder !== undefined ? props.placeholder : ""}
 	    			value={props.value !== undefined ? props.value : ""}
 	    		/>
-				<p className="textfield-error-text">{this.props.errorText !== undefined ? this.props.errorText : ""}</p>
+				{errorText}
 	    	</div>
 	    );
  	}
