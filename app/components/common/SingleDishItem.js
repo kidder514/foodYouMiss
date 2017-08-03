@@ -4,7 +4,7 @@ import IconButton from "../../uicomponent/button/IconButton"
 import Avatar from "../../uicomponent/button/Avatar"
 import { drawStars } from "../../helpers/DrawStars"
 
-class SinglePostItem extends Component {
+class SingleDishItem extends Component {
 	constructor(props){
 		super(props);
 		this.handleImageClick = this.handleImageClick.bind(this);
@@ -26,8 +26,8 @@ class SinglePostItem extends Component {
 
 	generateContent(){
 
-		const post = this.props.post;
-		var stars = drawStars(post.postRating, post.ratingNumber);
+		const dish = this.props.dish;
+		var stars = drawStars(dish.postRating, dish.ratingNumber);
 		
 		return (
 			<article 
@@ -37,9 +37,9 @@ class SinglePostItem extends Component {
 				>
 				<div className="dish-padding-layer">
 		            <section className="clearfix image-wrapper">
-		            	<Link to={"/dish/" + post.postId} >
+		            	<Link to={"/dish/" + dish.postId} >
 		            		<div className="dish-img" style={
-		            			{backgroundImage: 'url(' + this.props.post.postImgUrls[0].thumbnail + ')',}
+		            			{backgroundImage: 'url(' + this.props.dish.postImgUrls[0].thumbnail + ')',}
 		            		}>
 		            		</div>
 		            	</Link>
@@ -49,27 +49,27 @@ class SinglePostItem extends Component {
 		            		</a>
 			            </div>
 						<div className="dish-cook-info">
-			            	<Link to={"/author/" + post.authorId} className="dish-cook-link img-circle">
-			            		<Avatar src={post.authorImg} alt={post.authorName} />
+			            	<Link to={"/author/" + dish.authorId} className="dish-cook-link img-circle">
+			            		<Avatar src={dish.authorImg} alt={dish.authorName} />
 			            	</Link>
 				            <span className="dish-line dish-cook-name">
-			            		{post.authorName}			            	
+			            		{dish.authorName}			            	
 				            </span>
 			            </div>
 		            </section>
 		            <div className="short-summary">
-		            	<Link className="dish-title dish-line clearfix" to={"/dish/" + post.postId}>
-							{post.postTitle}
+		            	<Link className="dish-title dish-line clearfix" to={"/dish/" + dish.postId}>
+							{dish.postTitle}
 		            	</Link>
 		            	<div className="dish-price dish-line clearfix">
-		            		From ${post.postPrice} | ({post.postPortions}) portions left
+		            		From ${dish.postPrice} | ({dish.postPortions}) portions left
 		            	</div>
 		            	<div className="rating-section clearfix">
 		            		{stars}
-		            		<span className="dish-rating">{"  " + (post.ratingNumber? post.ratingNumber : " 0 " )+ " reviews"}</span>
+		            		<span className="dish-rating">{"  " + (dish.ratingNumber? dish.ratingNumber : " 0 " )+ " reviews"}</span>
 		            	</div>
 		            	<div className="dish-meta clearfix">
-		            		<span>{post.category} | {post.region} | {post.allergen}</span>
+		            		<span>{dish.category} | {dish.region} | {dish.allergen}</span>
 		            	</div>
 		            </div>
 		        </div>
@@ -78,7 +78,7 @@ class SinglePostItem extends Component {
 	}
 
 	render() {
-		if(this.props.post){
+		if(this.props.dish){
 		    return this.generateContent();
 		}else{
 			return (<div>unable to obtain current post data.</div>);
@@ -86,4 +86,4 @@ class SinglePostItem extends Component {
 	}
 }
 
-export default SinglePostItem;
+export default SingleDishItem;

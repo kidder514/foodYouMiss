@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import PostList from "./common/PostList"
+import DishList from "./common/DishList"
 import SideBar from "../containers/common/SideBar"
 import SearchBox from "../containers/common/Search"
 
@@ -14,18 +14,18 @@ class MyPagePage extends Component{
 			query = {userId: userState.userId};
 		}
 		
-        if(this.props.myPostListData.length <= 0){
-      	    this.props.initMyPost(query);
+        if(this.props.myDishListData.length <= 0){
+      	    this.props.initMyDish(query);
         }
   	}
 
   	render(){
-  		if(this.props.myPostListData.length > 0){
+  		if(this.props.myDishListData.length > 0){
 	  		return(
 	  			<div className="container">
 		  			<div className="row">
 		  				<div className="col-sm-8">
-		  					<PostList data={this.props.myPostListData} />
+		  					<DishList data={this.props.myDishListData} />
 		  				</div>
 						<div className="col-sm-4 hidden-xs">
 		            		<SideBar currentPage={"home"} />

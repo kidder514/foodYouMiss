@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
-import SinglePostItem from "./SinglePostItem";
+import SingleDishItem from "./SingleDishItem";
 
-class PostList extends Component {
+class DishList extends Component {
 
 	render(){
 	    return (
@@ -9,9 +9,9 @@ class PostList extends Component {
 	    		<div className="row">
 		          	{
 		          	this.props.data.map(
-		          		post => <SinglePostItem 
-		          			key={"dish" + post.postId} 
-		          			post={post} 
+		          		dish => <SingleDishItem 
+		          			key={"dish" + dish.postId} 
+		          			dish={dish} 
 		          			onMouseEnter={this.props.onMouseEnter}
 		          			onMouseLeave={this.props.onMouseLeave}
 		          			/>
@@ -23,4 +23,4 @@ class PostList extends Component {
 	};
 }
 
-export default PostList;
+export default DishList;

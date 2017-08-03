@@ -19,7 +19,7 @@ export const authorInfoCall = (query) => {
 	  	})
 	  	.catch(function (error) {
 			dispatch(finishLoading());
-			dispatch(popupError("Unable to load dishes' Post from server"));
+			dispatch(popupError("Unable to load dishes from server"));
 	  	});
 	}	
 }

@@ -1,19 +1,19 @@
 import React, {Component} from 'react';
 import {connect} from "react-redux";
 import HomeFoodPage from "../components/HomeFoodPage"
-import { postListCall } from "../action/postAction"
+import { dishListCall } from "../action/dishAction"
 import { updateSearchOptionsCall } from "../action/searchAction"
 
 const mapStateToProps = (state) => {
 	return {
 		userState: state.userState,
-		postListData: state.homeFoodPost
+		dishListData: state.homeFoodDish
 	}
 }
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        updatePost: (query) => {dispatch(postListCall(query))},
+        updateDish: (query) => {dispatch(dishListCall(query))},
         updateSearchOptions: (query) => {dispatch(updateSearchOptionsCall(query))}
     };
 };

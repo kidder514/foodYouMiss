@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import PostList from "./common/PostList"
+import DishList from "./common/DishList"
 import SideBar from "../containers/common/SideBar"
 import SearchBox from "../containers/common/Search"
 import Googlemap from "../helpers/GoogleMap"
@@ -36,14 +36,14 @@ class HomeFoodPage extends Component{
 	}
 
   	render(){
-  		if(this.props.postListData.length > 0){
+  		if(this.props.dishListData.length > 0){
 	  		return(
 	  			<div className="container">
 		  			<div className="row">
 		  				<div className="col-md-8 col-xs-12">
 		  					<SearchBox />
-		  					<PostList 
-		  						data={this.props.postListData}
+		  					<DishList 
+		  						data={this.props.dishListData}
 		  						onMouseEnter={this.ItemOnMouseEnter}
 		  						onMouseLeave={this.ItemOnMouseLeave}
 		  						/>
@@ -51,7 +51,7 @@ class HomeFoodPage extends Component{
 						<div className="col-md-4 hidden-sm hidden-xs map-wrapper">
 		            		<Googlemap 
 		            			centerLocation={{lat: -33.872110, lng: 151.206559}}
-		            			data={this.props.postListData}
+		            			data={this.props.dishListData}
 		            			setMarkers= {this.setMarkers}
 		            			/>
 		            			
