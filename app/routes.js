@@ -16,7 +16,7 @@ import OrderHistory from "./containers/dashboard/OrderHistory"
 import Notification from "./containers/dashboard/Notification"
 import Setting from "./containers/dashboard/Setting"
 import Help from "./containers/dashboard/Help"
-import Author from "./containers/Author"
+import Cook from "./containers/Cook"
 import SingleDish from "./containers/SingleDish"
 
 export default (
@@ -30,7 +30,7 @@ export default (
 		  	<Route path="mypage" component={MyPage} />
 		  	<Route path="message" component={Message} />
 		  	<Route path="dish/:dishid" component={SingleDish} />
-		  	<Route path="author/:authorid" component={Author} />
+		  	<Route path="cook/:cookid" component={Cook} />
 		  	<Route path="dashboard" component={Dashboard} >
 		  		<IndexRoute component={Overview}/>
 		  		<Route path="order-history" component={OrderHistory} />

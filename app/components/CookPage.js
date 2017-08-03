@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-class AuthorPage extends Component {
+class CookPage extends Component {
 
   	render(){
 	    return (
@@ -85,4 +85,4 @@ class AuthorPage extends Component {
   	}
 }
 
-export default AuthorPage;
+export default CookPage;

@@ -15,21 +15,21 @@ class HomeFoodPage extends Component{
 		this.markers = [];
 	}
 
-	ItemOnMouseEnter(authorId){
-		this.changeMarker(authorId, config.mouseInMarker);
+	ItemOnMouseEnter(cookId){
+		this.changeMarker(cookId, config.mouseInMarker);
 	}
 
-	ItemOnMouseLeave(authorId){
-		this.changeMarker(authorId, config.mouseOutMarker);
+	ItemOnMouseLeave(cookId){
+		this.changeMarker(cookId, config.mouseOutMarker);
 	}
 
 	setMarkers(markers){
 		this.markers = markers;
 	}
 
-	changeMarker(authorId, icon){
+	changeMarker(cookId, icon){
 		this.markers.forEach((item, index) => {
-			if (item.id === authorId){
+			if (item.id === cookId){
 				item.setIcon(icon);
 			}
 		});

@@ -63,9 +63,9 @@ export default class GoogleMap extends Component{
 		var infoWindowContent = 
 		'<div class="info-window">'+
 		'<div class="info-header">'+
-		'<a href="/author/' + data.authorId + '"><img class="img-circle" src="' + data.authorImg + '" /></a>'+
+		'<a href="/cook/' + data.authorId + '"><img class="img-circle" src="' + data.authorImg + '" /></a>'+
 		'</div>' +
-		'<div class="gm-author-name"><a href="/author/' + data.authorId +'" >' + data.authorName + '</a></div>' +
+		'<div class="gm-cook-name"><a href="/cook/' + data.authorId +'" >' + data.authorName + '</a></div>' +
 		'</div>' +
 		'<div class="info-content">'+
 		'<p>' + data.postDescription + '</p>' +

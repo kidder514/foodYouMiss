@@ -49,7 +49,7 @@ class SingleDishItem extends Component {
 		            		</a>
 			            </div>
 						<div className="dish-cook-info">
-			            	<Link to={"/author/" + dish.authorId} className="dish-cook-link img-circle">
+			            	<Link to={"/cook/" + dish.authorId} className="dish-cook-link img-circle">
 			            		<Avatar src={dish.authorImg} alt={dish.authorName} />
 			            	</Link>
 				            <span className="dish-line dish-cook-name">

@@ -6,7 +6,7 @@ import uiReducer from "./uiReducer"
 import userState from "./userState"
 import userData from "./userData"
 import singleDishData from "./singleDishData"
-import authorData from "./authorData"
+import cookData from "./cookData"
 import search from "./searchReducer"
 
 const rootReducer = combineReducers({
@@ -16,7 +16,7 @@ const rootReducer = combineReducers({
   userState,  
   userData,
   singleDishData,
-  authorData,
+  cookData,
   search,
   routing
 })
