@@ -59,35 +59,13 @@ export default class GoogleMap extends Component{
 			var authorSignature = '<span className="signature">' + authorSignature + '</span>';
 		}
 
-		// var imageSection = "";
-		// if (data.postImgUrls.length == 1){
-		// 	imageSection += 
-		// 	'<section class="map-img-section">'+
-		// 	'<img class="col-xs-4" src="' + data.postImgUrls[0].thumbnail + '" />'+
-		// 	'</section>';
-		// }else if (data.postImgUrls.length == 2){
-		// 	imageSection = 
-		// 	'<section class="map-img-section">'+
-		// 	'<img class="col-xs-4" src="' + data.postImgUrls[0].thumbnail + '" />'
-		// 	'<img class="col-xs-4" src="' + data.postImgUrls[1].thumbnail + '" />'
-		// 	'</section>';
-		// }else if (data.postImgUrls.length >= 3){
-		// 	imageSection = 
-		// 	'<section class="map-img-section">'+
-		// 	'<img class="col-xs-4" src="' + data.postImgUrls[0].thumbnail + '" />'+
-		// 	'<img class="col-xs-4" src="' + data.postImgUrls[1].thumbnail + '" />'+
-		// 	'<img class="col-xs-4" src="' + data.postImgUrls[2].thumbnail + '" />'+
-		// 	'</section>';
-		// }
-
 		//google map requires this to be string
 		var infoWindowContent = 
 		'<div class="info-window">'+
 		'<div class="info-header">'+
-		'<img src="' + data.authorImg + '" />'+
+		'<a href="/author/' + data.authorId + '"><img class="img-circle" src="' + data.authorImg + '" /></a>'+
 		'</div>' +
-		'<h2>' + data.authorName + '</h2>' +
-		authorSignature +
+		'<div class="gm-author-name"><a href="/author/' + data.authorId +'" >' + data.authorName + '</a></div>' +
 		'</div>' +
 		'<div class="info-content">'+
 		'<p>' + data.postDescription + '</p>' +

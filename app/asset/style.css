@@ -432,6 +432,7 @@ a.menu-item-button:not(.logo):hover
 #more-options label{
 	margin-top: 10px;
 	margin-bottom: 5px;
+	font-weight: 300;
 }
 
 #more-options span{
@@ -594,7 +595,7 @@ a.menu-item-button:not(.logo):hover
 }
 
 .gm-style-iw{
-	height:300px;
+	height:auto;
 }
 
 .info-window{
@@ -608,7 +609,19 @@ a.menu-item-button:not(.logo):hover
 
 .info-header img{
 	width:100%;
-	height:auto;
+	height:50px;
+	width:auto;
+}
+
+.gm-author-name{
+	display:block;
+	padding:10px 0 5px;
+	border-bottom: 1px solid #ccc;
+}
+
+.info-content{
+	padding-top: 10px;
+	text-align: justify;
 }
 
 .map-img-section{
