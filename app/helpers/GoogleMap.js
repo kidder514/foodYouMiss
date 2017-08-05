@@ -82,6 +82,10 @@ export default class GoogleMap extends Component{
         	zoom: 13,
         	streetViewControl: false,
 		});
+
+		// I guess it is okey for map to be a global variable
+		// since we only use one map instance
+		window.map = this.map;
 		this.showMarkers();
 	}
 

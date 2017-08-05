@@ -32,8 +32,8 @@ class SingleDishItem extends Component {
 		return (
 			<article 
 				className="col-xs-12 col-sm-6 col-lg-4 dish-list-item"  
-				onMouseEnter={this.props.onMouseEnter ? () => {this.props.onMouseEnter(post.authorId)} : false}
-				onMouseLeave={this.props.onMouseLeave ? () => {this.props.onMouseLeave(post.authorId)} : false}
+				onMouseEnter={this.props.onMouseEnter ? () => {this.props.onMouseEnter(dish.authorId)} : false}
+				onMouseLeave={this.props.onMouseLeave ? () => {this.props.onMouseLeave(dish.authorId)} : false}
 				>
 				<div className="dish-padding-layer">
 		            <section className="clearfix image-wrapper">
