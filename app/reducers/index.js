@@ -1,22 +1,22 @@
 import { routerReducer as routing } from 'react-router-redux'
 import { combineReducers } from 'redux'
-import nearByPostReducer from "./nearByPostReducer"
-import myPostReducer from "./myPostReducer"
+import homeFoodDishReducer from "./homeFoodDishReducer"
+import myDishReducer from "./myDishReducer"
 import uiReducer from "./uiReducer"
 import userState from "./userState"
 import userData from "./userData"
 import singleDishData from "./singleDishData"
-import authorData from "./authorData"
+import cookData from "./cookData"
 import search from "./searchReducer"
 
 const rootReducer = combineReducers({
-  nearByPost: nearByPostReducer,
-  myPost:myPostReducer,
+  homeFoodDish: homeFoodDishReducer,
+  myDish:myDishReducer,
   ui: uiReducer,
   userState,  
   userData,
   singleDishData,
-  authorData,
+  cookData,
   search,
   routing
 })

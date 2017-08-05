@@ -16,7 +16,7 @@ export const loadUserDataAction = (data) => {
 }
 
 //TODO: handle the backend data.
-export const signinCall = (userInfo, rememberLogin) => {
+export const loginCall = (userInfo, rememberLogin) => {
 	return dispatch => {
 		dispatch(startLoading());
 		axios.get("http://www.mocky.io/v2/595247070f00000501a3d7f5", userInfo)
@@ -27,7 +27,7 @@ export const signinCall = (userInfo, rememberLogin) => {
 			})
 		.catch((error)=>{
 			dispatch(finishLoading())
-			dispatch(popupError("Unable to signin"));
+			dispatch(popupError("Unable to login"));
 		})
 	}
 }

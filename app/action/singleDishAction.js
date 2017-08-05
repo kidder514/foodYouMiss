@@ -39,7 +39,7 @@ export const singleDishCall = (query) => {
 	  	})
 	  	.catch(function (error) {
 			dispatch(finishLoading());
-			dispatch(popupError("Unable to load dishes' Post from server"));
+			dispatch(popupError("Unable to load dish from server"));
 	  	});
 	}	
 }

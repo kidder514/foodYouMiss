@@ -2,61 +2,61 @@ import axios from "axios";
 import {popupError} from "./errorAction";
 import {startLoading, finishLoading} from "./loadingAction"
 
-export const initNearbyPostAction = (post) => {
+export const initHomeFoodDishAction = (dish) => {
     return {
-    	type: "INIT_POST",
-    	newPost: post
+    	type: "INIT_DISH",
+    	newDish: dish
     }
 }
 
-export const initMyPostAction = (post) => {
+export const initMyDishAction = (dish) => {
     return {
-    	type: "INIT_MY_POST",
-    	newPost: post
+    	type: "INIT_MY_DISH",
+    	newDish: dish
     }
 }
 
 
-export const initPostListCall = (query) => {
+export const initDishListCall = (query) => {
 	return dispatch => {
 		axios.get('http://www.mocky.io/v2/596714a3110000cd0db6c077',query)
 		.then(function (res) {
 			dispatch(finishLoading());
-			dispatch(initNearbyPostAction(res.data));
+			dispatch(initHomeFoodDishAction(res.data));
 	  	})
 	  	.catch(function (error) {
 			dispatch(finishLoading());
-			dispatch(popupError("Unable to load dishes' Post from server"));
+			dispatch(popupError("Unable to load dishes from server"));
 	  	});
 	}	
 }
 
-export const postListCall = (query) => {
+export const dishListCall = (query) => {
 	return dispatch => {
 		dispatch(startLoading());
 		axios.post('http://www.mocky.io/v2/596714a3110000cd0db6c077',query)
 		.then(function (res) {
 			dispatch(finishLoading());
-			dispatch(initNearbyPostAction(res.data));
+			dispatch(initHomeFoodDishAction(res.data));
 	  	})
 	  	.catch(function (error) {
 			dispatch(finishLoading());
-			dispatch(popupError("Unable to load dishes' Post from server"));
+			dispatch(popupError("Unable to load dishes from server"));
 	  	});
 	}	
 }
 
-export const myPostListCall = (query) => {
+export const myDishListCall = (query) => {
 	return dispatch => {
 		dispatch(startLoading());
 		axios.post('http://www.mocky.io/v2/596714a3110000cd0db6c077',query)
 		.then(function (res) {
 			dispatch(finishLoading());
-			dispatch(initMyPostAction(res.data));
+			dispatch(initMyDishAction(res.data));
 	  	})
 	  	.catch(function (error) {
 			dispatch(finishLoading());
-			dispatch(popupError("Unable to load dishes' Post from server"));
+			dispatch(popupError("Unable to load dishes from server"));
 	  	});
 	}	
 }

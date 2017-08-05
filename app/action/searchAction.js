@@ -1,7 +1,7 @@
 import axios from "axios";
 import {popupError} from "./errorAction";
 import {startLoading, finishLoading} from "./loadingAction"
-import { initPostListCall } from "./postAction"
+import { initDishListCall } from "./dishAction"
 
 export const updateSearch = (search) => {
     return {
@@ -23,7 +23,7 @@ export const updateSearchOptionsCall = (query) => {
 		axios.post('http://www.mocky.io/v2/59660ed31100000203c8f400')
 		.then(function (res) {
 			dispatch(updateSearchOptions(res.data));
-			dispatch(initPostListCall(query));
+			dispatch(initDishListCall(query));
 	  	})
 	  	.catch(function (error) {
 			dispatch(finishLoading());

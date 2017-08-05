@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from "react-redux";
 import SingleDishPage from "../components/SingleDishPage"
-import { singleDishCall } from "../action/singlePostAction"
+import { singleDishCall } from "../action/singleDishAction"
 
 const mapStateToProps = (state) => {
 	return {

@@ -8,7 +8,7 @@ import config from "../../config"
 import GoogleLogin from 'react-google-login';
 import FacebookLogin from 'react-facebook-login';
 
-class SigninPage extends Component {
+class LoginPage extends Component {
 
 	constructor(props){
 		super(props);
@@ -92,7 +92,7 @@ class SigninPage extends Component {
 
 			state_cache.recapResponse = this.recapResponse;
 			this.setState(state_cache,
-				this.props.signin({"email": this.state.email, "password": MD5(this.state.password), "recapResponse": this.recapResponse}, this.state.rememberLogin)
+				this.props.login({"email": this.state.email, "password": MD5(this.state.password), "recapResponse": this.recapResponse}, this.state.rememberLogin)
 			);
 		}else{
 			this.setState(state_cache);
@@ -120,7 +120,7 @@ class SigninPage extends Component {
 
 	gLoginSuccess(googleUser){
 		if (googleUser !== undefined && googleUser.getAuthResponse().id_token !== ""){
-			this.props.signin(googleUser.getAuthResponse().id_token, this.state.rememberLogin);
+			this.props.login(googleUser.getAuthResponse().id_token, this.state.rememberLogin);
 		}
 	}
 
@@ -131,7 +131,7 @@ class SigninPage extends Component {
 	responseFb(res){
 		if (res !== undefined)
 		{
-			this.props.signin({"email": res.email, "name": res.name, "Id": res.id, "avatar": res.picture.data.url }, this.state.rememberLogin);
+			this.props.login({"email": res.email, "name": res.name, "Id": res.id, "avatar": res.picture.data.url }, this.state.rememberLogin);
 		}
 	}
 
@@ -146,7 +146,7 @@ class SigninPage extends Component {
 			        <div className="col-sm-8 col-sm-offset-2">
 	            		<h1 className="content-logo"></h1>
 		            	<form onSubmit={this.onSubmit}>
-		            		<h1>Sign in with existing account</h1>
+		            		<h1>Log in with existing account</h1>
 							<TextField 
 				    			value={this.state.email}
 				    			onChange={this.onChange}
@@ -213,4 +213,4 @@ class SigninPage extends Component {
   	}
 }
 
-export default SigninPage;
+export default LoginPage;
