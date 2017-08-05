@@ -25,15 +25,22 @@ class HomeFoodPage extends Component{
 	}
 
 	toggleMap(showMap){
+		var dishListDom = this.dishListDom;
+		var mapDom = this.mapDom;
+
 		if (showMap){
-			this.dishListDom.style.display = "none";
-			this.mapDom.style.display = "block";
+			dishListDom.className = dishListDom.className.replace(" mobile-show", "");
+			if (mapDom.className.indexOf(" mobile-show") == -1){
+				mapDom.className += " mobile-show";
+			}
 			var currCenter = map.getCenter();
 			google.maps.event.trigger(map, "resize");
 			map.setCenter(currCenter);
 		} else {
-			this.dishListDom.style.display = "block";
-			this.mapDom.style.display = "none";
+			if (dishListDom.className.indexOf(" mobile-show") == -1){
+				this.dishListDom.className += " mobile-show";
+			}
+			mapDom.className = this.mapDom.className.replace(" mobile-show", " ");
 		}
 	}
 
