@@ -15,6 +15,13 @@ export const loadUserDataAction = (data) => {
 	return { type: "LOAD_USER_DATA", data}
 }
 
+export const setAddress = (addressObj) => {
+	return {
+		type: "LOCATE",
+		action: addressObj
+	};
+};
+
 //TODO: handle the backend data.
 export const loginCall = (userInfo, rememberLogin) => {
 	return dispatch => {

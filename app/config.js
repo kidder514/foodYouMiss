@@ -5,6 +5,8 @@ const config = {
 	googleLoginKey:"215051426109-bnlsa6i3klfvsctep2qor59mp4rk31g3.apps.googleusercontent.com",
 	mouseInMarker:"https://mt.googleapis.com/vt/icon/name=icons/onion/124-red.png",
 	mouseOutMarker:"https://mt.googleapis.com/vt/icon/name=icons/onion/158-yellow.png",
+	googleDirectionApiUrl:"http://maps.googleapis.com/maps/api/directions/json?",
+	googleDirectionApiKey:"AIzaSyA2yE010jxuJuPYX-dDUQJEMfE-1EuTPh8",
 	mainColor:"#F25D30",
 	secondColor:"#F98563",
 	thirdColor:"#F9A48B",
