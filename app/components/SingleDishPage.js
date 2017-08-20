@@ -1,14 +1,15 @@
 import React, {Component} from 'react';
 import SideBar from "../containers/common/SideBar"
 import DeliveryFee from "../containers/DeliveryFee"
+import Order from "../containers/Order"
 import {drawStars} from "../helpers/drawStars"
+import {Link} from "react-router";
 
 class SingleDishPage extends Component {
 	constructor(props){
 		super(props);
 		this.expandDescription = this.expandDescription.bind(this);
 		this.toggleDish = this.toggleDish.bind(this);
-
 	}
 
 	componentWillMount() {
@@ -16,6 +17,12 @@ class SingleDishPage extends Component {
 		let userState = this.props.userState;
 
   	    this.props.loadSingleDish(query);
+  	}
+
+  	componentDidMount(){
+  		if (this.descriptionText.scrollHeight <= 80){
+  			this.expandButton.style.display = "none";
+  		}
   	}
 
   	expandDescription(){
@@ -26,7 +33,9 @@ class SingleDishPage extends Component {
 
   	toggleDish(showDish){
   		this.tabDish.style.display = showDish ? "block" : "none";
+  		this.tabItemDish.className = showDish ? "tab-item active":"tab-item";
   		this.tabReview.style.display = showDish ? "none" : "block";
+  		this.tabItemReview.className = showDish ? "tab-item":"tab-item active";
   	}
 
   	render(){
@@ -36,9 +45,13 @@ class SingleDishPage extends Component {
 					<div className="col-sm-8">
 						<div className="clearfix text-center">
 							<div className="single-dish-meta-wrapper">
-								<img className="img-circled" src="https://cdn2.iconfinder.com/data/icons/rcons-user/32/male-circle-128.png" alt="profile-avatar" />
+								<Link to="/cook/1">
+									<img className="img-circled" src="https://cdn2.iconfinder.com/data/icons/rcons-user/32/male-circle-128.png" alt="profile-avatar" />
+								</Link>
 								<div className="single-dish-meta clearfix">
+								<Link to="/cook/1">
 									<h2>James' indian food</h2>		
+								</Link>
 									23 Viking Street, Campsie NSW
 								</div>	
 							</div>
@@ -61,9 +74,9 @@ class SingleDishPage extends Component {
 							</div>
 						</div>
   						<div className="single-dish-content">
-  							<div className="tab">
-								<button type="button" onClick={() => this.toggleDish(true)}>Dish</button>
-								<button type="button" onClick={() => this.toggleDish(false)}>Review</button>
+  							<div className="tab clearfix">
+								<div className="tab-item active" ref={(el) => { this.tabItemDish = el; }} onClick={() => this.toggleDish(true)}>Dish</div>
+								<div className="tab-item" ref={(el) => { this.tabItemReview = el; }} onClick={() => this.toggleDish(false)}>Review</div>
   							</div>
   							<div className="tab-content">
   								<div className="tab-dish" ref={(el) => { this.tabDish = el; }}>
@@ -83,35 +96,48 @@ class SingleDishPage extends Component {
 	  										</div>
 	  									</div>
 	  									<div className="col-sm-6">
-	  										<h1>big bowl of fried rice</h1>
-	  										<hr />
-	  											<div className="row clearfix">
-	  												<div className="col-sm-6">
-	  												1 serve( for 1 people)
-	  												</div>
-	  												<div className="col-sm-6">
-	  												$10.6
-														<button type="button">Order</button>
-	  												</div>
-	  											</div>
-	  											<div className="row clearfix">
-	  												<div className="col-sm-6">
-	  												family pack (for 10 people)
-	  												</div>
-	  												<div className="col-sm-6">
+	  										<h1 className="single-dish-title">big bowl of fried rice</h1>
+  											<div className="row clearfix">
+  												<div className="col-sm-6">
+  												1 serve( for 1 people)
+  												</div>
+  												<div className="col-sm-6">
+	  												<div className="package-price">
+		  												$10.6
+															<button type="button">add</button>
+													</div>
+  												</div>
+  											</div>
+  											<div className="row clearfix">
+  												<div className="col-sm-6">
+  												family pack (for 10 people)
+  												</div>
+  												<div className="col-sm-6">
+	  												<div className="package-price">
 	  												$56  
-														<button type="button">Order</button>
-	  												</div>
-	  											</div>
+														<button type="button">add</button>
+													</div>
+  												</div>
+  											</div>
 	  										<hr />
 	  										<p>order for now/ tomorrow/26th of Jun</p>
 	  										<h4>Description</h4>
 	  										<p>voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto</p>
-	  										<p>Tags: BBQ, meal, delicous</p>
-	  										<p>category: meal</p>
-	  										<p>Allergens: Nuts free, Diary Free, Wheat Free</p>
-	  										<p>Delivery Ratio: 5km</p>
-	  										<p>Delivery Suburbs: Sydney, Hurstville, Auburn</p>
+	  										<hr />
+	  										<div>
+	  											<div className="other-info-item">
+	  												<div className="other-info-title">Allergens:</div>
+	  												<div className="other-info-content">Nuts free, Diary Free, Wheat Free</div>
+	  											</div>
+	  											<div className="other-info-item">
+	  												<div className="other-info-title">Delivery Ratio:</div>
+	  												<div className="other-info-content">5km</div>
+	  											</div>
+	  											<div className="other-info-item">
+	  												<div className="other-info-title">Delivery Suburbs:</div>
+	  												<div className="other-info-content">Sydney, Hurstville, Auburn</div>
+	  											</div>
+	  										</div>
 	  									</div>
 	  								</div>
 		  							<div className="row">
@@ -132,24 +158,13 @@ class SingleDishPage extends Component {
   								<div className="tab-review" ref={(el) => { this.tabReview = el; }}>
   									no review at the moment
   								</div>
-
   							</div>
-
   						</div>
 					</div>
 					<div className="col-sm-4">
 						<DeliveryFee />
 						<hr />
-						<h1>Your order</h1>
-						<h3>Anny's Kitchen</h3>
-							<p>2 BBQ chicken $ 86</p>
-							<p>family pack</p>
-						<h3>James' Indian Food</h3>
-							<p>1 fried rice $ 10.5</p>
-							<p>single serve</p>
-						<strong>Delivery: $39</strong><br />
-						<strong>Total: $135.5</strong><br />
-						<button>Order Now</button>
+						<Order />
 	                </div>
 				</div>				
 			</div>

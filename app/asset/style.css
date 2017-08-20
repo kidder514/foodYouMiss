@@ -18,12 +18,26 @@ a:focus{
 }
 
 h1{
-	color:#fff !important;
+	text-transform: capitalize;
 }
 
 h1{ font-size: 20px !important; }
 h2{ font-size: 18px !important; }
 h3{ font-size: 16px !important; }
+
+input, select, button{
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    -webkit-transition: none !important;
+    -o-transition: none !important;
+    transition: none !important;
+}
+
+button{
+	border: none;
+    background-color: #F25D30;
+    color: #fff !important;
+}
 
 .icon-button{
 	display: block;
@@ -43,13 +57,6 @@ h3{ font-size: 16px !important; }
 	background-color:unset;
 }
 
-input, select, button{
-    -webkit-box-shadow: none !important;
-    box-shadow: none !important;
-    -webkit-transition: none !important;
-    -o-transition: none !important;
-    transition: none !important;
-}
 /*=====================2.0 General===========================*/
 body{
 	font-family: Arial,Helvetica,sans-serif;
@@ -759,10 +766,68 @@ a.menu-item-button:not(.logo):hover
 	text-decoration: underline;
 }
 
+.tab{
+	border-bottom:1px solid #f1f1f1;
+	margin-bottom: 20px;
+}
+
 .tab-review{
 	display: none;
 }
 
+.tab-item{
+	position:relative;
+	top: 1px;
+	display:inline-block;
+	padding:5px 40px;
+	border-top:2px solid #f1f1f1;
+	border-left:1px solid #f1f1f1;
+	border-right:1px solid #f1f1f1;
+	background-color:#f1f1f1;
+}
+
+.tab-item.active{
+	background-color:#fff;
+	border-top:2px solid #F25D30;
+}
+
+.other-info-item{
+	width:100%;
+	height:auto;
+	clear:both;
+}
+
+.other-info-title{
+	width: 40%;
+	padding-right: 10%;
+	font-weight: 700;
+	float:left;
+	padding-bottom: 15px;
+}
+
+.other-info-content{
+	width:50%;
+	float: right;
+	padding-bottom: 15px;
+}
+
+.package-price{
+	float: right;
+	padding: 5px 0;
+}
+
+.package-price button{
+	margin-left: 10px;
+}
+
+.single-dish-title{
+	margin-top: 10;
+}
+
+.order-button{
+	margin:10px 0;
+	width: 100%;
+}
 /* 4.6 Dashboard */
 
 .dashboard-content{
