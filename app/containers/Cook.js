@@ -1,19 +1,19 @@
 import React, {Component} from 'react';
 import {connect} from "react-redux";
 import CookPage from "../components/CookPage"
-import { cookInfoCall } from "../action/cookAction"
+import { dishListCall } from "../action/dishAction"
 
 const mapStateToProps = (state) => {
 	return {
 		userState: state.userState,
-		cookData: state.cookData
+		dishListData: state.homeFoodDish
 	}
 }
 
 const mapDispatchToProps = (dispatch) => {
     return {
         initCookCall: (query) => {
-            dispatch(cookInfoCall(query))
+            dispatch(dishListCall(query))
         }
     };
 };

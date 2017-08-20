@@ -17,6 +17,7 @@ import Notification from "./containers/dashboard/Notification"
 import Setting from "./containers/dashboard/Setting"
 import Help from "./containers/dashboard/Help"
 import Cook from "./containers/Cook"
+import Checkout from "./containers/Checkout"
 import SingleDish from "./containers/SingleDish"
 
 export default (
@@ -31,6 +32,7 @@ export default (
 		  	<Route path="message" component={Message} />
 		  	<Route path="dish/:dishid" component={SingleDish} />
 		  	<Route path="cook/:cookid" component={Cook} />
+		  	<Route path="checkout" component={Checkout} />
 		  	<Route path="dashboard" component={Dashboard} >
 		  		<IndexRoute component={Overview}/>
 		  		<Route path="order-history" component={OrderHistory} />
