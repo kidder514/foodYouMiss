@@ -1,12 +1,11 @@
 import React, {Component} from 'react';
+import {Link} from "react-router";
 
 class OrderSection extends Component {
 
 	constructor(props){
 		super(props);
-		this.state = {
-
-		};
+		this.state = {};
 	}
 
   	render(){
@@ -18,7 +17,11 @@ class OrderSection extends Component {
 					<p>single serve</p>
 				<strong>Delivery: $39</strong><br />
 				<strong>Total: $135.5</strong><br />
-				<button className="order-button">Order Now</button>			
+                <Link to="/checkout"> 
+					<button className="order-button">
+						Order Now
+					</button>			
+				</Link>
   			</div>
   			);
   	}
