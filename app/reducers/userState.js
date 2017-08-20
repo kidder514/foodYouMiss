@@ -66,9 +66,17 @@ function userState(state = (currentState != undefined) ? currentState : initialU
 			}
 	        return initialUserState;
 	    case "LOCATE":
-	    	return { ...state, hasAddress: true, currentAddress: action.location};
+	    	return { ...state, 
+	    			hasAddress: true, 
+	    			currentAddress: action.address, 
+	    			coordinate: action.coordinate 
+	    		};
 	    case "UNLOCATE":
-	        return { ...state, hasAddress: false, currentAddress: ""};
+	        return { ...state, 
+	        		hasAddress: false, 
+	        		currentAddress: "", 
+	        		coordinate: ""
+	        	};
 	    default:
 	    	return state
     }
