@@ -1,12 +1,12 @@
 import React, {Component} from 'react';
 import {connect} from "react-redux";
 import FrontPage from "../../components/static/FrontPage"
-import { postListCall } from "../../action/postAction"
+import { dishListCall } from "../../action/dishAction"
 
 const mapStateToProps = (state) => {
 	return {
-		userStatus: state.userStatus,
-		postListData: state.nearByPost
+		userState: state.userState,
+		dishListData: state.homeFoodDish
 	}
 }
 

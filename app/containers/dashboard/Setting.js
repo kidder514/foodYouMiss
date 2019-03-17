@@ -4,7 +4,7 @@ import SettingPage from "../../components/dashboard/SettingPage"
 
 const mapStateToProps = (state) => {
 	return {
-		userStatus: state.userStatus,
+		userState: state.userState,
 		userData: state.userData
 	}
 }

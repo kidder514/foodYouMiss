@@ -1,12 +1,21 @@
 import React, {Component} from 'react';
 import {connect} from "react-redux";
 import UserMenuLayer from "../components/UserMenuLayer"
+import { ShowUserMenu } from "../action/uiAction"
 
 const mapStateToProps = (state) => {
 	return {
-		userStatus: state.userStatus,
+		userState: state.userState,
 		ui: state.ui
 	}
 }
 
-export default connect(mapStateToProps)(UserMenuLayer);
+const mapDispatchToProps = (dispatch) => {
+    return {
+        toggleUserMenu: (isShown) => {
+            dispatch(ShowUserMenu(isShown))
+        }
+    };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(UserMenuLayer);

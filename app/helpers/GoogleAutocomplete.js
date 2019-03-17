@@ -22,9 +22,9 @@ export default class GoogleAutocomplete extends Component{
 
 	componentDidMount(){
 		this.autocomplete = new google.maps.places.Autocomplete( 
-			this.refs.autocomplete, 
+			this.autocompleteInput, 
 			{
-				types:["geocode"],
+				types:[this.props.types],
 				componentRestrictions: {country: 'au'}
 			}
 		);
@@ -68,8 +68,8 @@ export default class GoogleAutocomplete extends Component{
 	    	<div className={this.props.className !== undefined ? "textfield-wrapper " + this.props.className : "textfield-wrapper"} >
 				<input 
 					id="autocomplete"
-					className="autocomplete textfield-input form-control"
-					ref="autocomplete"
+	    		    className={this.props.fieldClass !== undefined ? this.props.fieldClass + " autocomplete textfield-input form-control" : "autocomplete textfield-input form-control"}
+					ref={(c) => this.autocompleteInput = c}
 					onFocus={this.geolocate}
 					onChange={this.onChange}
 		    		placeholder={this.props.placeholder  !== undefined ? this.props.placeholder : ""}

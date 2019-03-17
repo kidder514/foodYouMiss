@@ -1,31 +1,31 @@
 import React, {Component} from 'react';
-import PostList from "./common/PostList"
+import DishList from "./common/DishList"
 import SideBar from "../containers/common/SideBar"
 import SearchBox from "../containers/common/Search"
 
-class MyDishPage extends Component{
+class MyPagePage extends Component{
 
 	componentDidMount() {
-		let query = "";
-		let userStatus = this.props.userStatus;
+		let query = {};
+
+		let userState = this.props.userState;
 		
-		if(userStatus.hasLocation){
-			query = "location=" + userStatus.currentLocation;
+		if(userState.isLoggedIn){
+			query = {userId: userState.userId};
 		}
 		
-        if(this.props.myPostListData.length <= 0){
-      	    this.props.initMyPost(query);
+        if(this.props.myDishListData.length <= 0){
+      	    this.props.initMyDish(query);
         }
   	}
 
   	render(){
-  		if(this.props.myPostListData.length > 0){
+  		if(this.props.myDishListData.length > 0){
 	  		return(
 	  			<div className="container">
 		  			<div className="row">
 		  				<div className="col-sm-8">
-		  					<SearchBox />
-		  					<PostList data={this.props.myPostListData} />
+		  					<DishList data={this.props.myDishListData} />
 		  				</div>
 						<div className="col-sm-4 hidden-xs">
 		            		<SideBar currentPage={"home"} />
@@ -38,9 +38,8 @@ class MyDishPage extends Component{
   				<div className="container">
   					<div className="row">
   						<div className="col-sm-8">
-		  					<SearchBox />
 	  						<div>
-	  							Sorry, there is no cook in this area.
+	  							You haven't post any dishes yet.
 	  						</div>
   						</div>
 						<div className="col-sm-4 hidden-xs">
@@ -53,4 +52,4 @@ class MyDishPage extends Component{
     }
 }
 
-export default MyDishPage;
+export default MyPagePage;

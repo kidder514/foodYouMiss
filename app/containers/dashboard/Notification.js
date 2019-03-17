@@ -4,7 +4,7 @@ import NotificationPage from "../../components/dashboard/NotificationPage"
 
 const mapStateToProps = (state) => {
 	return {
-		userStatus: state.userStatus,
+		userState: state.userState,
 		userData: state.userData
 	}
 }

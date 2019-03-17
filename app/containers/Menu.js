@@ -5,7 +5,7 @@ import { ShowUserMenu } from "../action/uiAction"
 
 const mapStateToProps = (state) => {
 	return {
-		userStatus: state.userStatus,
+		userState: state.userState,
 		ui: state.ui
 	}
 }

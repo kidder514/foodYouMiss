@@ -5,13 +5,13 @@ class SideBarPage extends Component{
 
   	render(){
   		var loginPortal = "";
-  		if ( !this.props.userStatus.isLoggedIn)
+  		if ( !this.props.userState.isLoggedIn)
 		{
 			loginPortal = 
 			<div>
 				<p>Login or sign-up to order food</p>
 				<div className="login-button">
-				  	<Link to="/signin" className="login ">
+				  	<Link to="/login" className="login ">
 			    		<button className="btn btn-default btn-sm btn-block">
 			    			login
 				    	</button>

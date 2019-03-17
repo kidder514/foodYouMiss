@@ -1,7 +1,7 @@
 
-function singleDishData(state = [], action) {
+function myDishReducer(state = [], action) {
   switch(action.type){
-    case "INIT_SINGLE_DISH":
+    case "INIT_MY_DISH":
     	return state.concat(action.newDish)
     case "APPEND_MY_DISH":
     	return state.concat(action.newDish)
@@ -12,4 +12,4 @@ function singleDishData(state = [], action) {
     }
 }
 
-export default singleDishData
+export default myDishReducer

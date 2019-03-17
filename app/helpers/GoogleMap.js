@@ -1,37 +1,54 @@
 import React, {Component} from "react";
+import config from "../config"
 
 export default class GoogleMap extends Component{
 	constructor(props){
 		super(props);
 		this.showMarkers = this.showMarkers.bind(this);
 		this.createInfoWindow = this.createInfoWindow.bind(this);
+		this.markers = [];
 	}
 
 	showMarkers(){
-		if (this.props.data.length > 0){
+		if (this.props.data != undefined && this.props.data.length > 0){
 
 			var data = this.props.data;
 			var locations = [];
+			var ids = [];
+			var markers = [];
+			var infoWindow = null;
+
 			for (var i = 0; i < data.length; i++)
 			{
-				locations.push({lat: parseFloat(data[i].postCoordinate.latitude),
-				lng: parseFloat(data[i].postCoordinate.longitude)});
+				if (ids.indexOf(data[i].authorId) == -1)
+				{
+					locations.push({lat: parseFloat(data[i].postCoordinate.latitude),
+					lng: parseFloat(data[i].postCoordinate.longitude)});
+					ids.push(data[i].authorId);
+				}
+
 			}
 
-		    var markers = locations.map((location, i) => {
+		    locations.map((location, i) => {
 	        	var marker = new google.maps.Marker({
-					position: location
+					position: location,
+					map: this.map,
+					id: data[i].authorId,
+					icon: config.mouseOutMarker
 				});
 		        marker.addListener('click', () => {
-					this.createInfoWindow(data[i]).open(this.map, marker);
+		        	if(infoWindow){
+		        		infoWindow.close();
+		        	}
+					infoWindow = this.createInfoWindow(data[i]);
+					infoWindow.open(this.map, marker);
+
 		        });
 
-	        return marker;
+		        markers.push(marker);
 	        });
+		    this.props.setMarkers(markers);
 
-	        // Add a marker clusterer to manage the markers.
-	        var markerCluster = new MarkerClusterer(this.map, markers,
-	            {imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});
 		}
 	}
 
@@ -42,39 +59,16 @@ export default class GoogleMap extends Component{
 			var authorSignature = '<span className="signature">' + authorSignature + '</span>';
 		}
 
-		var imageSection = "";
-		if (data.postImgUrls.length == 1){
-			imageSection += 
-			'<section class="map-img-section">'+
-			'<img class="col-xs-4" src="' + data.postImgUrls[0].thumbnail + '" />'+
-			'</section>';
-		}else if (data.postImgUrls.length == 2){
-			imageSection = 
-			'<section class="map-img-section">'+
-			'<img class="col-xs-4" src="' + data.postImgUrls[0].thumbnail + '" />'
-			'<img class="col-xs-4" src="' + data.postImgUrls[1].thumbnail + '" />'
-			'</section>';
-		}else if (data.postImgUrls.length >= 3){
-			imageSection = 
-			'<section class="map-img-section">'+
-			'<img class="col-xs-4" src="' + data.postImgUrls[0].thumbnail + '" />'+
-			'<img class="col-xs-4" src="' + data.postImgUrls[1].thumbnail + '" />'+
-			'<img class="col-xs-4" src="' + data.postImgUrls[2].thumbnail + '" />'+
-			'</section>';
-		}
-
 		//google map requires this to be string
 		var infoWindowContent = 
 		'<div class="info-window">'+
 		'<div class="info-header">'+
-		'<img src="' + data.authorImg + '" />'+
+		'<a href="/cook/' + data.authorId + '"><img class="img-circle" src="' + data.authorImg + '" /></a>'+
 		'</div>' +
-		'<h2>' + data.authorName + '</h2>' +
-		authorSignature +
+		'<div class="gm-cook-name"><a href="/cook/' + data.authorId +'" >' + data.authorName + '</a></div>' +
 		'</div>' +
 		'<div class="info-content">'+
 		'<p>' + data.postDescription + '</p>' +
-		imageSection +
 		'</div>';
 
 		return new google.maps.InfoWindow({
@@ -88,6 +82,10 @@ export default class GoogleMap extends Component{
         	zoom: 13,
         	streetViewControl: false,
 		});
+
+		// I guess it is okey for map to be a global variable
+		// since we only use one map instance
+		window.map = this.map;
 		this.showMarkers();
 	}
 
